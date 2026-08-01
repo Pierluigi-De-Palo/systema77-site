@@ -6,55 +6,77 @@
 <title>SYSTEMA 77</title>
 <meta name="description" content="SYSTEMA 77 — la casa dell’agenzia. I servizi sono in sviluppo.">
 <style>
-  :root{
-    --bg-deep:#0C0B0E; --bg-surface:#141216; --amber:#C9A15E;
-    --text-hi:#ECE7DF; --text-lo:#A7A29B; --line:#3A3730;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{
-    background:var(--bg-deep); color:var(--text-hi);
-    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-    display:flex; align-items:center; justify-content:center;
-    text-align:center; padding:2rem;
-    background-image:radial-gradient(ellipse at 50% 38%, rgba(201,161,94,.07), transparent 62%);
-  }
-  main{max-width:36rem}
-  .marca{
-    font-family:"Courier Prime","Courier New",monospace;
-    letter-spacing:.35em; font-size:.85rem; color:var(--amber);
-    text-transform:uppercase; margin-bottom:1.4rem;
-  }
-  h1{font-size:clamp(1.7rem,5vw,2.5rem); font-weight:400; letter-spacing:.03em; line-height:1.35; margin-bottom:1rem}
-  h1 b{color:var(--amber); font-weight:400}
-  .riga{width:3.5rem; height:1px; background:var(--line); margin:1.5rem auto}
-  p{color:var(--text-lo); line-height:1.7; font-size:1.02rem}
-  .presto{
-    display:inline-block; margin-top:2rem; padding:.55rem 1.2rem;
-    border:1px solid var(--line); border-radius:2px;
-    font-family:"Courier Prime","Courier New",monospace;
-    font-size:.78rem; letter-spacing:.28em; text-transform:uppercase; color:var(--amber);
-  }
-  footer{
-    position:fixed; left:0; right:0; bottom:1.2rem;
-    font-family:"Courier Prime","Courier New",monospace;
-    font-size:.72rem; letter-spacing:.1em; color:var(--text-lo); text-align:center;
-  }
-  footer a{color:var(--text-lo); text-decoration:none; border-bottom:1px solid var(--line); white-space:nowrap}
-  footer a:hover{color:var(--amber)}
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Share+Tech+Mono&family=Newsreader:opsz,wght@6..72,400&display=swap');
+:root{
+  --giallo:#F2E205; --nero:#0A0A0A; --carta:#F7F7F2;
+  --muto:#8F8A82; --linea:#2A2A26; --superficie:#141414;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--nero); color:var(--carta);
+  display:flex; align-items:center; justify-content:center;
+  padding:1.5rem;
+}
+.band{
+  width:min(100%,1100px); aspect-ratio:2.35/1;
+  position:relative; border:1px solid var(--linea);
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  background:radial-gradient(ellipse at 50% 42%, rgba(242,226,5,.05), transparent 60%);
+  padding:2rem;
+}
+@media(max-width:700px){.band{aspect-ratio:3/4}}
+.edge{
+  position:absolute; left:0; right:0; display:flex; justify-content:space-between;
+  padding:10px 16px; font-family:'Share Tech Mono',monospace;
+  font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--muto);
+}
+.edge.top{top:0} .edge.bot{bottom:0}
+main{max-width:44rem}
+.marca{
+  font-family:'Share Tech Mono',monospace; letter-spacing:.35em;
+  font-size:.8rem; color:var(--giallo); text-transform:uppercase; margin-bottom:1.6rem;
+}
+h1{
+  font-family:'Anton',Impact,sans-serif; font-weight:400;
+  font-size:clamp(1.9rem,6vw,4.6rem); line-height:.95;
+  text-transform:uppercase; letter-spacing:.01em;
+}
+h1 b{color:var(--giallo); font-weight:400}
+p{
+  font-family:'Newsreader',Georgia,serif; color:#c4c4bc;
+  line-height:1.7; font-size:clamp(.95rem,1.6vw,1.05rem);
+  max-width:52ch; margin:1.4rem auto 0;
+}
+.presto{
+  display:inline-block; margin-top:2rem; padding:.6rem 1.3rem;
+  border:1px solid var(--giallo); color:var(--giallo);
+  font-family:'Share Tech Mono',monospace;
+  font-size:.72rem; letter-spacing:.28em; text-transform:uppercase;
+}
+footer{
+  position:fixed; left:0; right:0; bottom:1.1rem;
+  font-family:'Share Tech Mono',monospace;
+  font-size:.7rem; letter-spacing:.12em; color:var(--muto); text-align:center;
+}
+footer a{color:var(--muto); text-decoration:none; border-bottom:1px solid var(--linea); white-space:nowrap}
+footer a:hover{color:var(--giallo)}
 </style>
 </head>
 <body>
-<main>
-  <div class="marca">&#9673; Systema 77</div>
-  <h1>Non ci siamo trasferiti nel digitale.<br><b>Ci siamo nati.</b></h1>
-  <div class="riga"></div>
-  <p>La casa dell’agenzia. I servizi sono in sviluppo, come le fotografie: al buio, con calma, finché l’immagine non è nitida.</p>
-  <div class="presto">In sviluppo</div>
-</main>
+<div class="band">
+  <div class="edge top"><span>Systema 77 · la casa</span><span>2077</span></div>
+  <main>
+    <div class="marca">&#9673; Systema 77</div>
+    <h1>Non ci siamo trasferiti<br>nel digitale.<br><b>Ci siamo nati.</b></h1>
+    <p>La casa dell’agenzia. I servizi sono in sviluppo, come le fotografie: al buio, con calma, finché l’immagine non è nitida.</p>
+    <div class="presto">In sviluppo</div>
+  </main>
+  <div class="edge bot"><span>S77·00</span><span>coming soon</span></div>
+</div>
 <footer>
   <a href="https://anima.solar">anima.solar — il gioco</a>
 </footer>
-<!-- creato da D.R.A.G.O., 2026-07-28 · voce di JUDY, 2026-07-29 -->
+<!-- creato da D.R.A.G.O., 2026-07-28 · voce di JUDY, 2026-07-29 · veste ponte 77 di JUDY, 2026-08-01 -->
 </body>
 </html>
