@@ -8,10 +8,13 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Share+Tech+Mono&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap');
 :root{
-  /* ACID — validata dal Direttore 08·08·2026. Giallo, nero, carta.
-     Magenta e ciano restano fuori: sono la voce .ninja e l'interno del Systema.
-     Il colore, qui, lo mettono le opere. */
-  --giallo:#F2E205; --nero:#0A0A0A; --carta:#F7F7F2;
+  /* ACID PIENA — ordine del Direttore 08·08·2026 sera: «soprattutto fucsia».
+     La riduzione a giallo/nero del mattino è revocata da lui; la collisione col
+     magenta della voce si risolve dall'altra parte (.ninja cambierà colore).
+     Disciplina di palette (JUDY, 17/07): giallo A BLOCCHI, fucsia come SEGNALE
+     caldo, ciano solo micro-segnale, nero per leggere. */
+  --giallo:#F2E205; --fucsia:#FF2E88; --ciano:#16E0DC;
+  --nero:#0A0A0A; --carta:#F7F7F2;
   --muto:#8F8A82; --linea:#2A2A26; --superficie:#141414;
   --mono:'Share Tech Mono',ui-monospace,Menlo,monospace;
 }
@@ -26,7 +29,8 @@ a{color:inherit}
   width:min(100%,1100px); aspect-ratio:2.35/1; position:relative;
   border:1px solid var(--linea); display:flex; align-items:center; justify-content:center;
   text-align:center; padding:2rem;
-  background:radial-gradient(ellipse at 50% 42%, rgba(242,226,5,.05), transparent 60%);
+  background:radial-gradient(ellipse at 38% 40%, rgba(242,226,5,.05), transparent 55%),
+             radial-gradient(ellipse at 66% 60%, rgba(255,46,136,.06), transparent 55%);
 }
 @media(max-width:700px){.band{aspect-ratio:3/4}}
 .edge{position:absolute; left:0; right:0; display:flex; justify-content:space-between;
@@ -34,7 +38,7 @@ a{color:inherit}
   text-transform:uppercase; color:var(--muto)}
 .edge.top{top:0} .edge.bot{bottom:0}
 .band main{max-width:44rem}
-.marca{font-family:var(--mono); letter-spacing:.35em; font-size:.8rem; color:var(--giallo);
+.marca{font-family:var(--mono); letter-spacing:.35em; font-size:.8rem; color:var(--fucsia);
   text-transform:uppercase; margin-bottom:1.6rem}
 h1{font-family:'Anton',Impact,sans-serif; font-weight:400; font-size:clamp(1.9rem,6vw,4.6rem);
   line-height:.95; text-transform:uppercase; letter-spacing:.01em}
@@ -44,12 +48,12 @@ h1 b{color:var(--giallo); font-weight:400}
 .giu{position:absolute; bottom:38px; left:50%; transform:translateX(-50%);
   font-family:var(--mono); font-size:.66rem; letter-spacing:.26em; color:var(--muto);
   text-transform:uppercase; text-decoration:none}
-.giu:hover{color:var(--giallo)}
+.giu:hover{color:var(--fucsia)}
 
 /* ── sezioni ── */
 section{padding:5.5rem 0; border-top:1px solid var(--linea)}
 .occhiello{font-family:var(--mono); font-size:.68rem; letter-spacing:.3em; text-transform:uppercase;
-  color:var(--giallo); margin-bottom:1.1rem}
+  color:var(--fucsia); margin-bottom:1.1rem}
 h2{font-family:'Anton',Impact,sans-serif; font-weight:400; text-transform:uppercase;
   font-size:clamp(1.5rem,3.6vw,2.6rem); line-height:1.02; max-width:22ch}
 .testo{font-family:'Newsreader',Georgia,serif; color:#c4c4bc; line-height:1.75;
@@ -73,7 +77,7 @@ h2{font-family:'Anton',Impact,sans-serif; font-weight:400; text-transform:upperc
 @media(max-width:760px){.opere{grid-template-columns:1fr}}
 .opera{background:var(--superficie); padding:1.7rem 1.5rem; display:flex; flex-direction:column; gap:.6rem}
 .opera .tipo{font-family:var(--mono); font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
-  color:var(--giallo)}
+  color:var(--fucsia)}
 .opera .cosa{font-family:'Newsreader',Georgia,serif; font-size:1.02rem; line-height:1.6; color:#c4c4bc}
 .opera .stato{margin-top:auto; padding-top:1rem; border-top:1px solid var(--linea);
   font-family:var(--mono); font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muto)}
@@ -81,23 +85,23 @@ h2{font-family:'Anton',Impact,sans-serif; font-weight:400; text-transform:upperc
 .chiusa{text-align:center; padding:5rem 0}
 .chiusa .frase{font-family:'Anton',Impact,sans-serif; text-transform:uppercase;
   font-size:clamp(1.3rem,3.2vw,2.1rem); line-height:1.06}
-.chiusa .frase b{color:var(--giallo); font-weight:400}
+.chiusa .frase b{color:var(--fucsia); font-weight:400}
 .bottone{display:inline-block; margin-top:2rem; padding:.75rem 1.6rem; background:var(--giallo);
   color:var(--nero); font-family:var(--mono); font-size:.74rem; letter-spacing:.24em;
   text-transform:uppercase; text-decoration:none}
-.bottone:hover{background:var(--carta)}
+.bottone:hover{background:var(--fucsia); color:var(--carta)}
 
 footer{border-top:1px solid var(--linea); padding:2rem 0 3rem; text-align:center;
   font-family:var(--mono); font-size:.7rem; letter-spacing:.12em; color:var(--muto)}
 footer a{color:var(--muto); text-decoration:none; border-bottom:1px solid var(--linea)}
-footer a:hover{color:var(--giallo)}
+footer a:hover{color:var(--fucsia)}
 </style>
 </head>
 <body>
 
 <div class="hero">
   <div class="band">
-    <div class="edge top"><span>Systema 77 · la casa</span><span>2077</span></div>
+    <div class="edge top"><span>Systema 77 · la casa</span><span style="color:var(--ciano)">2077</span></div>
     <main>
       <div class="marca">&#9673; Systema 77</div>
       <h1>Non ci siamo trasferiti<br>nel digitale.<br><b>Ci siamo nati.</b></h1>
@@ -171,12 +175,35 @@ footer a:hover{color:var(--giallo)}
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <div class="occhiello">Le prime opere</div>
+    <h2>Sul banco, adesso.</h2>
+    <p class="testo">Non un portfolio: <b>il banco di lavoro.</b> Qui compare solo ciò che esiste
+    davvero — e ogni pezzo arriverà con il suo processo in vista, scarti e correzioni compresi.</p>
+    <div class="opere">
+      <div class="opera">
+        <div class="tipo">Fine art</div>
+        <div class="cosa">Otto fotografie, scelte una a una da un archivio di sessantaquattro.
+        La prima uscita in stampa d'arte.</div>
+        <div class="stato">Curatela chiusa</div>
+      </div>
+      <div class="opera">
+        <div class="tipo">Suono</div>
+        <div class="cosa">ECODUB — un brano, sei letture diverse della stessa voce, un master
+        finale. Mixato e chiuso in casa.</div>
+        <div class="stato">Master chiuso</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="chiusa">
   <div class="wrap">
     <div class="frase">Se vuoi vedere come lavoriamo,<br><b>ti facciamo entrare in bottega.</b></div>
-    <!-- ⚠️ JUDY 08/08: il bottone «Scrivici» è TOLTO di proposito. L'agenzia non ha ancora un
-         recapito dichiarato, e un recapito che non riceve è peggio di nessun recapito su una
-         vetrina. Appena il Direttore ne dichiara uno vero, si rimette qui e basta. -->
+    <a class="bottone" href="mailto:pierluigidepalo@gmail.com">Scrivici</a>
+    <!-- recapito provvisorio scelto dal Direttore l'08/08 (sera): la sua casella personale,
+         finché non esiste una casella dell'agenzia. Si cambia con una riga. -->
   </div>
 </section>
 
