@@ -91,3 +91,42 @@ footer{padding:2rem 1.2rem 2.8rem; font-family:var(--mono); font-size:.64rem;
   display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap}
 footer a{border-bottom:1px solid var(--linea)}
 footer a:hover{color:var(--giallo)}
+
+/* ── IL BINARIO 2.35 — lo scroll verso il basso corre verso destra ──
+   Idea del Direttore (08/08 sera): «siamo nel 2077 e dobbiamo creare artifici».
+   Tecnica: pagina alta N schermi, viewport sticky, il binario trasla in X
+   proporzionalmente allo scroll Y. Scrollbar nativa, niente wheel-hijack.
+   Sotto i 760px il binario si spegne e i quadri tornano in colonna. */
+.binario-alt{position:relative}
+.binario{position:sticky; top:0; height:100svh; overflow:hidden}
+.corsa{display:flex; height:100%; will-change:transform}
+.quadro77{flex:0 0 100vw; height:100%; display:flex; flex-direction:column;
+  justify-content:center; padding:4.6rem 1.4rem 3rem; border-right:2px solid var(--linea);
+  position:relative}
+.quadro77 .dentro{max-width:1100px; margin:0 auto; width:100%}
+.quadro77 .angolo{position:absolute; bottom:14px; right:18px; font-family:var(--mono);
+  font-size:.6rem; letter-spacing:.24em; color:var(--muto); text-transform:uppercase}
+.gigante{font-family:var(--anton); font-weight:400; text-transform:uppercase;
+  font-size:clamp(4rem,14.5vw,12rem); line-height:.88; letter-spacing:.01em}
+.gigante .g{color:var(--giallo)}
+/* le strip dentro i quadri: la forma di CHILL, un colore per sezione */
+.strip{display:flex; align-items:stretch; border:2px solid var(--linea); flex-wrap:wrap; margin-top:1.6rem}
+.strip .tag{color:var(--nero); font-family:var(--anton); text-transform:uppercase;
+  font-size:1.6rem; padding:1rem 1.4rem; display:flex; align-items:center}
+.strip.officina .tag{background:var(--giallo)}
+.strip.chill2 .tag{background:var(--magenta)}
+.strip.game .tag{background:#38E08A}
+.strip.rs .tag{background:var(--ciano)}
+.strip a, .strip .voce{flex:1; min-width:8.5rem; padding:1.1rem 1.2rem; border-left:2px solid var(--linea);
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.2em; text-transform:uppercase;
+  display:flex; flex-direction:column; gap:.3rem; justify-content:center}
+.strip a span, .strip .voce span{color:var(--muto); font-size:.58rem}
+.strip.officina a:hover{background:#111; color:var(--giallo)}
+.strip.chill2 a:hover{background:#111; color:var(--magenta)}
+.strip.game a:hover{background:#111; color:#38E08A}
+@media(max-width:760px){
+  .binario-alt{height:auto !important}
+  .binario{position:static; height:auto; overflow:visible}
+  .corsa{display:block; transform:none !important}
+  .quadro77{flex:none; height:auto; min-height:72svh; border-right:0; border-bottom:2px solid var(--linea)}
+}
