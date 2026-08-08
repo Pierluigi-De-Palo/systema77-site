@@ -3,215 +3,73 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SYSTEMA 77</title>
-<meta name="description" content="SYSTEMA 77 — agenzia di contenuti. Una persona genera, la macchina integra. Immagini, suono, stampa, libri.">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Share+Tech+Mono&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap');
-:root{
-  /* ACID PIENA — ordine del Direttore 08·08·2026 sera: «soprattutto fucsia».
-     La riduzione a giallo/nero del mattino è revocata da lui; la collisione col
-     magenta della voce si risolve dall'altra parte (.ninja cambierà colore).
-     Disciplina di palette (JUDY, 17/07): giallo A BLOCCHI, fucsia come SEGNALE
-     caldo, ciano solo micro-segnale, nero per leggere. */
-  --giallo:#F2E205; --fucsia:#FF2E88; --ciano:#16E0DC;
-  --nero:#0A0A0A; --carta:#F7F7F2;
-  --muto:#8F8A82; --linea:#2A2A26; --superficie:#141414;
-  --mono:'Share Tech Mono',ui-monospace,Menlo,monospace;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--nero); color:var(--carta); -webkit-font-smoothing:antialiased}
-.wrap{width:min(100%,1100px); margin:0 auto; padding:0 1.5rem}
-a{color:inherit}
-
-/* ── la banda: resta il volto della casa ── */
-.hero{min-height:100svh; display:flex; align-items:center; justify-content:center; padding:1.5rem}
-.band{
-  width:min(100%,1100px); aspect-ratio:2.35/1; position:relative;
-  border:1px solid var(--linea); display:flex; align-items:center; justify-content:center;
-  text-align:center; padding:2rem;
-  background:radial-gradient(ellipse at 38% 40%, rgba(242,226,5,.05), transparent 55%),
-             radial-gradient(ellipse at 66% 60%, rgba(255,46,136,.06), transparent 55%);
-}
-@media(max-width:700px){.band{aspect-ratio:3/4}}
-.edge{position:absolute; left:0; right:0; display:flex; justify-content:space-between;
-  padding:10px 16px; font-family:var(--mono); font-size:10.5px; letter-spacing:.22em;
-  text-transform:uppercase; color:var(--muto)}
-.edge.top{top:0} .edge.bot{bottom:0}
-.band main{max-width:44rem}
-.marca{font-family:var(--mono); letter-spacing:.35em; font-size:.8rem; color:var(--fucsia);
-  text-transform:uppercase; margin-bottom:1.6rem}
-h1{font-family:'Anton',Impact,sans-serif; font-weight:400; font-size:clamp(1.9rem,6vw,4.6rem);
-  line-height:.95; text-transform:uppercase; letter-spacing:.01em}
-h1 b{color:var(--giallo); font-weight:400}
-.band p{font-family:'Newsreader',Georgia,serif; color:#c4c4bc; line-height:1.7;
-  font-size:clamp(.95rem,1.6vw,1.05rem); max-width:52ch; margin:1.4rem auto 0}
-.giu{position:absolute; bottom:38px; left:50%; transform:translateX(-50%);
-  font-family:var(--mono); font-size:.66rem; letter-spacing:.26em; color:var(--muto);
-  text-transform:uppercase; text-decoration:none}
-.giu:hover{color:var(--fucsia)}
-
-/* ── sezioni ── */
-section{padding:5.5rem 0; border-top:1px solid var(--linea)}
-.occhiello{font-family:var(--mono); font-size:.68rem; letter-spacing:.3em; text-transform:uppercase;
-  color:var(--fucsia); margin-bottom:1.1rem}
-h2{font-family:'Anton',Impact,sans-serif; font-weight:400; text-transform:uppercase;
-  font-size:clamp(1.5rem,3.6vw,2.6rem); line-height:1.02; max-width:22ch}
-.testo{font-family:'Newsreader',Georgia,serif; color:#c4c4bc; line-height:1.75;
-  font-size:1.02rem; max-width:56ch; margin-top:1.2rem}
-.testo b{color:var(--carta); font-weight:500}
-
-/* il metodo — tre passi, il giallo a blocchi */
-.passi{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--linea);
-  border:1px solid var(--linea); margin-top:2.6rem}
-@media(max-width:760px){.passi{grid-template-columns:1fr}}
-.passo{background:var(--nero); padding:1.6rem 1.4rem}
-.passo .n{font-family:var(--mono); font-size:.7rem; letter-spacing:.2em; color:var(--nero);
-  background:var(--giallo); padding:2px 8px; display:inline-block}
-.passo h3{font-family:var(--mono); font-size:.92rem; letter-spacing:.12em; text-transform:uppercase;
-  margin:1rem 0 .5rem}
-.passo p{font-family:'Newsreader',Georgia,serif; color:var(--muto); font-size:.94rem; line-height:1.65}
-
-/* le opere */
-.opere{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--linea);
-  border:1px solid var(--linea); margin-top:2.6rem}
-@media(max-width:760px){.opere{grid-template-columns:1fr}}
-.opera{background:var(--superficie); padding:1.7rem 1.5rem; display:flex; flex-direction:column; gap:.6rem}
-.opera .tipo{font-family:var(--mono); font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
-  color:var(--fucsia)}
-.opera .cosa{font-family:'Newsreader',Georgia,serif; font-size:1.02rem; line-height:1.6; color:#c4c4bc}
-.opera .stato{margin-top:auto; padding-top:1rem; border-top:1px solid var(--linea);
-  font-family:var(--mono); font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muto)}
-
-.chiusa{text-align:center; padding:5rem 0}
-.chiusa .frase{font-family:'Anton',Impact,sans-serif; text-transform:uppercase;
-  font-size:clamp(1.3rem,3.2vw,2.1rem); line-height:1.06}
-.chiusa .frase b{color:var(--fucsia); font-weight:400}
-.bottone{display:inline-block; margin-top:2rem; padding:.75rem 1.6rem; background:var(--giallo);
-  color:var(--nero); font-family:var(--mono); font-size:.74rem; letter-spacing:.24em;
-  text-transform:uppercase; text-decoration:none}
-.bottone:hover{background:var(--fucsia); color:var(--carta)}
-
-footer{border-top:1px solid var(--linea); padding:2rem 0 3rem; text-align:center;
-  font-family:var(--mono); font-size:.7rem; letter-spacing:.12em; color:var(--muto)}
-footer a{color:var(--muto); text-decoration:none; border-bottom:1px solid var(--linea)}
-footer a:hover{color:var(--fucsia)}
-</style>
+<title>SYSTEMA 77 — AI Service Agency</title>
+<meta name="description" content="SYSTEMA 77 — AI Service Agency. Scriviamo dal futuro: meteo, suono, fotografia, video. Gli output vivono qui, in casa.">
+<link rel="stylesheet" href="stile.css">
 </head>
 <body>
 
-<div class="hero">
-  <div class="band">
-    <div class="edge top"><span>Systema 77 · la casa</span><span style="color:var(--ciano)">2077</span></div>
+<nav>
+  <a class="marca" href="index.html">&#9673; SYSTEMA 77</a>
+  <a href="index.html" aria-current="page">Home</a>
+  <a href="servizi.html">Servizi</a>
+  <a href="opere.html">Opere</a>
+</nav>
+
+<!-- SCENA 01 · chi siamo, in un fotogramma -->
+<div class="scena">
+  <div class="quadro">
+    <div class="ciak alto"><span>S77 &middot; scena 01 &middot; esterno &mdash; il futuro</span><span class="tc">tc 20:77:00:01</span></div>
     <main>
-      <div class="marca">&#9673; Systema 77</div>
-      <h1>Non ci siamo trasferiti<br>nel digitale.<br><b>Ci siamo nati.</b></h1>
-      <p>Agenzia di contenuti. Facciamo immagini, suono, stampa e libri — con una persona
-      davanti alla macchina, non al posto suo.</p>
+      <div class="kicker">AI Service Agency</div>
+      <h1>Scriviamo <span class="acceso">dal futuro.</span></h1>
+      <p class="sotto">Systema 77 &egrave; un&rsquo;agenzia di servizi AI. Lavoriamo dal 2077:
+      da qui, quello che vi serve adesso si vede benissimo &mdash; e ve lo mandiamo indietro,
+      un pezzo alla volta.</p>
+      <a class="bottone" href="servizi.html">I servizi</a>
     </main>
-    <div class="edge bot"><span>S77&middot;00</span><span>la vetrina</span></div>
-    <a class="giu" href="#metodo">&#9662; il metodo</a>
+    <div class="ciak basso"><span>bobina 1</span><span>2.35 : 1</span></div>
   </div>
 </div>
 
-<section id="metodo">
-  <div class="wrap">
-    <div class="occhiello">Il metodo</div>
-    <h2>Una persona genera.<br>La macchina integra.</h2>
-    <p class="testo">Non produciamo a comando. <b>Le immagini le fa una persona</b>, una alla volta,
-    scartandone centinaia — e poi il Systema le monta, le corregge, le impagina e le manda in stampa
-    o in onda. La parte lenta resta umana apposta: <b>è quella che si vede.</b></p>
-
-    <div class="passi">
-      <div class="passo">
-        <span class="n">01</span>
-        <h3>Si genera a mano</h3>
-        <p>Una persona sceglie, prova, butta. Nessun automatismo decide che faccia ha una storia.</p>
+<!-- SCENA 02 · i quattro servizi, come segnali -->
+<div class="scena" style="min-height:auto; padding-top:0">
+  <div style="width:min(100%,1160px)">
+    <div class="ciak" style="position:static; padding:0 4px 12px"><span>S77 &middot; scena 02 &middot; i mestieri</span><span class="tc">quattro segnali</span></div>
+    <div class="segnali">
+      <div class="segnale">
+        <div class="nome">Meteo</div>
+        <div class="dice">Il tempo di un luogo, letto e raccontato. Si chiama AURA, e la prima localit&agrave; &egrave; una baia vera.</div>
+        <div class="stato vivo">funziona gi&agrave;</div>
       </div>
-      <div class="passo">
-        <span class="n">02</span>
-        <h3>Il Systema integra</h3>
-        <p>Selezione, colore, impaginato, suono, stampa. Il lavoro sporco, fatto senza stancarsi.</p>
+      <div class="segnale">
+        <div class="nome">Suono</div>
+        <div class="dice">Musica originale e voce, mixate e masterizzate in casa. Non demo: master.</div>
+        <div class="stato">master chiusi</div>
       </div>
-      <div class="passo">
-        <span class="n">03</span>
-        <h3>Si verifica</h3>
-        <p>Ogni fatto che diciamo vero passa da un controllo che può bocciarci. E ci ha già bocciati.</p>
+      <div class="segnale">
+        <div class="nome">Fotografia</div>
+        <div class="dice">Fine art scelta a mano, un&rsquo;uscita alla volta. Otto opere, firma Pierluigi De Palo.</div>
+        <div class="stato">prima uscita &middot; curatela chiusa</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="occhiello">Cosa facciamo</div>
-    <h2>Quattro mestieri,<br>una bottega sola.</h2>
-
-    <div class="opere">
-      <div class="opera">
-        <div class="tipo">Immagine</div>
-        <div class="cosa">Illustrazione e fotografia generata, selezionata a mano e resa coerente:
-        stesso personaggio, stesso tratto, tavola dopo tavola.</div>
-        <div class="stato">In produzione</div>
-      </div>
-      <div class="opera">
-        <div class="tipo">Suono</div>
-        <div class="cosa">Musica originale e voce registrata, mixate e masterizzate in casa.
-        Non demo: master.</div>
-        <div class="stato">In produzione</div>
-      </div>
-      <div class="opera">
-        <div class="tipo">Stampa</div>
-        <div class="cosa">Carta, plexi, tessere. Quello che nasce sullo schermo deve reggere
-        anche quando lo tieni in mano.</div>
-        <div class="stato">In produzione</div>
-      </div>
-      <div class="opera">
-        <div class="tipo">Libri</div>
-        <div class="cosa">Albi illustrati scritti e impaginati in casa, con i fatti verificati
-        prima della stampa.</div>
-        <div class="stato">Primo titolo in scrittura</div>
+      <div class="segnale">
+        <div class="nome">Video</div>
+        <div class="dice">Il making-of come genere: si vede il processo, scarti compresi.</div>
+        <div class="stato">sul banco</div>
       </div>
     </div>
+    <p style="text-align:center; margin-top:1.6rem">
+      <a class="m" style="font-size:.66rem; color:var(--muto)" href="opere.html">&#9656; le opere, in sala</a>
+    </p>
   </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="occhiello">Le prime opere</div>
-    <h2>Sul banco, adesso.</h2>
-    <p class="testo">Non un portfolio: <b>il banco di lavoro.</b> Qui compare solo ciò che esiste
-    davvero — e ogni pezzo arriverà con il suo processo in vista, scarti e correzioni compresi.</p>
-    <div class="opere">
-      <div class="opera">
-        <div class="tipo">Fine art</div>
-        <div class="cosa">Otto fotografie, scelte una a una da un archivio di sessantaquattro.
-        La prima uscita in stampa d'arte.</div>
-        <div class="stato">Curatela chiusa</div>
-      </div>
-      <div class="opera">
-        <div class="tipo">Suono</div>
-        <div class="cosa">ECODUB — un brano, sei letture diverse della stessa voce, un master
-        finale. Mixato e chiuso in casa.</div>
-        <div class="stato">Master chiuso</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="chiusa">
-  <div class="wrap">
-    <div class="frase">Se vuoi vedere come lavoriamo,<br><b>ti facciamo entrare in bottega.</b></div>
-    <a class="bottone" href="mailto:pierluigidepalo@gmail.com">Scrivici</a>
-    <!-- recapito provvisorio scelto dal Direttore l'08/08 (sera): la sua casella personale,
-         finché non esiste una casella dell'agenzia. Si cambia con una riga. -->
-  </div>
-</section>
+</div>
 
 <footer>
-  <a href="https://anima.solar">anima.solar — il gioco</a>
+  gli output vivono qui, in casa &middot; nessuna piattaforma sotto<br><br>
+  <a href="mailto:pierluigidepalo@gmail.com">scrivici</a> &nbsp;&middot;&nbsp; &copy; 2026&rarr;2077 &middot; SYSTEMA 77
 </footer>
 
-<!-- creato da D.R.A.G.O., 2026-07-28 · voce di JUDY, 2026-07-29 · veste ponte 77 di JUDY, 2026-08-01
-     · vetrina + palette ACID di JUDY, 2026-08-08 (magenta e ciano esclusi: sono altre case) -->
+<!-- STILE UNICO declinazione agenzia (fucsia) — dottrina JUDY/STILE-UNICO.md ·
+     creato da D.R.A.G.O. 2026-07-28 · riscritture JUDY 2026-08-08 (vetrina, poi upgrade a pagine) -->
 </body>
 </html>
