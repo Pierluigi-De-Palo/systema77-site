@@ -113,20 +113,44 @@ footer a:hover{color:var(--giallo)}
 .strip{display:flex; align-items:stretch; border:2px solid var(--linea); flex-wrap:wrap; margin-top:1.6rem}
 .strip .tag{color:var(--nero); font-family:var(--anton); text-transform:uppercase;
   font-size:1.6rem; padding:1rem 1.4rem; display:flex; align-items:center}
-.strip.officina .tag{background:var(--giallo)}
-.strip.chill2 .tag{background:var(--magenta)}
+/* Ordine del Direttore: officina = FUCSIA (i primari, il cuore) · chill = BLU · R&S in fondo */
+.strip.officina .tag{background:var(--magenta)}
+.strip.chill2 .tag{background:var(--ciano)}
 .strip.game .tag{background:#38E08A}
-.strip.rs .tag{background:var(--ciano)}
+.strip.rs .tag{background:var(--giallo)}
 .strip a, .strip .voce{flex:1; min-width:8.5rem; padding:1.1rem 1.2rem; border-left:2px solid var(--linea);
   font-family:var(--mono); font-size:.7rem; letter-spacing:.2em; text-transform:uppercase;
   display:flex; flex-direction:column; gap:.3rem; justify-content:center}
 .strip a span, .strip .voce span{color:var(--muto); font-size:.58rem}
-.strip.officina a:hover{background:#111; color:var(--giallo)}
-.strip.chill2 a:hover{background:#111; color:var(--magenta)}
+.strip.officina a:hover{background:#111; color:var(--magenta)}
+.strip.chill2 a:hover{background:#111; color:var(--ciano)}
 .strip.game a:hover{background:#111; color:#38E08A}
-@media(max-width:760px){
-  .binario-alt{height:auto !important}
-  .binario{position:static; height:auto; overflow:visible}
-  .corsa{display:block; transform:none !important}
-  .quadro77{flex:none; height:auto; min-height:72svh; border-right:0; border-bottom:2px solid var(--linea)}
+/* ── L'ORDINE DI GIRARE — solo telefono in verticale ──
+   Niente ripiego in colonna: SYSTEMA 77 si guarda orizzontale. Chi arriva
+   col telefono in piedi trova questo, a tutto schermo, sopra ogni cosa. */
+.ruota{display:none}
+@media (orientation: portrait) and (max-width:600px){
+  .ruota{display:flex; position:fixed; inset:0; z-index:100; background:var(--nero);
+    flex-direction:column; align-items:center; justify-content:center; gap:1.6rem;
+    text-align:center; padding:2rem}
+  body{overflow:hidden}
+  .ruota-icona{width:64px; height:104px; border:3px solid var(--giallo); border-radius:12px;
+    animation:coricati 2.4s ease-in-out infinite}
+  .ruota-big{font-family:var(--anton); font-weight:400; text-transform:uppercase;
+    font-size:clamp(2.4rem,13vw,4rem); line-height:.9; color:var(--carta)}
+  .ruota-big .m{color:var(--magenta)}
+  .ruota-mono{font-family:var(--mono); font-size:.72rem; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--muto); line-height:1.9}
+  .ruota-mono .m{color:var(--magenta)}
+}
+@keyframes coricati{
+  0%,35%{transform:rotate(0)}
+  55%,100%{transform:rotate(-90deg)}
+}
+/* Landscape corto (telefono girato): il gigante non deve sfondare l'altezza */
+@media (max-height: 480px){
+  .gigante{font-size:clamp(2.4rem,17vh,5rem)}
+  .quadro77{padding:3.4rem 1.3rem 2.4rem}
+  .quadro77 h2{font-size:clamp(1.6rem,11vh,3rem) !important}
+  .strip .tag{font-size:1.2rem; padding:.7rem 1rem}
 }

@@ -9,6 +9,14 @@
 </head>
 <body>
 
+<!-- L'ORDINE: SYSTEMA 77 si guarda orizzontale. Sul telefono in verticale, questo copre tutto. -->
+<div class="ruota" aria-hidden="false">
+  <div class="ruota-icona"></div>
+  <div class="ruota-big">GIRA<br>IL TELEFONO<span class="m">.</span></div>
+  <div class="ruota-mono">SYSTEMA 77 SI GUARDA ORIZZONTALE.<br>
+  <span class="m">IL RESTO L'ABBIAMO GI&Agrave; RISOLTO NOI.</span></div>
+</div>
+
 <nav>
   <a class="marca" href="index.html">&#9673; SYSTEMA 77</a>
   <a href="immagini.html">Immagini</a>
@@ -51,10 +59,10 @@
         <span class="angolo">quadro 2/5</span>
       </section>
 
-      <!-- QUADRO 3 · CHILL (fucsia) -->
+      <!-- QUADRO 3 · CHILL (blu) -->
       <section class="quadro77">
         <div class="dentro">
-          <h2 style="font-size:clamp(2.2rem,6vw,4.2rem)">E QUANDO NON<br>SERVE NIENTE<span style="color:var(--magenta)">.</span></h2>
+          <h2 style="font-size:clamp(2.2rem,6vw,4.2rem)">E QUANDO NON<br>SERVE NIENTE<span style="color:var(--ciano)">.</span></h2>
           <div class="strip chill2">
             <div class="tag">CHILL</div>
             <a href="chill.html#meteo">METEO<span>funziona gi&agrave;</span></a>
@@ -98,16 +106,19 @@
 
 <script>
 /* Il binario: scroll Y → corsa X. Scrollbar nativa, zero librerie.
-   Sotto i 760px il CSS spegne tutto e i quadri tornano in colonna. */
+   SYSTEMA 77 SI GUARDA ORIZZONTALE: sul telefono in verticale non c'è un ripiego
+   in colonna — c'è l'ordine di girare il telefono (overlay via CSS). Il binario
+   resta acceso in orizzontale, a ogni larghezza. */
 (function(){
   var alt=document.getElementById('binarioAlt'), corsa=document.getElementById('corsa');
+  var verticale=window.matchMedia('(orientation: portrait) and (max-width:600px)');
   function misura(){
-    if(window.innerWidth<=760){ alt.style.height='auto'; return; }
+    if(verticale.matches){ alt.style.height='100svh'; return; }
     var extra=corsa.scrollWidth-window.innerWidth;
     alt.style.height=(window.innerHeight+extra)+'px';
   }
   function muovi(){
-    if(window.innerWidth<=760) return;
+    if(verticale.matches) return;
     var r=alt.getBoundingClientRect();
     var extra=corsa.scrollWidth-window.innerWidth;
     var y=Math.min(Math.max(-r.top,0), extra);
@@ -115,7 +126,9 @@
   }
   window.addEventListener('scroll',muovi,{passive:true});
   window.addEventListener('resize',function(){misura();muovi();});
+  window.addEventListener('orientationchange',function(){setTimeout(function(){misura();muovi();},60);});
   window.addEventListener('load',function(){misura();muovi();});
+  if(verticale.addEventListener) verticale.addEventListener('change',function(){misura();muovi();});
   misura(); muovi();
   setTimeout(function(){misura();muovi();},350); /* font e layout tardivi */
 })();
