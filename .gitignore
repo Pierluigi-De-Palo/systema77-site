@@ -61,8 +61,3 @@ Thumbs.db
 *.pem
 *.key
 .dev.vars
-# 37 MB di immagini in risoluzione da stampa, origine non accertata e nessuna
-# pagina del sito le usa. Decisione del Direttore, 10/08: NON si pubblicano.
-# Restano sul disco: questo le tiene solo fuori dal repo pubblico, cosi' un
-# `git add -A` di un'altra sessione non le manda online per sbaglio.
-print/
