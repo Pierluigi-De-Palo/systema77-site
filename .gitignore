@@ -1,0 +1,63 @@
+# ◉ systema77-site — cosa NON entra qui dentro
+#
+# ⚠️ QUESTO REPO E' PUBBLICO su GitHub, due volte: dal sito systema77.com e dal
+# sorgente grezzo. E su un repo pubblico L'ELENCO DEI FILE SI LEGGE DA FUORI —
+# quindi un nome difficile da indovinare NON protegge niente.
+# E git non dimentica: un file cancellato domani resta scaricabile per sempre
+# da chiunque conosca il commit.
+#
+# — creato da SUONO, 2026-08-10
+
+# ── I FILE DI STAMPA NON ENTRANO IN GIT ─────────────────────────────────────
+# `print/` contiene le fotografie del Direttore a risoluzione di stampa:
+# 8 file, 37 MB, il piu' grande da 11 MB. Devono stare online perche' Printful
+# li scarica da un indirizzo diretto, ma NON qui dentro:
+#
+#   · in git resterebbero nella cronologia per sempre, anche dopo averli tolti
+#   · su un repo pubblico comparirebbero nell'elenco dei file, quindi il nome
+#     non indovinabile scelto da SHUTTER smetterebbe di proteggerli
+#
+# Vivono su CLOUDFLARE PAGES, che non tiene cronologia e non elenca i file:
+#     bash scripts/pubblica.sh stampa --vai
+#
+# ⚠️ Su Pages togliere un file non e' immediato: esce subito dal sito, ma la
+#    cache lo serve fino a 7 giorni. Si guarda bene PRIMA di pubblicare.
+#
+# ⚠️ Se un giorno serve pubblicare immagini pesanti da qui, NON si toglie questa
+#    riga: si discute prima. E' la differenza fra una scelta e un incidente.
+print/
+
+# ── Immagini pesanti in generale ────────────────────────────────────────────
+# Le foto del sito stanno in assets/ e sono gia' ridotte per il web. Un master
+# da 11 MB in un repo pubblico e' sempre un errore, ovunque lo si metta.
+*.tif
+*.tiff
+*.psd
+*.raw
+*.cr2
+*.nef
+*.dng
+
+# ── Audio e video: stesso ragionamento ──────────────────────────────────────
+*.mp3
+*.wav
+*.m4a
+*.aac
+*.flac
+*.mp4
+*.mov
+*.webm
+
+# ── Roba di sistema e di lavoro ─────────────────────────────────────────────
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# ── Segreti: non dovrebbero mai arrivare qui, ma la porta si chiude lo stesso
+.env
+.env.*
+*.pem
+*.key
+.dev.vars
