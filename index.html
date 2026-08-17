@@ -15,6 +15,9 @@
   <div class="ruota-big">GIRA<br>IL TELEFONO<span class="m">.</span></div>
   <div class="ruota-mono">SYSTEMA 77 SI GUARDA ORIZZONTALE.<br>
   <span class="m">IL RESTO L'ABBIAMO GI&Agrave; RISOLTO NOI.</span></div>
+  <!-- La via d'uscita (WCAG 1.3.4): chi ha il blocco rotazione attivo, o non puo'
+       girare il telefono, senza questo bottone resta fuori da TUTTO il sito. -->
+  <button type="button" class="ruota-esci" id="ruotaEsci">CONTINUA COMUNQUE</button>
 </div>
 
 <nav>
@@ -106,18 +109,42 @@
 
 <script>
 /* Il binario: scroll Y → corsa X. Scrollbar nativa, zero librerie.
-   SYSTEMA 77 SI GUARDA ORIZZONTALE: sul telefono in verticale non c'è un ripiego
-   in colonna — c'è l'ordine di girare il telefono (overlay via CSS). Il binario
-   resta acceso in orizzontale, a ogni larghezza. */
+   SYSTEMA 77 SI GUARDA ORIZZONTALE: sul telefono in verticale l'invito è girare
+   lo schermo (overlay via CSS). Dal 17/08 però l'invito non è più un muro: chi
+   non può girare preme «CONTINUA COMUNQUE» e ottiene gli stessi cinque quadri
+   in colonna. Il binario resta acceso in orizzontale, a ogni larghezza. */
 (function(){
   var alt=document.getElementById('binarioAlt'), corsa=document.getElementById('corsa');
   var verticale=window.matchMedia('(orientation: portrait) and (max-width:600px)');
+
+  /* LA VIA D'USCITA. L'ordine di girare resta l'invito, ma non e' piu' un muro:
+     chi non puo' girare il telefono (blocco rotazione su iOS, supporto fisso,
+     tablet legato) passa oltre e vede gli stessi cinque quadri in colonna.
+     La scelta vale per la sessione: chiederla a ogni pagina sarebbe lo stesso
+     muro, solo piu' educato. */
+  var esci=document.getElementById('ruotaEsci');
+  function passaOltre(){
+    document.documentElement.classList.add('passa');
+    try{ sessionStorage.setItem('s77-passa','1'); }catch(e){}
+    misura(); muovi();
+  }
+  try{ if(sessionStorage.getItem('s77-passa')==='1') document.documentElement.classList.add('passa'); }catch(e){}
+  if(esci) esci.addEventListener('click', passaOltre);
+  /* In verticale il binario e' fermo. Se pero' si e' passati oltre, la pagina
+     deve poter crescere: si toglie l'altezza fissa invece di lasciarla correggere
+     al solo !important del CSS. In orizzontale «passa» non conta: la pista torna
+     quella di sempre. */
+  function impilato(){
+    return verticale.matches && document.documentElement.classList.contains('passa');
+  }
   function misura(){
+    if(impilato()){ alt.style.height=''; return; }
     if(verticale.matches){ alt.style.height='100svh'; return; }
     var extra=corsa.scrollWidth-window.innerWidth;
     alt.style.height=(window.innerHeight+extra)+'px';
   }
   function muovi(){
+    if(impilato()){ corsa.style.transform=''; return; }
     if(verticale.matches) return;
     var r=alt.getBoundingClientRect();
     var extra=corsa.scrollWidth-window.innerWidth;

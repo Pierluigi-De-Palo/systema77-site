@@ -96,7 +96,12 @@ footer a:hover{color:var(--giallo)}
    Idea del Direttore (08/08 sera): «siamo nel 2077 e dobbiamo creare artifici».
    Tecnica: pagina alta N schermi, viewport sticky, il binario trasla in X
    proporzionalmente allo scroll Y. Scrollbar nativa, niente wheel-hijack.
-   Sotto i 760px il binario si spegne e i quadri tornano in colonna. */
+   Sul telefono in verticale il binario e' fermo: l'invito e' a girare lo
+   schermo. Chi non puo' girarlo preme «CONTINUA COMUNQUE» e i cinque quadri
+   si impilano (regole `html.passa`, in fondo al blocco dell'ordine di girare).
+   ⚠️ Qui c'era scritto «sotto i 760px il binario si spegne e i quadri tornano
+   in colonna»: non era vero: nessuna regola lo faceva, e il JS diceva il
+   contrario. Corretto il 17/08 mentre si apriva la via d'uscita. */
 .binario-alt{position:relative}
 .binario{position:sticky; top:0; height:100svh; overflow:hidden}
 .corsa{display:flex; height:100%; will-change:transform}
@@ -142,6 +147,25 @@ footer a:hover{color:var(--giallo)}
   .ruota-mono{font-family:var(--mono); font-size:.72rem; letter-spacing:.22em;
     text-transform:uppercase; color:var(--muto); line-height:1.9}
   .ruota-mono .m{color:var(--magenta)}
+  /* La via d'uscita. Non e' un ripiego estetico: senza, chi ha il blocco
+     rotazione attivo su iOS resta fuori dall'intero sito (WCAG 1.3.4). */
+  .ruota-esci{margin-top:.8rem; background:transparent; border:2px solid var(--giallo);
+    color:var(--giallo); font-family:var(--mono); font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; padding:.9rem 1.4rem; cursor:pointer}
+  .ruota-esci:hover, .ruota-esci:focus{background:var(--giallo); color:var(--nero)}
+
+  /* ── PASSATO OLTRE: i cinque quadri si impilano ──────────────────────────
+     Stessa palette, stesso contenuto, tutti e cinque: non e' una versione
+     ridotta del sito, e' lo stesso sito in colonna. Il binario smette di
+     essere una pista orizzontale e torna a essere un documento. */
+  html.passa .ruota{display:none}
+  html.passa body{overflow:auto}
+  html.passa .binario-alt{height:auto !important}
+  html.passa .binario{position:static; height:auto; overflow:visible}
+  html.passa .corsa{flex-direction:column; transform:none !important; height:auto}
+  html.passa .quadro77{flex:0 0 auto; height:auto; min-height:100svh;
+    border-right:0; border-bottom:2px solid var(--linea)}
+  html.passa .quadro77:last-child{border-bottom:0}
 }
 @keyframes coricati{
   0%,35%{transform:rotate(0)}
