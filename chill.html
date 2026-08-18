@@ -5,6 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CHILL — SYSTEMA 77</title>
 <meta name="description" content="SYSTEMA 77 — Chill: meteo, radio, podcast. Servizi d'ambiente, integrati o singoli.">
+<!-- Come il sito si vede FUORI da se': la tab del browser e l'anteprima
+     di un link incollato in chat. Favicon inline (zero file), immagine di
+     condivisione generata con la stessa palette, nessuna foto inventata. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23F2E205' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='7.5' fill='%23F2E205'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SYSTEMA 77">
+<meta property="og:title" content="CHILL — SYSTEMA 77">
+<meta property="og:description" content="SYSTEMA 77 — Chill: meteo, radio, podcast. Servizi d'ambiente, integrati o singoli.">
+<meta property="og:url" content="https://systema77.com/chill.html">
+<meta property="og:image" content="https://systema77.com/og-systema77.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://systema77.com/og-systema77.png">
 <link rel="stylesheet" href="stile.css">
 <style>
 .blocco{border-bottom:2px solid var(--linea); padding:2.6rem 1.2rem}
@@ -19,6 +33,7 @@
   <div class="ruota-big">GIRA<br>IL TELEFONO<span class="m">.</span></div>
   <div class="ruota-mono">SYSTEMA 77 SI GUARDA ORIZZONTALE.<br>
   <span class="m">IL RESTO L'ABBIAMO GI&Agrave; RISOLTO NOI.</span></div>
+  <button type="button" class="ruota-esci" id="ruotaEsci">CONTINUA COMUNQUE</button>
 </div>
 
 <nav>
@@ -40,10 +55,13 @@
 <div class="blocco" id="meteo">
   <div class="dentro">
     <h2>METEO<span style="color:var(--ciano)">.</span></h2>
-    <div class="riga-mono"><span class="stato on">FUNZIONA GI&Agrave;</span> &middot; SI CHIAMA AURA &middot; LA PRIMA LOCALIT&Agrave; &Egrave; UNA BAIA VERA</div>
-    <!-- La cornice resta spenta finché la licenza dei dati non è chiusa:
-         niente che non possiamo mantenere. -->
-    <div class="riga-mono" style="margin-top:1rem"><span class="stato">LA CORNICE SI ACCENDE QUI &middot; LICENZA DATI IN VERIFICA</span></div>
+    <div class="riga-mono"><span class="stato on">FUNZIONA GI&Agrave;</span> &middot; SI CHIAMA AURA &middot; IL MOTORE CONOSCE QUATTRO LOCALIT&Agrave; VERE</div>
+    <!-- La cornice resta spenta finché l'abbonamento ai dati non è pagato.
+         La verifica è CHIUSA dal 6 agosto (AURA/LICENZA-DATI.md): quello che
+         manca è una cifra di spesa e aspetta @EDDIE — non D.R.A.G.O., e non
+         una riga di codice. Niente che non possiamo mantenere. -->
+    <div class="riga-mono" style="margin-top:1rem"><span class="stato">LA CORNICE SI ACCENDE QUI &middot; LICENZA DATI VERIFICATA IL 6 AGOSTO 2026<br>
+    NON LO MOSTRIAMO FINCH&Eacute; NON &Egrave; IN REGOLA &middot; MANCA UN ABBONAMENTO, NON UNA RIGA DI CODICE</span></div>
   </div>
 </div>
 
@@ -52,6 +70,7 @@
     <h2>RADIO<span style="color:var(--ciano)">.</span></h2>
     <div class="riga-mono">UNA VOCE, NON UNA PLAYLIST.<br>
     <span class="stato">IN ACCORDATURA &middot; SI ACCENDE QUANDO I DIRITTI SONO NOSTRI, TUTTI</span></div>
+    <div class="riga-mono" style="margin-top:1rem">NON SI SEGUE. SI SINTONIZZA &mdash; E NON CONTA CHI ASCOLTA.</div>
   </div>
 </div>
 
@@ -67,6 +86,21 @@
   <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
   <a href="index.html">home</a>
 </footer>
+
+<script>
+/* LA VIA D'USCITA, ANCHE QUI. La home ce l'aveva dal 17/08, queste no: chi
+   atterrava diretto su questa pagina col blocco rotazione attivo restava fuori
+   dall'intero sito (WCAG 1.3.4). Qui non c'e' il binario da rimisurare, quindi
+   basta togliere il muro. La scelta vale per la sessione, come in home. */
+(function(){
+  var esci=document.getElementById('ruotaEsci');
+  try{ if(sessionStorage.getItem('s77-passa')==='1') document.documentElement.classList.add('passa'); }catch(e){}
+  if(esci) esci.addEventListener('click', function(){
+    document.documentElement.classList.add('passa');
+    try{ sessionStorage.setItem('s77-passa','1'); }catch(e){}
+  });
+})();
+</script>
 
 </body>
 </html>
