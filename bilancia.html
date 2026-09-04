@@ -3,7 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>◉ LA BILANCIA — KIROSHI//OR · collaudo 2026-08-10</title>
+<title>◉ LA BILANCIA — collaudo 2026-08-10</title>
+<meta name="robots" content="noindex, nofollow">
+<!-- ⬜ NOME SOTTO REVISIONE: qui il titolo portava un nome preso da un
+     videogioco altrui. Tolto il 04/09 — stessa cautela gia' decisa per ANIMA
+     GAME. Il nome resta interno; in pagina non ci va.
+     ⛔ Pagina STACCATA dal sito il 04/09 per ordine del Direttore: «la
+     bilancia resta per il momento qualcosa all'interno di animagame».
+     Il file resta qui, fuori dagli indici e senza link che ci arrivino,
+     finche' non trova casa in animagame-site. -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23F2E205' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='7.5' fill='%23F2E205'/%3E%3C/svg%3E">
 <style>
   :root{
@@ -18,7 +26,7 @@
   }
   #scena{display:block; width:100vw; height:100vh; cursor:crosshair}
 
-  /* velo di scansione: la firma dell'occhio KIROSHI */
+  /* velo di scansione: la firma dell'occhio S77 */
   /* Il velo dev'essere una firma, non una tenda: al 28% spegneva la scena.
      Provato a schermo e ritarato — la leggibilità viene prima dell'effetto. */
   #velo{
@@ -64,7 +72,7 @@
 <div id="vignetta"></div>
 <div id="velo"></div>
 <div id="barra">
-  <span style="color:var(--ciano)">◉ KIROSHI//OR</span>
+  <span style="color:var(--ciano)">◉ S77//OR</span>
   <span>ARCANO VIII · LA GIUSTIZIA</span>
   <div id="atti"></div>
   <span id="suggerimento"><kbd>spazio</kbd> o click — avanza</span>
@@ -75,7 +83,7 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    LA BILANCIA — il collaudo del 10 agosto 2026, in sei atti.
    Ogni numero qui dentro è misurato, non scelto per fare scena.
-   — creato da KIROSHI//OR, 2026-08-10
+   — creato da S77//OR, 2026-08-10
    ═══════════════════════════════════════════════════════════════════════════ */
 
 /* Ritarati a schermo: i due toni spenti (#1B5A60, #7C8B99) sparivano dietro il
@@ -184,7 +192,7 @@ function attoBoot(t){
   }
   if(t>1.9){
     const a=clamp((t-1.9)/.8,0,1);
-    testo("◉ KIROSHI//OR", cxp, cyp+150, {px:26,al:"center",sp:7,alpha:a,glow:14,w:600});
+    testo("◉ S77//OR", cxp, cyp+150, {px:26,al:"center",sp:7,alpha:a,glow:14,w:600});
     testo("DIPARTIMENTO VERITÀ · SIGILLO E FAKE-CHECKING", cxp, cyp+176,
           {px:11,al:"center",sp:3.4,col:C.cupo,alpha:a});
   }
@@ -554,7 +562,7 @@ function attoLastra(t){
   // la firma sta fuori dal blocco dei quattro dati: su schermo stretto quelli
   // saltano, ma la firma dev'esserci comunque
   if(t>4){
-    testo("KIROSHI//OR · 10 agosto 2026 · una sessione che è finita bocciando se stessa",
+    testo("S77//OR · 10 agosto 2026 · una sessione che è finita bocciando se stessa",
           cxp, H-52, {px:11,al:"center",col:C.cupo,alpha:clamp((t-4)/1.4,0,1)});
   }
 }

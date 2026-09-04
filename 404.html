@@ -6,9 +6,9 @@
 <title>404 — SYSTEMA 77</title>
 <meta name="description" content="SYSTEMA 77 — la pagina non c'è. La porta di casa resta questa.">
 <meta name="robots" content="noindex">
-<!-- Come il sito si vede FUORI da se': la tab del browser e l'anteprima
-     di un link incollato in chat. Favicon inline (zero file), immagine di
-     condivisione generata con la stessa palette, nessuna foto inventata. -->
+<!-- Come il sito si vede FUORI da se': la tab del browser e l'anteprima di un
+     link incollato in chat. Favicon inline (zero file), immagine di condivisione
+     con la stessa palette, nessuna foto inventata. -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23F2E205' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='7.5' fill='%23F2E205'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SYSTEMA 77">
@@ -20,52 +20,42 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://systema77.com/og-systema77.png">
+<!-- I font si chiedono da qui, non da un @import dentro il CSS: l'@import
+     costringeva il browser a scaricare prima il foglio e POI accorgersi dei
+     font, un viaggio in fila invece che in parallelo. Su un link aperto col
+     telefono in giro quello e' mezzo secondo di testo invisibile. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Share+Tech+Mono&display=swap">
 <link rel="stylesheet" href="stile.css">
 </head>
 <body>
 
-<div class="ruota" aria-hidden="false">
-  <div class="ruota-icona"></div>
-  <div class="ruota-big">GIRA<br>IL TELEFONO<span class="m">.</span></div>
-  <div class="ruota-mono">SYSTEMA 77 SI GUARDA ORIZZONTALE.<br>
-  <span class="m">IL RESTO L'ABBIAMO GI&Agrave; RISOLTO NOI.</span></div>
-  <button type="button" class="ruota-esci" id="ruotaEsci">CONTINUA COMUNQUE</button>
-</div>
 
 <nav>
   <a class="marca" href="index.html">&#9673; SYSTEMA 77</a>
-  <a href="storie.html">Storie</a>
-  <a href="chill.html">Chill</a>
+  <a href="servizi.html">Servizi</a>
+  <a href="editrice.html">Casa editrice</a>
+  <a href="officina.html">Officina</a>
   <a href="progetti.html">Progetti</a>
+  <a href="chill.html">Chill</a>
+  <span class="spazio"></span>
 </nav>
 
 <div class="annuncio">
   <div class="dentro">
     <div class="kick">404 &middot; <b>strada sbagliata</b></div>
-    <h1>QUESTA PAGINA<br>NON C'<span class="m">&Egrave;.</span></h1>
-    <div class="riga-mono">NON &Egrave; UN GUASTO: L'INDIRIZZO NON ESISTE, O NON ESISTE PI&Ugrave;.<br>
-    LA PORTA DI CASA RESTA QUESTA.</div>
-    <div class="riga-mono" style="margin-top:2.4rem"><span class="stato">TORNA ALL'INIZIO &middot; <a href="index.html" style="color:var(--giallo)">SYSTEMA 77</a></span></div>
+    <h1>QUESTA PAGINA<br>NON C&rsquo;<span class="m">&Egrave;.</span></h1>
+    <p class="dice">Non &egrave; un guasto: l&rsquo;indirizzo non esiste, o non esiste pi&ugrave;.
+       La porta di casa resta questa.</p>
+    <a class="bottone" href="index.html">Torna all&rsquo;inizio</a>
   </div>
 </div>
 
 <footer>
   <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
-  <a href="index.html">home</a>
+  <span><a href="mailto:pierluigidepalo@gmail.com">scriveteci</a> &middot; <a href="index.html">home</a></span>
 </footer>
-
-<script>
-/* Stessa via d'uscita delle altre pagine: chi sbaglia strada col telefono
-   bloccato in verticale non deve restare fuori due volte. */
-(function(){
-  var esci=document.getElementById('ruotaEsci');
-  try{ if(sessionStorage.getItem('s77-passa')==='1') document.documentElement.classList.add('passa'); }catch(e){}
-  if(esci) esci.addEventListener('click', function(){
-    document.documentElement.classList.add('passa');
-    try{ sessionStorage.setItem('s77-passa','1'); }catch(e){}
-  });
-})();
-</script>
-
+<script src="s77.js" defer></script>
 </body>
 </html>
