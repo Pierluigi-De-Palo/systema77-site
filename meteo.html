@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AURA — meteo</title>
+<!-- Impianto di AURA non toccato. Qui è cambiata solo la faccia (font, colore, registro ACID di systema77.com). — JUDY, 2026-09-04 -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23F2E205' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='7.5' fill='%23F2E205'/%3E%3C/svg%3E">
 <script>
 /*!
  * Chart.js v4.4.9
@@ -22,49 +24,57 @@
 
 </script>
 <style>
+/* Faccia ACID di systema77.com (JUDY, 2026-09-04). Palette e font dal canone
+   di stile.css — "chill = blu": l'accento di questa pagina è il ciano
+   dell'agenzia (--accent), non più l'ambra di Camera Oscura. Zero variabili
+   rinominate a valle dei dati (--m-*, --sea, --night, --tip-*): lo script
+   di AURA le legge per nome via cv() e resta intatto. */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Share+Tech+Mono&display=swap');
 :root{
   color-scheme:dark;
-  --surface-1:#141216; --page:#0C0B0E;
-  --text-primary:#F7F7F2; --text-secondary:#B5AFA6; --text-muted:#8F8A82;
-  --grid:#2A2A26; --baseline:#3A3934; --border:rgba(201,161,94,0.16);
+  --surface-1:#141414; --page:#0A0A0A;
+  --text-primary:#F7F7F2; --text-secondary:#B9B9AE; --text-muted:#8A8A80;
+  --grid:#262626; --baseline:#3A3A3A; --border:rgba(22,224,220,0.18);
   --m-ecmwf:#3987e5; --m-gfs:#008300; --m-icon:#d55181; --sea:#9085e9;
   --night:rgba(0,0,0,0.32);
-  --tip-bg:#1C1A1E; --tip-fg:#F7F7F2;
-  --ambra:#C9A15E; --ambra-ink:#0C0B0E;
+  --tip-bg:#151515; --tip-fg:#F7F7F2;
+  --accent:#16E0DC; --accent-ink:#0A0A0A;
+  --mono:'Share Tech Mono',ui-monospace,Menlo,Consolas,monospace;
+  --archivo:'Archivo Black',sans-serif;
 }
 :root[data-theme="light"]{
   color-scheme:light;
-  --surface-1:#fcfcfb; --page:#f9f9f7;
-  --text-primary:#0b0b0b; --text-secondary:#52514e; --text-muted:#898781;
-  --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,0.10);
+  --surface-1:#ffffff; --page:#F7F7F2;
+  --text-primary:#0A0A0A; --text-secondary:#4A4A44; --text-muted:#7A7A70;
+  --grid:#E3E3DA; --baseline:#C9C9BD; --border:rgba(10,120,118,0.18);
   --m-ecmwf:#2a78d6; --m-gfs:#008300; --m-icon:#e87ba4; --sea:#4a3aa7;
   --night:rgba(11,11,11,0.05);
-  --tip-bg:#0b0b0b; --tip-fg:#ffffff;
-  --ambra:#8A6A2F; --ambra-ink:#ffffff;
+  --tip-bg:#0A0A0A; --tip-fg:#ffffff;
+  --accent:#0E8F8C; --accent-ink:#ffffff;
 }
-.mono{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}
+.mono{font-family:var(--mono)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--page);color:var(--text-primary);
   font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.45}
 .wrap{max-width:1080px;margin:0 auto;padding:16px 14px 40px}
 header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin:6px 2px 2px}
-h1{font-size:20px;margin:0;font-weight:650;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;letter-spacing:.5px}
-h1 .sl{color:var(--ambra)}
-.sub{color:var(--text-secondary);font-size:13px}
+h1{font-size:20px;margin:0;font-weight:400;font-family:var(--archivo);letter-spacing:.02em;text-transform:uppercase}
+h1 .sl{color:var(--accent)}
+.sub{color:var(--text-secondary);font-size:11px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase}
 .spots{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
 .spots button{border:1px solid var(--border);background:var(--surface-1);color:var(--text-secondary);
-  border-radius:9px;padding:8px 13px;font-size:13.5px;cursor:pointer}
-.spots button.on{background:var(--ambra);border-color:var(--ambra);color:var(--ambra-ink);font-weight:650}
+  border-radius:9px;padding:8px 13px;font-size:12px;font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
+.spots button.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
 .updated{color:var(--text-muted);font-size:12.5px;margin:2px 2px 12px}
 .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 16px;position:sticky;top:0;
   background:var(--page);padding:10px 2px;z-index:5}
 .seg{display:flex;border:1px solid var(--border);border-radius:9px;overflow:hidden;background:var(--surface-1)}
-.seg button{border:0;background:transparent;color:var(--text-secondary);padding:7px 14px;font-size:13.5px;cursor:pointer}
-.seg button.on{background:var(--text-primary);color:var(--page);font-weight:600}
-.tile .lab{font-family:ui-monospace,Menlo,Consolas,monospace;text-transform:uppercase;letter-spacing:.8px;font-size:11px}
-.card h2{font-family:ui-monospace,Menlo,Consolas,monospace;text-transform:uppercase;letter-spacing:.4px;font-size:13px}
+.seg button{border:0;background:transparent;color:var(--text-secondary);padding:7px 14px;font-size:12px;font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
+.seg button.on{background:var(--text-primary);color:var(--page);font-weight:700}
+.tile .lab{font-family:var(--mono);text-transform:uppercase;letter-spacing:.8px;font-size:11px}
+.card h2{font-family:var(--mono);text-transform:uppercase;letter-spacing:.4px;font-size:13px}
 .btn{border:1px solid var(--border);background:var(--surface-1);color:var(--text-secondary);
-  border-radius:9px;padding:7px 12px;font-size:13.5px;cursor:pointer}
+  border-radius:9px;padding:7px 12px;font-size:12px;font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
 .tile{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
 .tile .lab{font-size:12.5px;color:var(--text-secondary)}
@@ -84,7 +94,7 @@ h1 .sl{color:var(--ambra)}
   border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:14px}
 #loading{color:var(--text-muted);padding:30px 0;text-align:center}
 details{margin-top:16px;background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:10px 14px}
-summary{cursor:pointer;font-size:14px;color:var(--text-secondary);font-weight:600}
+summary{cursor:pointer;font-size:12px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);font-weight:600}
 .tblwrap{overflow-x:auto;margin-top:10px}
 table{border-collapse:collapse;font-size:12.5px;white-space:nowrap;font-variant-numeric:tabular-nums}
 th,td{padding:4px 9px;text-align:right;border-bottom:1px solid var(--grid);color:var(--text-secondary)}
