@@ -1,180 +1,256 @@
-/* ◉ SYSTEMA 77 — ACID, la proposta validata (palette A · JUDY/SYSTEM-77-palette.html)
-   Ordine del Direttore 08/08 sera: font della proposta, stile d'impatto, SOLO MAIUSCOLE,
-   nessuna spiegazione. Si fanno ANNUNCI, non inviti. Metodo TAFFO: la frase secca vale
-   piu' del paragrafo. Giallo a blocchi · magenta e ciano segnali · nero per leggere. */
+/* ◉ SYSTEMA 77 — ACID · palette validata (giallo · magenta · ciano · nero)
+   Ordine del Direttore 08/08: font della proposta, impatto, annunci non inviti.
+   Revisione JUDY 04/09 per la v1 operativa — il link si diffonde, quindi la
+   pagina deve reggere uno sconosciuto che la apre dal telefono e ha dieci
+   secondi. Tre rettifiche del Direttore, tutte tipografiche:
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Share+Tech+Mono&family=Newsreader:opsz,wght@6..72,400&display=swap');
+     1. «questo si deve leggere MOLTO meglio: AI AGENT SERVICE»
+        Era un `kick` da 11px, grigio, tutto spaziato: la cosa che vendiamo
+        scritta con la voce di una nota a piè di pagina, sotto un SYSTEMA 77
+        da 190px. Ora ha una classe sua (`.claim`) e pesa quanto conta.
+     2. «i testi piccoli non si leggono»
+        Vero, e non per il colore: TUTTO il sito era scritto in mono
+        maiuscolo con .24em di spaziatura, cioè in un carattere da
+        ETICHETTA usato per fare i PARAGRAFI. Un'etichetta si riconosce,
+        non si legge.
+     3. «ridurrei tutti i testi a qualcosa per il pubblico, non nostro interno»
+        Conseguenza della 2: quando l'unico stile disponibile è l'etichetta,
+        si finisce a scrivere per sigle. Adesso c'è dove scrivere in italiano.
+
+   LA REGOLA, da qui in avanti:
+     ANTON      → l'annuncio. Solo titoli.
+     ARCHIVO    → la promessa. Una riga, quella che deve restare in testa.
+     MONO       → etichette e stati. MAI una frase. Se supera sei parole,
+                  non è un'etichetta: è una voce umana, e va in serif.
+     NEWSREADER → la voce umana. Frasi vere, in minuscolo, che si leggono.
+*/
 
 :root{
   --nero:#0A0A0A; --giallo:#F2E205; --magenta:#FF2E88; --ciano:#16E0DC;
-  --carta:#F7F7F2; --muto:#8a8a80; --linea:#262626;
+  --verde-game:#38E08A;
+  --carta:#F7F7F2;
+  /* Alzati apposta il 04/09: il vecchio #8a8a80 stava a 5,9:1 sul nero, che
+     regge la norma ma non regge un telefono al sole. Ora 7,6:1 e 15:1. */
+  --testo:#D8D7D0;
+  --muto:#9B9A91;
+  --linea:#262626;
   --anton:'Anton',Impact,sans-serif;
-  --archivo:'Archivo Black',sans-serif;
+  --archivo:'Archivo Black',Impact,sans-serif;
   --mono:'Share Tech Mono',ui-monospace,Menlo,monospace;
   --serif:'Newsreader',Georgia,serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--nero); color:var(--carta); font-family:var(--serif);
-  -webkit-font-smoothing:antialiased; line-height:1.5}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--nero); color:var(--testo); font-family:var(--serif);
+  -webkit-font-smoothing:antialiased; line-height:1.6; overflow-x:hidden}
 a{color:inherit; text-decoration:none}
+:focus-visible{outline:2px solid var(--giallo); outline-offset:3px}
 
-/* ── navigazione: una riga mono, secca ── */
-nav{position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:1.4rem;
-  padding:.8rem 1.2rem; background:var(--nero); border-bottom:2px solid var(--linea);
-  font-family:var(--mono); font-size:.66rem; letter-spacing:.22em; text-transform:uppercase}
-nav .marca{color:var(--giallo); margin-right:auto; font-size:.74rem; letter-spacing:.3em; white-space:nowrap}
-nav a{color:var(--muto)}
+/* ── NAVIGAZIONE — cinque voci, come le ha numerate il Direttore ──
+   Su schermo stretto non si spezza in due righe e non diventa un panino:
+   scorre. Una riga sola, sempre, e la barra di scorrimento sparisce. */
+nav{position:sticky; top:0; z-index:20; display:flex; align-items:center; gap:1.25rem;
+  padding:.75rem 1.1rem; background:var(--nero); border-bottom:2px solid var(--linea);
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+  overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none}
+nav::-webkit-scrollbar{display:none}
+nav a{color:var(--muto); white-space:nowrap; padding:.2rem 0; flex:0 0 auto}
 nav a:hover{color:var(--carta)}
-nav a[aria-current]{color:var(--nero); background:var(--giallo); padding:.15rem .5rem}
-@media(max-width:640px){nav{gap:.9rem; font-size:.6rem}}
+nav .marca{color:var(--giallo); font-size:.78rem; letter-spacing:.26em; margin-right:.5rem}
+nav .spazio{flex:1 1 auto; min-width:.5rem}
+nav a[aria-current]{color:var(--nero); background:var(--giallo); padding:.2rem .5rem}
+@media(max-width:700px){nav{gap:1rem; font-size:.68rem; padding:.7rem .9rem}}
 
-/* ── l'annuncio: Anton, maiuscolo, senza scuse ── */
-.annuncio{padding:5.2rem 1.2rem 4.4rem; border-bottom:2px solid var(--linea)}
-.annuncio .dentro{max-width:1100px; margin:0 auto}
-.kick{font-family:var(--mono); font-size:.7rem; letter-spacing:.34em; text-transform:uppercase;
-  color:var(--muto); margin-bottom:1.1rem}
+/* ── L'ANNUNCIO ── */
+.annuncio{padding:4.4rem 1.2rem 3.6rem; border-bottom:2px solid var(--linea)}
+.dentro{max-width:1100px; margin:0 auto; width:100%}
+.kick{font-family:var(--mono); font-size:.74rem; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--muto); margin-bottom:1rem}
 .kick b{color:var(--magenta); font-weight:400}
 h1{font-family:var(--anton); font-weight:400; text-transform:uppercase;
-  font-size:clamp(2.6rem,9vw,6.4rem); line-height:.92; letter-spacing:.01em}
-h1 .g{color:var(--giallo)}
-h1 .m{color:var(--magenta)}
+  font-size:clamp(2.6rem,9vw,6.4rem); line-height:.92; letter-spacing:.01em; color:var(--carta)}
+h1 .g{color:var(--giallo)} h1 .m{color:var(--magenta)} h1 .c{color:var(--ciano)}
 h2{font-family:var(--anton); font-weight:400; text-transform:uppercase;
-  font-size:clamp(1.9rem,5.5vw,3.6rem); line-height:.94}
+  font-size:clamp(1.9rem,5.5vw,3.6rem); line-height:.94; color:var(--carta)}
 h3{font-family:var(--archivo); font-weight:400; text-transform:uppercase;
-  font-size:clamp(1rem,2.2vw,1.3rem); letter-spacing:.02em}
+  font-size:clamp(1rem,2.2vw,1.28rem); letter-spacing:.01em; color:var(--carta)}
 .striscia{display:inline-block; background:var(--giallo); color:var(--nero); padding:.1em .25em}
-.riga-mono{font-family:var(--mono); font-size:.72rem; letter-spacing:.24em;
-  text-transform:uppercase; color:var(--muto); margin-top:1.4rem}
-.riga-mono .c{color:var(--ciano)}
-.riga-mono .m{color:var(--magenta)}
 
-/* ── i manifesti (servizi primari): blocchi, non card gentili ── */
-.manifesti{display:grid; grid-template-columns:repeat(3,1fr); border-bottom:2px solid var(--linea)}
-@media(max-width:760px){.manifesti{grid-template-columns:1fr}}
-.manifesto{padding:2.6rem 1.4rem 2.2rem; border-right:2px solid var(--linea); display:block}
-.manifesto:last-child{border-right:0}
-@media(max-width:760px){.manifesto{border-right:0; border-bottom:2px solid var(--linea)}
-  .manifesto:last-child{border-bottom:0}}
-.manifesto .num{font-family:var(--mono); font-size:.66rem; letter-spacing:.26em; color:var(--magenta)}
-.manifesto h2{margin:.5rem 0 .6rem}
-.manifesto .urlo{font-family:var(--archivo); text-transform:uppercase; font-size:.82rem;
-  letter-spacing:.03em; color:var(--muto); line-height:1.5}
-.manifesto:hover{background:#111}
-.manifesto:hover h2{color:var(--giallo)}
+/* ── LA PROMESSA — quello che vendiamo, scritto come si vende ──
+   Rettifica 1 del Direttore. Non è mono, non è grigia, non è piccola. */
+.claim{font-family:var(--archivo); text-transform:uppercase; color:var(--carta);
+  font-size:clamp(1.1rem,3.4vw,2.6rem); line-height:1.14; letter-spacing:.005em;
+  margin-top:1.1rem; max-width:22ch}
+.claim .g{color:var(--giallo)}
+.claim .c{color:var(--ciano)}
+.claim .m{color:var(--magenta)}
 
-/* ── CHILL: la strip dei secondari ── */
-.chill{display:flex; align-items:stretch; border-bottom:2px solid var(--linea); flex-wrap:wrap}
-.chill .tag{background:var(--ciano); color:var(--nero); font-family:var(--anton);
-  text-transform:uppercase; font-size:1.5rem; padding:1rem 1.4rem; display:flex; align-items:center}
-.chill a, .chill .voce{flex:1; min-width:9rem; padding:1.2rem 1.4rem; border-left:2px solid var(--linea);
-  font-family:var(--mono); font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
-  display:flex; flex-direction:column; gap:.3rem; justify-content:center}
-.chill .voce span, .chill a span{color:var(--muto); font-size:.6rem}
-.chill a:hover{background:#111; color:var(--ciano)}
+/* ── LA VOCE UMANA — qui si scrive in italiano, non per sigle ──
+   Rettifiche 2 e 3. Minuscolo, serif, interlinea larga, misura corta. */
+.dice{font-family:var(--serif); font-size:clamp(1.04rem,1.55vw,1.2rem); line-height:1.68;
+  color:var(--testo); max-width:60ch; margin-top:1.1rem}
+.dice + .dice{margin-top:.85rem}
+.dice b, .dice strong{color:var(--carta); font-weight:600}
+.dice a{color:var(--giallo); border-bottom:1px solid var(--linea)}
+.dice a:hover{border-color:var(--giallo)}
+.dice.stretta{max-width:46ch}
 
-/* ── tabelle-annuncio e stati ── */
-.stato{font-family:var(--mono); font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muto)}
-.stato.on{color:var(--ciano)}
-.bottone{display:inline-block; margin-top:1.8rem; font-family:var(--mono); font-size:.72rem;
-  letter-spacing:.2em; text-transform:uppercase; padding:.8rem 1.5rem;
+/* ── ETICHETTE E STATI — mono, e mai più di sei parole ── */
+.etichetta{font-family:var(--mono); font-size:.76rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--muto)}
+.riga-mono{font-family:var(--mono); font-size:.76rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--muto); margin-top:1.2rem; line-height:1.9}
+.riga-mono .c{color:var(--ciano)} .riga-mono .m{color:var(--magenta)} .riga-mono .g{color:var(--giallo)}
+.stato{font-family:var(--mono); font-size:.7rem; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--muto); border:1px solid var(--linea); padding:.28rem .6rem; display:inline-block}
+.stato.on{color:var(--ciano); border-color:#164e4d}
+.stato.giallo{color:var(--giallo); border-color:#4a4503}
+
+/* ── BOTTONI — il contatto deve vedersi da lontano ── */
+.bottone{display:inline-block; margin-top:1.6rem; font-family:var(--mono); font-size:.82rem;
+  letter-spacing:.16em; text-transform:uppercase; padding:.9rem 1.6rem;
   border:2px solid var(--giallo); color:var(--giallo)}
 .bottone:hover{background:var(--giallo); color:var(--nero)}
-.bottone.m{border-color:var(--magenta); color:var(--magenta)}
-.bottone.m:hover{background:var(--magenta); color:var(--nero)}
+.bottone.pieno{background:var(--giallo); color:var(--nero)}
+.bottone.pieno:hover{background:transparent; color:var(--giallo)}
+.bottone.c{border-color:var(--ciano); color:var(--ciano)}
+.bottone.c:hover{background:var(--ciano); color:var(--nero)}
+.bottone.v{border-color:var(--verde-game); color:var(--verde-game)}
+.bottone.v:hover{background:var(--verde-game); color:var(--nero)}
 
-/* ── corpo raro (quando serve una riga umana) ── */
-.corpo{font-family:var(--serif); font-size:1.02rem; line-height:1.7; color:#c9c9c1; max-width:56ch}
+/* ── I MANIFESTI — blocchi, non card gentili ── */
+.manifesti{display:grid; grid-template-columns:repeat(3,1fr); border-bottom:2px solid var(--linea)}
+@media(max-width:820px){.manifesti{grid-template-columns:1fr}}
+.manifesti.due{grid-template-columns:repeat(2,1fr)}
+@media(max-width:820px){.manifesti.due{grid-template-columns:1fr}}
+.manifesto{padding:2.6rem 1.4rem 2.4rem; border-right:2px solid var(--linea); display:block}
+.manifesto:last-child{border-right:0}
+@media(max-width:820px){.manifesto{border-right:0; border-bottom:2px solid var(--linea)}
+  .manifesto:last-child{border-bottom:0}}
+.manifesto .num{font-family:var(--mono); font-size:.7rem; letter-spacing:.18em; color:var(--magenta)}
+.manifesto h2{margin:.55rem 0 .5rem; font-size:clamp(1.7rem,4vw,2.6rem)}
+.manifesto .dice{margin-top:.7rem}
+a.manifesto:hover{background:#111}
+a.manifesto:hover h2{color:var(--giallo)}
 
-/* ── coda ── */
-footer{padding:2rem 1.2rem 2.8rem; font-family:var(--mono); font-size:.64rem;
-  letter-spacing:.2em; text-transform:uppercase; color:var(--muto);
-  display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap}
+/* ── LE STRIP dentro i quadri ── */
+.strip{display:flex; align-items:stretch; border:2px solid var(--linea); flex-wrap:wrap; margin-top:1.5rem}
+.strip .tag{color:var(--nero); font-family:var(--anton); text-transform:uppercase;
+  font-size:1.5rem; padding:.9rem 1.3rem; display:flex; align-items:center; white-space:nowrap}
+.strip.officina .tag{background:var(--magenta)}
+.strip.chill2 .tag{background:var(--ciano)}
+.strip.game .tag{background:var(--verde-game)}
+.strip.rs .tag{background:var(--giallo)}
+.strip a, .strip .voce{flex:1 1 11rem; min-width:11rem; padding:1rem 1.2rem;
+  border-left:2px solid var(--linea); display:flex; flex-direction:column; gap:.3rem;
+  justify-content:center;
+  font-family:var(--mono); font-size:.8rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--carta)}
+/* la seconda riga è una frase, non un'etichetta: quindi si legge */
+.strip a span, .strip .voce span{color:var(--testo); font-family:var(--serif);
+  font-size:.94rem; letter-spacing:0; text-transform:none; line-height:1.4}
+.strip.officina a:hover{background:#111; color:var(--magenta)}
+.strip.chill2 a:hover{background:#111; color:var(--ciano)}
+.strip.game a:hover{background:#111; color:var(--verde-game)}
+.strip.rs a:hover{background:#111; color:var(--giallo)}
+
+/* ── I PASSI (come si lavora) ── */
+.passi{display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:2rem;
+  border:2px solid var(--linea)}
+@media(max-width:820px){.passi{grid-template-columns:1fr}}
+.passo{padding:1.6rem 1.3rem; border-right:2px solid var(--linea)}
+.passo:last-child{border-right:0}
+@media(max-width:820px){.passo{border-right:0; border-bottom:2px solid var(--linea)}
+  .passo:last-child{border-bottom:0}}
+.passo .n{font-family:var(--anton); font-size:2.4rem; line-height:1; color:var(--giallo)}
+.passo h3{margin:.5rem 0 .4rem}
+.passo .dice{font-size:1rem; margin-top:.3rem}
+
+/* ── BLOCCHI di pagina ── */
+.blocco{border-bottom:2px solid var(--linea); padding:3rem 1.2rem}
+.blocco:last-of-type{border-bottom:0}
+.blocco h2{margin-bottom:.4rem}
+
+/* ── CODA ── */
+footer{padding:2.2rem 1.2rem 3rem; font-family:var(--mono); font-size:.72rem;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--muto);
+  display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  border-top:2px solid var(--linea)}
 footer a{border-bottom:1px solid var(--linea)}
 footer a:hover{color:var(--giallo)}
 
-/* ── IL BINARIO 2.35 — lo scroll verso il basso corre verso destra ──
-   Idea del Direttore (08/08 sera): «siamo nel 2077 e dobbiamo creare artifici».
-   Tecnica: pagina alta N schermi, viewport sticky, il binario trasla in X
-   proporzionalmente allo scroll Y. Scrollbar nativa, niente wheel-hijack.
-   Sul telefono in verticale il binario e' fermo: l'invito e' a girare lo
-   schermo. Chi non puo' girarlo preme «CONTINUA COMUNQUE» e i cinque quadri
-   si impilano (regole `html.passa`, in fondo al blocco dell'ordine di girare).
-   ⚠️ Qui c'era scritto «sotto i 760px il binario si spegne e i quadri tornano
-   in colonna»: non era vero: nessuna regola lo faceva, e il JS diceva il
-   contrario. Corretto il 17/08 mentre si apriva la via d'uscita. */
+/* ══ IL BINARIO 2.35 — lo scroll verso il basso corre verso destra ══
+   Idea del Direttore (08/08): «siamo nel 2077 e dobbiamo creare artifici».
+   Resta, ed è la firma della casa su schermo largo e su telefono girato.
+
+   ⚠️ CAMBIO DEL 04/09, e non è cosmetico. Fino a ieri il telefono in
+   verticale trovava un MURO a tutto schermo: «GIRA IL TELEFONO», e sotto un
+   bottone per passare oltre. Il Direttore sta per diffondere questo link, e
+   un link condiviso si apre col telefono in mano, in verticale, quasi
+   sempre. La prima cosa che vedeva uno sconosciuto era un ordine.
+   Adesso: in verticale il sito si apre e basta, coi quadri in colonna —
+   stesso contenuto, tutti. L'invito a girare resta, ma è una striscia in
+   fondo che si chiude con una ×. L'artificio non si tocca: chi gira il
+   telefono trova il binario esattamente com'era. */
 .binario-alt{position:relative}
 .binario{position:sticky; top:0; height:100svh; overflow:hidden}
 .corsa{display:flex; height:100%; will-change:transform}
-.quadro77{flex:0 0 100vw; height:100%; display:flex; flex-direction:column;
-  justify-content:center; padding:4.6rem 1.4rem 3rem; border-right:2px solid var(--linea);
+/* ⚠️ 100% e NON 100vw: `100vw` include la barra di scorrimento, cioe' e' piu'
+   largo dell'area visibile. Con 100vw ogni quadro sporgeva di una quindicina
+   di pixel a destra e il numero in basso a destra restava tagliato, su tutti e
+   sei. Misurato il 04/09. La corsa e' larga quanto la pista: si usa quella. */
+.quadro77{flex:0 0 100%; height:100%; display:flex; flex-direction:column;
+  justify-content:center; padding:4.4rem 1.4rem 3.4rem; border-right:2px solid var(--linea);
   position:relative}
 .quadro77 .dentro{max-width:1100px; margin:0 auto; width:100%}
 .quadro77 .angolo{position:absolute; bottom:14px; right:18px; font-family:var(--mono);
-  font-size:.6rem; letter-spacing:.24em; color:var(--muto); text-transform:uppercase}
+  font-size:.66rem; letter-spacing:.18em; color:var(--muto); text-transform:uppercase}
 .gigante{font-family:var(--anton); font-weight:400; text-transform:uppercase;
-  font-size:clamp(4rem,14.5vw,12rem); line-height:.88; letter-spacing:.01em}
+  font-size:clamp(3.6rem,13vw,11rem); line-height:.88; letter-spacing:.01em; color:var(--carta)}
 .gigante .g{color:var(--giallo)}
-/* le strip dentro i quadri: la forma di CHILL, un colore per sezione */
-.strip{display:flex; align-items:stretch; border:2px solid var(--linea); flex-wrap:wrap; margin-top:1.6rem}
-.strip .tag{color:var(--nero); font-family:var(--anton); text-transform:uppercase;
-  font-size:1.6rem; padding:1rem 1.4rem; display:flex; align-items:center}
-/* Ordine del Direttore: officina = FUCSIA (i primari, il cuore) · chill = BLU · R&S in fondo */
-.strip.officina .tag{background:var(--magenta)}
-.strip.chill2 .tag{background:var(--ciano)}
-.strip.game .tag{background:#38E08A}
-.strip.rs .tag{background:var(--giallo)}
-.strip a, .strip .voce{flex:1; min-width:8.5rem; padding:1.1rem 1.2rem; border-left:2px solid var(--linea);
-  font-family:var(--mono); font-size:.7rem; letter-spacing:.2em; text-transform:uppercase;
-  display:flex; flex-direction:column; gap:.3rem; justify-content:center}
-.strip a span, .strip .voce span{color:var(--muto); font-size:.58rem}
-.strip.officina a:hover{background:#111; color:var(--magenta)}
-.strip.chill2 a:hover{background:#111; color:var(--ciano)}
-.strip.game a:hover{background:#111; color:#38E08A}
-/* ── L'ORDINE DI GIRARE — solo telefono in verticale ──
-   Niente ripiego in colonna: SYSTEMA 77 si guarda orizzontale. Chi arriva
-   col telefono in piedi trova questo, a tutto schermo, sopra ogni cosa. */
-.ruota{display:none}
-@media (orientation: portrait) and (max-width:600px){
-  .ruota{display:flex; position:fixed; inset:0; z-index:100; background:var(--nero);
-    flex-direction:column; align-items:center; justify-content:center; gap:1.6rem;
-    text-align:center; padding:2rem}
-  body{overflow:hidden}
-  .ruota-icona{width:64px; height:104px; border:3px solid var(--giallo); border-radius:12px;
-    animation:coricati 2.4s ease-in-out infinite}
-  .ruota-big{font-family:var(--anton); font-weight:400; text-transform:uppercase;
-    font-size:clamp(2.4rem,13vw,4rem); line-height:.9; color:var(--carta)}
-  .ruota-big .m{color:var(--magenta)}
-  .ruota-mono{font-family:var(--mono); font-size:.72rem; letter-spacing:.22em;
-    text-transform:uppercase; color:var(--muto); line-height:1.9}
-  .ruota-mono .m{color:var(--magenta)}
-  /* La via d'uscita. Non e' un ripiego estetico: senza, chi ha il blocco
-     rotazione attivo su iOS resta fuori dall'intero sito (WCAG 1.3.4). */
-  .ruota-esci{margin-top:.8rem; background:transparent; border:2px solid var(--giallo);
-    color:var(--giallo); font-family:var(--mono); font-size:.72rem; letter-spacing:.2em;
-    text-transform:uppercase; padding:.9rem 1.4rem; cursor:pointer}
-  .ruota-esci:hover, .ruota-esci:focus{background:var(--giallo); color:var(--nero)}
 
-  /* ── PASSATO OLTRE: i cinque quadri si impilano ──────────────────────────
-     Stessa palette, stesso contenuto, tutti e cinque: non e' una versione
-     ridotta del sito, e' lo stesso sito in colonna. Il binario smette di
-     essere una pista orizzontale e torna a essere un documento. */
-  html.passa .ruota{display:none}
-  html.passa body{overflow:auto}
-  html.passa .binario-alt{height:auto !important}
-  html.passa .binario{position:static; height:auto; overflow:visible}
-  html.passa .corsa{flex-direction:column; transform:none !important; height:auto}
-  html.passa .quadro77{flex:0 0 auto; height:auto; min-height:100svh;
-    border-right:0; border-bottom:2px solid var(--linea)}
-  html.passa .quadro77:last-child{border-bottom:0}
+/* ── LA STRISCIA che invita a girare (non un muro) ── */
+.suggerimento{display:none}
+@media (orientation:portrait) and (max-width:720px){
+  .suggerimento{display:flex; position:fixed; left:0; right:0; bottom:0; z-index:30;
+    align-items:center; gap:.8rem; padding:.8rem 1rem;
+    background:var(--giallo); color:var(--nero);
+    font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase}
+  .suggerimento .icona{width:15px; height:24px; border:2.5px solid var(--nero); border-radius:4px;
+    flex:0 0 auto; animation:coricati 2.6s ease-in-out infinite}
+  .suggerimento p{flex:1; line-height:1.35}
+  .suggerimento button{background:transparent; border:0; color:var(--nero); cursor:pointer;
+    font:inherit; font-size:1.15rem; line-height:1; padding:.2rem .35rem}
+  html.senza-suggerimento .suggerimento{display:none}
+  /* La striscia e' fissa in fondo e coprirebbe l'ultima riga. Lo spazio si
+     riserva SOLO dove la striscia c'e' davvero (la home): sulle altre pagine
+     sarebbe un buco nero in fondo senza motivo. Se `:has()` non c'e', il
+     padding del footer basta comunque a non far coprire niente. */
+  body:has(#suggerimento){padding-bottom:3.6rem}
+  html.senza-suggerimento body{padding-bottom:0}
+
+  /* IN VERTICALE IL SITO È UN DOCUMENTO. Stesso contenuto, in colonna. */
+  .binario-alt{height:auto !important}
+  .binario{position:static; height:auto; overflow:visible}
+  .corsa{flex-direction:column; transform:none !important; height:auto}
+  .quadro77{flex:0 0 auto; height:auto; min-height:82svh;
+    border-right:0; border-bottom:2px solid var(--linea); padding:3.2rem 1.2rem 3.4rem}
+  .quadro77:last-child{border-bottom:0}
+  .quadro77 .angolo{position:static; display:block; margin-top:1.6rem}
+  /* In colonna non si va da nessuna parte a destra: l'indicazione sparisce
+     invece di raccontare al telefono una cosa che sullo schermo non succede. */
+  .solo-pista{display:none}
 }
-@keyframes coricati{
-  0%,35%{transform:rotate(0)}
-  55%,100%{transform:rotate(-90deg)}
-}
-/* Landscape corto (telefono girato): il gigante non deve sfondare l'altezza */
-@media (max-height: 480px){
-  .gigante{font-size:clamp(2.4rem,17vh,5rem)}
-  .quadro77{padding:3.4rem 1.3rem 2.4rem}
-  .quadro77 h2{font-size:clamp(1.6rem,11vh,3rem) !important}
-  .strip .tag{font-size:1.2rem; padding:.7rem 1rem}
+@keyframes coricati{ 0%,35%{transform:rotate(0)} 55%,100%{transform:rotate(-90deg)} }
+@media (prefers-reduced-motion:reduce){ .suggerimento .icona{animation:none} }
+
+/* Telefono girato (landscape corto): il gigante non deve sfondare l'altezza */
+@media (max-height:480px) and (orientation:landscape){
+  .gigante{font-size:clamp(2.2rem,16vh,4.6rem)}
+  .quadro77{padding:3.2rem 1.3rem 2.4rem}
+  .quadro77 h2{font-size:clamp(1.5rem,10vh,2.8rem) !important}
+  .claim{font-size:clamp(.95rem,4.2vh,1.4rem); margin-top:.7rem}
+  .strip .tag{font-size:1.15rem; padding:.6rem 1rem}
+  .strip a, .strip .voce{padding:.7rem 1rem; font-size:.72rem}
+  .strip a span, .strip .voce span{font-size:.84rem}
 }
