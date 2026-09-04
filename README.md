@@ -14,7 +14,8 @@ e un gioco.
 | `officina.html` | dove si fabbrica — porta alle tre stanze |
 | `immagini.html` · `film.html` · `musica.html` | le tre stanze dell'officina |
 | `progetti.html` | **solo ANIMA GAME**, e porta ad `animagame.io` |
-| `chill.html` | meteo (vivo) · radio · podcast |
+| `chill.html` | **AURA** (accesa) · **radio** (accesa) · podcast |
+| `divulgazione.html` | la porta verso `cyberboomer.ninja` — la divulgazione sta su un pianeta suo |
 | `meteo.html` | AURA, il meteo. Vive già |
 | `stile.css` · `s77.js` | il sistema. Un foglio, un file di comportamento |
 | `storie.html` | rinvio: l'indirizzo vecchio porta alla casa editrice |
@@ -28,6 +29,20 @@ e un gioco.
    - **Share Tech Mono** (`.etichetta`, `.stato`, `.riga-mono`) → **etichette e stati soltanto.**
      Mai una frase. Se supera sei parole non è un'etichetta: è una voce umana.
    - **Newsreader** (`.dice`) → la voce umana. Frasi vere, in minuscolo, che si leggono.
+
+   **Il testo ha tre volumi, e il bianco è il più alto** (revisione 04/09 sera:
+   «i testi sono tutti bianchi»). Il bianco era il default, quindi non voleva
+   dire niente. Adesso:
+   `.dice.forte` bianco e più grande — **una per blocco, mai due** ·
+   `.dice` grigio chiaro, il corpo · `.dice.piccola` grigio muto, il dettaglio.
+
+   **La pagina usa la larghezza che ha.** Contenitore a 1360px e blocchi in
+   **due colonne** sopra i 1000px (`.due`): a sinistra chi parla, a destra cosa
+   dice. La misura di lettura resta corta — quella non si allarga mai, righe
+   lunghe si perdono — ma è la pagina a occupare lo spazio, non il paragrafo.
+
+   **Semplificare vuol dire togliere.** Un paragrafo in più non si riscrive
+   più corto: si cancella.
 
    Il 04/09 il Direttore ha scritto «i testi piccoli non si leggono» e
    «ridurrei tutti i testi a qualcosa per il pubblico, non nostro interno».
@@ -48,6 +63,30 @@ e un gioco.
 
 5. **Un indirizzo non si rompe.** Se una pagina cambia nome, la vecchia resta
    e rinvia (vedi `storie.html`).
+
+## La galassia
+
+SYSTEMA 77 è il centro; intorno ci sono altri pianeti, ognuno col suo indirizzo.
+Il componente `.galassia` è la mappa, e sta **sul piede di ogni pagina**: da
+qualunque punto del sito si vede dove si può andare.
+
+**Il colore è l'indirizzo, non una decorazione:**
+
+| colore | vuol dire |
+|---|---|
+| **giallo** | si resta qui, su `systema77.com` |
+| verde · magenta · ciano | è un altro pianeta, e sotto c'è scritto quale |
+
+I pianeti di oggi: `animagame.io` (il gioco), `cyberboomer.ninja` (la
+divulgazione), `radio-anima.pages.dev` (la radio). Quando se ne aggiunge uno,
+si tocca solo la lista `FUORI` nel generatore e la mappa si aggiorna ovunque.
+
+## Gli stati accesi
+
+`chill.html` dà **AURA** e **la radio** per accese. AURA è verificata (vive in
+`meteo.html`). La radio è accesa **sulla parola del Direttore del 04/09**, non
+su un collaudo: da questo ambiente `radio-anima.pages.dev` non è raggiungibile.
+Se il link non suona, si torna a «in accordatura» cambiando una riga.
 
 ## Il telefono in verticale
 

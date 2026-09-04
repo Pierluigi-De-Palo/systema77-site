@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CHILL — SYSTEMA 77</title>
-<meta name="description" content="SYSTEMA 77 — Chill: meteo, radio, podcast. Servizi d'ambiente, integrati o da soli.">
+<meta name="description" content="SYSTEMA 77 — Chill: AURA il meteo, la radio, i podcast. Servizi d'ambiente, integrati o da soli.">
 <!-- Come il sito si vede FUORI da se': la tab del browser e l'anteprima di un
      link incollato in chat. Favicon inline (zero file), immagine di condivisione
      con la stessa palette, nessuna foto inventata. -->
@@ -12,17 +12,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SYSTEMA 77">
 <meta property="og:title" content="CHILL — SYSTEMA 77">
-<meta property="og:description" content="SYSTEMA 77 — Chill: meteo, radio, podcast. Servizi d'ambiente, integrati o da soli.">
+<meta property="og:description" content="SYSTEMA 77 — Chill: AURA il meteo, la radio, i podcast. Servizi d'ambiente, integrati o da soli.">
 <meta property="og:url" content="https://systema77.com/chill.html">
 <meta property="og:image" content="https://systema77.com/og-systema77.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://systema77.com/og-systema77.png">
-<!-- I font si chiedono da qui, non da un @import dentro il CSS: l'@import
-     costringeva il browser a scaricare prima il foglio e POI accorgersi dei
-     font, un viaggio in fila invece che in parallelo. Su un link aperto col
-     telefono in giro quello e' mezzo secondo di testo invisibile. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Share+Tech+Mono&display=swap">
@@ -30,61 +26,141 @@
 </head>
 <body>
 
-
-<nav>
+<nav class="menu">
   <a class="marca" href="index.html">&#9673; SYSTEMA 77</a>
   <a href="servizi.html">Servizi</a>
   <a href="editrice.html">Casa editrice</a>
   <a href="officina.html">Officina</a>
   <a href="progetti.html">Progetti</a>
   <a href="chill.html" aria-current="page">Chill</a>
+  <a href="divulgazione.html">Divulgazione</a>
   <span class="spazio"></span>
 </nav>
 
 <div class="annuncio">
-  <div class="dentro">
-    <div class="kick">chill &middot; <b>servizi d&rsquo;ambiente</b></div>
-    <h1><span class="striscia" style="background:var(--ciano)">CHILL.</span></h1>
-    <p class="claim">METEO <span class="c" style="color:var(--ciano)">&middot;</span> RADIO
-       <span class="c" style="color:var(--ciano)">&middot;</span> PODCAST</p>
-    <p class="dice">Le cose che si tengono accese mentre si fa altro. Integrate alla
-       visione, o da sole.</p>
+  <div class="dentro due">
+    <div>
+      <div class="kick">chill &middot; <b>servizi d&rsquo;ambiente</b></div>
+      <h1><span class="striscia" style="background:var(--ciano)">CHILL.</span></h1>
+    </div>
+    <div class="destra">
+      <p class="claim">AURA <span class="c">&middot;</span> RADIO <span class="c">&middot;</span> PODCAST</p>
+      <p class="dice forte">Le cose che si tengono accese mentre si fa altro.</p>
+      <p class="dice piccola">Integrate alla visione, o da sole.</p>
+    </div>
   </div>
 </div>
 
+<!-- AURA — il progetto meteo, vivo. Ordine del Direttore 04/09: «attiva il
+     progetto AURA». Qui AURA smette di essere una riga dentro CHILL e diventa
+     una destinazione con un nome: sta anche nella mappa della galassia. -->
 <div class="blocco" id="meteo">
-  <div class="dentro">
-    <h2>METEO<span style="color:var(--ciano)">.</span></h2>
-    <p class="dice">Si chiama <b>AURA</b>. Quattro localit&agrave; vere, tre modelli messi a
-       confronto: quando non sono d&rsquo;accordo si vede, invece di scegliere per voi
-       quello che dice la cosa piu&rsquo; comoda.</p>
-    <p style="margin-top:1.4rem"><span class="stato on">funziona gi&agrave;</span></p>
-    <a class="bottone c" href="meteo.html">Guardalo adesso &rarr;</a>
-    <p class="riga-mono">dati open-meteo su licenza commerciale</p>
+  <div class="dentro due">
+    <div>
+      <h2>AURA<span style="color:var(--ciano)">.</span></h2>
+      <p class="dice piccola">il meteo del systema</p>
+    </div>
+    <div class="destra">
+      <p class="dice forte">Quattro localit&agrave; vere, tre modelli messi a confronto.</p>
+      <p class="dice">Quando i modelli non sono d&rsquo;accordo <b>si vede</b>, invece di
+         scegliere per voi quello che dice la cosa pi&ugrave; comoda.</p>
+      <p style="margin-top:1.5rem"><span class="stato on">acceso</span></p>
+      <a class="bottone c" href="meteo.html">Guardalo adesso &rarr;</a>
+      <p class="riga-mono">dati open-meteo su licenza commerciale</p>
+    </div>
   </div>
 </div>
 
+<!-- LA RADIO — accesa il 04/09 per ordine del Direttore («attiva la radio»).
+     ⚠️ Da questo ambiente radio-anima.pages.dev non e' raggiungibile (il proxy
+     blocca l'uscita), quindi lo stato «accesa» sta sulla parola del Direttore
+     e NON su una verifica di JUDY. Se il link non suona, si torna a
+     «in accordatura» in una riga. -->
 <div class="blocco" id="radio">
-  <div class="dentro">
-    <h2>RADIO<span style="color:var(--ciano)">.</span></h2>
-    <p class="dice">Una voce, non una playlist. Non si segue e non insegue:
-       <b>si sintonizza</b>, e non conta chi ascolta.</p>
-    <p style="margin-top:1.4rem"><span class="stato">in accordatura &middot; si accende coi diritti nostri</span></p>
+  <div class="dentro due">
+    <div>
+      <h2>RADIO<span style="color:var(--ciano)">.</span></h2>
+      <p class="dice piccola">una voce, non una playlist</p>
+    </div>
+    <div class="destra">
+      <p class="dice forte">Solo musica nostra, con i diritti in chiaro.</p>
+      <p class="dice">Non si segue e non insegue: <b>si sintonizza</b>, e non conta
+         chi ascolta.</p>
+      <p style="margin-top:1.5rem"><span class="stato on">accesa</span></p>
+      <a class="bottone c" href="https://radio-anima.pages.dev" rel="noopener">Sintonizzati &#8599;</a>
+      <p class="riga-mono">radio-anima.pages.dev</p>
+    </div>
   </div>
 </div>
 
 <div class="blocco" id="podcast">
-  <div class="dentro">
-    <h2>PODCAST<span style="color:var(--ciano)">.</span></h2>
-    <p class="dice">Episodi montati in casa, sigla compresa. Nessuna voce che
-       non possiamo firmare.</p>
-    <p style="margin-top:1.4rem"><span class="stato">al cancello diritti</span></p>
+  <div class="dentro due">
+    <div>
+      <h2>PODCAST<span style="color:var(--ciano)">.</span></h2>
+      <p class="dice piccola">montati in casa, sigla compresa</p>
+    </div>
+    <div class="destra">
+      <p class="dice">Nessuna voce che non possiamo firmare.</p>
+      <p style="margin-top:1.5rem"><span class="stato">al cancello diritti</span></p>
+    </div>
   </div>
 </div>
 
+<!-- LA CODA porta la galassia: da qualunque punto del sito si vede la mappa
+     intera, e il colore dice se si resta in casa o si cambia pianeta. -->
 <footer>
-  <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
-  <span><a href="mailto:pierluigidepalo@gmail.com">scriveteci</a> &middot; <a href="index.html">home</a></span>
+  <div class="dentro">
+    <p class="titolo-coda">la galassia</p>
+<div class="galassia">
+  <a class="stella qui" href="servizi.html">
+    <span class="nome">Servizi</span>
+    <span class="che">automazione, produzione per terzi, ricerca e sviluppo</span>
+  </a>
+  <a class="stella qui" href="editrice.html">
+    <span class="nome">Casa editrice</span>
+    <span class="che">produciamo storie: libri, e film quando è la forma giusta</span>
+  </a>
+  <a class="stella qui" href="officina.html">
+    <span class="nome">Officina</span>
+    <span class="che">immagini ferme, immagini in movimento, suono</span>
+  </a>
+  <a class="stella qui" href="progetti.html">
+    <span class="nome">Progetti</span>
+    <span class="che">quello che costruiamo e che non esisteva</span>
+  </a>
+  <a class="stella qui" href="chill.html" aria-current="page">
+    <span class="nome">Chill</span>
+    <span class="che">le cose che si tengono accese mentre si fa altro</span>
+  </a>
+  <a class="stella qui" href="meteo.html">
+    <span class="nome">AURA</span>
+    <span class="che">il meteo: quattro località, tre modelli a confronto</span>
+  </a>
+  <a class="stella verde" href="https://animagame.io" rel="noopener">
+    <span class="nome">Anima Game &#8599;</span>
+    <span class="che">il gioco a invito: serve una carta vera</span>
+    <span class="dove">animagame.io</span>
+  </a>
+  <a class="stella magenta" href="https://cyberboomer.ninja" rel="noopener">
+    <span class="nome">Cyber Boomer &#8599;</span>
+    <span class="che">la divulgazione: la tecnologia spiegata a chi non ci è nato dentro</span>
+    <span class="dove">cyberboomer.ninja</span>
+  </a>
+  <a class="stella ciano" href="https://radio-anima.pages.dev" rel="noopener">
+    <span class="nome">Radio Anima &#8599;</span>
+    <span class="che">solo musica nostra, con i diritti in chiaro</span>
+    <span class="dove">radio-anima.pages.dev</span>
+  </a>
+</div>
+<p class="galassia-legenda">
+  <span><i class="g"></i>si resta qui</span>
+  <span><i class="a"></i>un altro pianeta della galassia</span>
+</p>
+    <div class="coda-riga">
+      <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
+      <span><a href="mailto:pierluigidepalo@gmail.com">scriveteci</a> &middot; <a href="index.html">home</a></span>
+    </div>
+  </div>
 </footer>
 <script src="s77.js" defer></script>
 </body>

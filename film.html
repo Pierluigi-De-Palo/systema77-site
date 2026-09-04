@@ -19,18 +19,14 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://systema77.com/og-systema77.png">
-<!-- I font si chiedono da qui, non da un @import dentro il CSS: l'@import
-     costringeva il browser a scaricare prima il foglio e POI accorgersi dei
-     font, un viaggio in fila invece che in parallelo. Su un link aperto col
-     telefono in giro quello e' mezzo secondo di testo invisibile. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Share+Tech+Mono&display=swap">
 <link rel="stylesheet" href="stile.css">
 <style>
 /* IL FASCIO — l'otturatore, non il film. Il cinema non e' le immagini: e'
-   l'intervallo fra le immagini. Zero video, zero file, zero promesse: solo
-   CSS che pulsa. Battito FISSO, un ciclo ogni 2.4s, sempre lo stesso. */
+   l'intervallo fra le immagini. Zero video, zero file, zero promesse.
+   Battito FISSO, un ciclo ogni 2.4s, sempre lo stesso. */
 .annuncio{position:relative; overflow:hidden}
 .annuncio .dentro{position:relative; z-index:1}
 .fascio{position:absolute; top:-20%; left:50%; width:54vmax; height:150%;
@@ -42,56 +38,104 @@
   0%,44%{opacity:.50} 46%{opacity:.17} 48%,92%{opacity:.50}
   94%{opacity:.19} 96%,100%{opacity:.50}
 }
-/* Chi chiede meno movimento vede il fascio fermo, non la pagina spenta. */
 @media (prefers-reduced-motion: reduce){ .fascio{animation:none; opacity:.32} }
 </style>
 </head>
 <body>
 
-
-<nav>
+<nav class="menu">
   <a class="marca" href="index.html">&#9673; SYSTEMA 77</a>
   <a href="servizi.html">Servizi</a>
   <a href="editrice.html">Casa editrice</a>
   <a href="officina.html" aria-current="page">Officina</a>
   <a href="progetti.html">Progetti</a>
   <a href="chill.html">Chill</a>
+  <a href="divulgazione.html">Divulgazione</a>
   <span class="spazio"></span>
 </nav>
 
 <div class="annuncio">
   <div class="fascio" aria-hidden="true"></div>
-  <div class="dentro">
-    <div class="kick"><a href="officina.html">officina</a> &middot; <b>stanza 2</b></div>
-    <h1>FILM<span class="m">.</span></h1>
-    <p class="claim">VIDEO E FILM.
-       <span class="c" style="color:var(--ciano)">ANALOGICO E DIGITALE.</span></p>
-    <p class="dice">Produciamo video e film, girati e finiti in casa, in formato
-       analogico e in digitale. Il cinema &egrave; qui dentro: quando esce una produzione,
-       <b>la sala &egrave; questa</b> &mdash; niente piattaforme di altri.</p>
+  <div class="dentro due">
+    <div>
+      <div class="kick"><a href="officina.html">officina</a> &middot; <b>stanza 2</b></div>
+      <h1>FILM<span class="m">.</span></h1>
+    </div>
+    <div class="destra">
+      <p class="claim">VIDEO E FILM. <span class="c">ANALOGICO E DIGITALE.</span></p>
+      <p class="dice forte">Quando esce una produzione, la sala &egrave; questa.</p>
+      <p class="dice piccola">Niente piattaforme di altri.</p>
+    </div>
   </div>
 </div>
 
 <div class="blocco">
-  <div class="dentro">
-    <h2>LA SALA<span style="color:var(--magenta)">.</span></h2>
-    <p class="dice">Si sta costruendo. Quando la prima produzione &egrave; pronta,
-       si guarda da questa pagina.</p>
-    <p style="margin-top:1.4rem"><span class="stato">sala in costruzione</span></p>
+  <div class="dentro due">
+    <div><h2>LA SALA<span style="color:var(--magenta)">.</span></h2></div>
+    <div class="destra">
+      <p class="dice">Si sta costruendo. Quando la prima produzione &egrave; pronta,
+         si guarda da questa pagina.</p>
+      <p style="margin-top:1.5rem"><span class="stato">sala in costruzione</span></p>
+      <a class="bottone" href="officina.html">Torna in officina</a>
+    </div>
   </div>
 </div>
 
-<div class="blocco">
-  <div class="dentro">
-    <p class="dice">Video e film si fanno anche
-       <a href="servizi.html#terzi">su commissione</a>.</p>
-    <a class="bottone" href="officina.html">Torna in officina</a>
-  </div>
-</div>
-
+<!-- LA CODA porta la galassia: da qualunque punto del sito si vede la mappa
+     intera, e il colore dice se si resta in casa o si cambia pianeta. -->
 <footer>
-  <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
-  <span><a href="mailto:pierluigidepalo@gmail.com">scriveteci</a> &middot; <a href="index.html">home</a></span>
+  <div class="dentro">
+    <p class="titolo-coda">la galassia</p>
+<div class="galassia">
+  <a class="stella qui" href="servizi.html">
+    <span class="nome">Servizi</span>
+    <span class="che">automazione, produzione per terzi, ricerca e sviluppo</span>
+  </a>
+  <a class="stella qui" href="editrice.html">
+    <span class="nome">Casa editrice</span>
+    <span class="che">produciamo storie: libri, e film quando è la forma giusta</span>
+  </a>
+  <a class="stella qui" href="officina.html" aria-current="page">
+    <span class="nome">Officina</span>
+    <span class="che">immagini ferme, immagini in movimento, suono</span>
+  </a>
+  <a class="stella qui" href="progetti.html">
+    <span class="nome">Progetti</span>
+    <span class="che">quello che costruiamo e che non esisteva</span>
+  </a>
+  <a class="stella qui" href="chill.html">
+    <span class="nome">Chill</span>
+    <span class="che">le cose che si tengono accese mentre si fa altro</span>
+  </a>
+  <a class="stella qui" href="meteo.html">
+    <span class="nome">AURA</span>
+    <span class="che">il meteo: quattro località, tre modelli a confronto</span>
+  </a>
+  <a class="stella verde" href="https://animagame.io" rel="noopener">
+    <span class="nome">Anima Game &#8599;</span>
+    <span class="che">il gioco a invito: serve una carta vera</span>
+    <span class="dove">animagame.io</span>
+  </a>
+  <a class="stella magenta" href="https://cyberboomer.ninja" rel="noopener">
+    <span class="nome">Cyber Boomer &#8599;</span>
+    <span class="che">la divulgazione: la tecnologia spiegata a chi non ci è nato dentro</span>
+    <span class="dove">cyberboomer.ninja</span>
+  </a>
+  <a class="stella ciano" href="https://radio-anima.pages.dev" rel="noopener">
+    <span class="nome">Radio Anima &#8599;</span>
+    <span class="che">solo musica nostra, con i diritti in chiaro</span>
+    <span class="dove">radio-anima.pages.dev</span>
+  </a>
+</div>
+<p class="galassia-legenda">
+  <span><i class="g"></i>si resta qui</span>
+  <span><i class="a"></i>un altro pianeta della galassia</span>
+</p>
+    <div class="coda-riga">
+      <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
+      <span><a href="mailto:pierluigidepalo@gmail.com">scriveteci</a> &middot; <a href="index.html">home</a></span>
+    </div>
+  </div>
 </footer>
 <script src="s77.js" defer></script>
 </body>

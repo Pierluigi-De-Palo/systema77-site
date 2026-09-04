@@ -19,10 +19,6 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://systema77.com/og-systema77.png">
-<!-- I font si chiedono da qui, non da un @import dentro il CSS: l'@import
-     costringeva il browser a scaricare prima il foglio e POI accorgersi dei
-     font, un viaggio in fila invece che in parallelo. Su un link aperto col
-     telefono in giro quello e' mezzo secondo di testo invisibile. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Share+Tech+Mono&display=swap">
@@ -30,61 +26,68 @@
 </head>
 <body>
 
-
-<nav>
+<nav class="menu">
   <a class="marca" href="index.html">&#9673; SYSTEMA 77</a>
   <a href="servizi.html" aria-current="page">Servizi</a>
   <a href="editrice.html">Casa editrice</a>
   <a href="officina.html">Officina</a>
   <a href="progetti.html">Progetti</a>
   <a href="chill.html">Chill</a>
+  <a href="divulgazione.html">Divulgazione</a>
   <span class="spazio"></span>
 </nav>
 
 <div class="annuncio">
-  <div class="dentro">
-    <div class="kick">servizi &middot; <b>per chi lavora con noi</b></div>
-    <h1>SERVIZI<span class="g">.</span></h1>
-    <p class="claim">AUTOMAZIONE <span class="m">&middot;</span> PRODUZIONE PER TERZI
-       <span class="m">&middot;</span> RICERCA &amp; SVILUPPO</p>
-    <p class="dice">SYSTEMA 77 &egrave; un&rsquo;agenzia di servizi fatti con l&rsquo;intelligenza
-       artificiale. Facciamo tre cose, e le facciamo per voi <b>con gli stessi strumenti
-       che usiamo per noi</b>.</p>
+  <div class="dentro due">
+    <div>
+      <div class="kick">servizi &middot; <b>per chi lavora con noi</b></div>
+      <h1>SERVIZI<span class="g">.</span></h1>
+    </div>
+    <div class="destra">
+      <p class="claim">AUTOMAZIONE <span class="m">&middot;</span> PER TERZI
+         <span class="m">&middot;</span> RICERCA &amp; SVILUPPO</p>
+      <p class="dice forte">Facciamo per voi le stesse tre cose che facciamo per noi,
+         con gli stessi strumenti.</p>
+    </div>
   </div>
 </div>
 
 <div class="blocco" id="automazione">
-  <div class="dentro">
-    <h2>AUTOMAZIONE<span class="g" style="color:var(--giallo)">.</span></h2>
-    <p class="dice">Un lavoro che oggi vi costa ore &mdash; smistare, rispondere, controllare,
-       riscrivere sempre le stesse cose &mdash; lo guardiamo, lo riscriviamo come agente
-       e ve lo consegniamo che funziona.</p>
-    <p class="dice">Non un abbonamento a un servizio di qualcun altro: <b>una cosa vostra,
-       che gira</b>, e che resta vostra anche se domani cambiate idea su di noi.</p>
-    <p style="margin-top:1.4rem"><span class="stato">su misura &middot; nessun pacchetto</span></p>
+  <div class="dentro due">
+    <div><h2>AUTOMAZIONE<span style="color:var(--giallo)">.</span></h2></div>
+    <div class="destra">
+      <p class="dice forte">Un lavoro che oggi vi costa ore lo riscriviamo come agente.</p>
+      <p class="dice">Smistare, rispondere, controllare, rifare sempre le stesse cose:
+         lo guardiamo, lo costruiamo, ve lo consegniamo che funziona. Non un abbonamento
+         a un servizio di qualcun altro &mdash; <b>una cosa vostra, che resta vostra</b>.</p>
+      <p style="margin-top:1.5rem"><span class="stato">su misura &middot; nessun pacchetto</span></p>
+    </div>
   </div>
 </div>
 
 <div class="blocco" id="terzi">
-  <div class="dentro">
-    <h2>PRODUZIONE PER TERZI<span style="color:var(--magenta)">.</span></h2>
-    <p class="dice">Immagini, video, film, musica, testi. Escono dalla nostra
-       <a href="officina.html">officina</a> con i nostri strumenti, e la firma resta vostra.</p>
-    <p class="dice">Se vi serve una cosa sola, si fa una cosa sola: non c&rsquo;&egrave; un minimo
-       da raggiungere.</p>
-    <p style="margin-top:1.4rem"><span class="stato">analogico e digitale &middot; formato panoramico</span></p>
+  <div class="dentro due">
+    <div><h2>PRODUZIONE<br>PER TERZI<span style="color:var(--magenta)">.</span></h2></div>
+    <div class="destra">
+      <p class="dice forte">Immagini, video, film, musica, testi. La firma resta vostra.</p>
+      <p class="dice">Escono dalla nostra <a href="officina.html">officina</a> con i nostri
+         strumenti. Se vi serve una cosa sola, si fa una cosa sola: non c&rsquo;&egrave; un minimo
+         da raggiungere.</p>
+      <p style="margin-top:1.5rem"><span class="stato">analogico e digitale &middot; formato panoramico</span></p>
+    </div>
   </div>
 </div>
 
 <div class="blocco" id="rs">
-  <div class="dentro">
-    <h2>RICERCA &amp; SVILUPPO<span style="color:var(--ciano)">.</span></h2>
-    <p class="dice">Prodotti su misura che non esistono ancora. Se avete un&rsquo;idea e non
-       sapete se si pu&ograve; fare, <b>&egrave; questa la domanda giusta da farci</b>: la risposta
-       &egrave; s&igrave;, no, oppure ecco cosa ci vuole.</p>
-    <p class="dice">&Egrave; il reparto da cui sono usciti i nostri progetti, compreso quello
-       che oggi &egrave; vivo: <a href="progetti.html">ANIMA GAME</a>.</p>
-    <p style="margin-top:1.4rem"><span class="stato on">il banco &egrave; aperto</span></p>
+  <div class="dentro due">
+    <div><h2>RICERCA &amp;<br>SVILUPPO<span style="color:var(--ciano)">.</span></h2></div>
+    <div class="destra">
+      <p class="dice forte">Se avete un&rsquo;idea e non sapete se si pu&ograve; fare,
+         &egrave; questa la domanda giusta da farci.</p>
+      <p class="dice">La risposta &egrave; s&igrave;, no, oppure ecco cosa ci vuole. &Egrave; il reparto da
+         cui &egrave; uscito <a href="progetti.html">ANIMA GAME</a>.</p>
+      <p style="margin-top:1.5rem"><span class="stato on">il banco &egrave; aperto</span></p>
+    </div>
   </div>
 </div>
 
@@ -95,38 +98,91 @@
       <div class="passo">
         <div class="n">1</div>
         <h3>Ci scrivete</h3>
-        <p class="dice">Una riga basta: cosa vi serve e per quando. Non serve
-           un capitolato, e non serve sapere gi&agrave; come si fa.</p>
+        <p class="dice">Una riga basta: cosa vi serve e per quando.</p>
       </div>
       <div class="passo">
         <div class="n">2</div>
         <h3>Vi diciamo se si pu&ograve;</h3>
-        <p class="dice">Con quanto ci vuole e quanto costa. Se non si pu&ograve; fare
-           ve lo diciamo subito, e fin qui non avete speso niente.</p>
+        <p class="dice">Con tempi e prezzo. Se non si pu&ograve; fare lo diciamo subito,
+           e fin qui non avete speso niente.</p>
       </div>
       <div class="passo">
         <div class="n">3</div>
         <h3>Lo costruiamo</h3>
-        <p class="dice">Ve lo consegniamo che funziona, e resta vostro.
-           Non teniamo in ostaggio quello che abbiamo fatto per voi.</p>
+        <p class="dice">Ve lo consegniamo che funziona, e resta vostro.</p>
       </div>
     </div>
   </div>
 </div>
 
 <div class="blocco">
-  <div class="dentro">
-    <h2>PARLIAMONE<span class="m" style="color:var(--magenta)">.</span></h2>
-    <p class="dice">Non abbiamo un listino da mostrarvi: ogni lavoro &egrave; diverso e il prezzo
-       si fa sul lavoro. <b>Chiedere non costa</b>, e una risposta arriva sempre.</p>
-    <a class="bottone pieno" href="mailto:pierluigidepalo@gmail.com?subject=SYSTEMA%2077%20%E2%80%94%20richiesta">Scriveteci</a>
-    <p class="riga-mono">pierluigidepalo@gmail.com</p>
+  <div class="dentro due">
+    <div><h2>PARLIAMONE<span style="color:var(--magenta)">.</span></h2></div>
+    <div class="destra">
+      <p class="dice forte">Chiedere non costa, e una risposta arriva sempre.</p>
+      <p class="dice piccola">Non c&rsquo;&egrave; un listino: ogni lavoro &egrave; diverso e il prezzo
+         si fa sul lavoro.</p>
+      <a class="bottone pieno" href="mailto:pierluigidepalo@gmail.com?subject=SYSTEMA%2077%20%E2%80%94%20richiesta">Scriveteci</a>
+      <p class="riga-mono">pierluigidepalo@gmail.com</p>
+    </div>
   </div>
 </div>
 
+<!-- LA CODA porta la galassia: da qualunque punto del sito si vede la mappa
+     intera, e il colore dice se si resta in casa o si cambia pianeta. -->
 <footer>
-  <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
-  <span><a href="mailto:pierluigidepalo@gmail.com">scriveteci</a> &middot; <a href="index.html">home</a></span>
+  <div class="dentro">
+    <p class="titolo-coda">la galassia</p>
+<div class="galassia">
+  <a class="stella qui" href="servizi.html" aria-current="page">
+    <span class="nome">Servizi</span>
+    <span class="che">automazione, produzione per terzi, ricerca e sviluppo</span>
+  </a>
+  <a class="stella qui" href="editrice.html">
+    <span class="nome">Casa editrice</span>
+    <span class="che">produciamo storie: libri, e film quando è la forma giusta</span>
+  </a>
+  <a class="stella qui" href="officina.html">
+    <span class="nome">Officina</span>
+    <span class="che">immagini ferme, immagini in movimento, suono</span>
+  </a>
+  <a class="stella qui" href="progetti.html">
+    <span class="nome">Progetti</span>
+    <span class="che">quello che costruiamo e che non esisteva</span>
+  </a>
+  <a class="stella qui" href="chill.html">
+    <span class="nome">Chill</span>
+    <span class="che">le cose che si tengono accese mentre si fa altro</span>
+  </a>
+  <a class="stella qui" href="meteo.html">
+    <span class="nome">AURA</span>
+    <span class="che">il meteo: quattro località, tre modelli a confronto</span>
+  </a>
+  <a class="stella verde" href="https://animagame.io" rel="noopener">
+    <span class="nome">Anima Game &#8599;</span>
+    <span class="che">il gioco a invito: serve una carta vera</span>
+    <span class="dove">animagame.io</span>
+  </a>
+  <a class="stella magenta" href="https://cyberboomer.ninja" rel="noopener">
+    <span class="nome">Cyber Boomer &#8599;</span>
+    <span class="che">la divulgazione: la tecnologia spiegata a chi non ci è nato dentro</span>
+    <span class="dove">cyberboomer.ninja</span>
+  </a>
+  <a class="stella ciano" href="https://radio-anima.pages.dev" rel="noopener">
+    <span class="nome">Radio Anima &#8599;</span>
+    <span class="che">solo musica nostra, con i diritti in chiaro</span>
+    <span class="dove">radio-anima.pages.dev</span>
+  </a>
+</div>
+<p class="galassia-legenda">
+  <span><i class="g"></i>si resta qui</span>
+  <span><i class="a"></i>un altro pianeta della galassia</span>
+</p>
+    <div class="coda-riga">
+      <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
+      <span><a href="mailto:pierluigidepalo@gmail.com">scriveteci</a> &middot; <a href="index.html">home</a></span>
+    </div>
+  </div>
 </footer>
 <script src="s77.js" defer></script>
 </body>

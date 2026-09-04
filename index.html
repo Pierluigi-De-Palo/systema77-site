@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SYSTEMA 77 — AI AGENT SERVICE</title>
-<meta name="description" content="SYSTEMA 77 — AI Agent Service. Automazione con agenti AI, produzione per terzi, ricerca e sviluppo. Casa editrice, officina, ANIMA GAME.">
+<meta name="description" content="SYSTEMA 77 — AI Agent Service. Automazione con agenti AI, produzione per terzi, ricerca e sviluppo. Casa editrice, officina, AURA, ANIMA GAME.">
 <!-- Come il sito si vede FUORI da se': la tab del browser e l'anteprima di un
      link incollato in chat. Favicon inline (zero file), immagine di condivisione
      con la stessa palette, nessuna foto inventata. -->
@@ -12,17 +12,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SYSTEMA 77">
 <meta property="og:title" content="SYSTEMA 77 — AI AGENT SERVICE">
-<meta property="og:description" content="SYSTEMA 77 — AI Agent Service. Automazione con agenti AI, produzione per terzi, ricerca e sviluppo. Casa editrice, officina, ANIMA GAME.">
+<meta property="og:description" content="SYSTEMA 77 — AI Agent Service. Automazione con agenti AI, produzione per terzi, ricerca e sviluppo. Casa editrice, officina, AURA, ANIMA GAME.">
 <meta property="og:url" content="https://systema77.com/index.html">
 <meta property="og:image" content="https://systema77.com/og-systema77.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://systema77.com/og-systema77.png">
-<!-- I font si chiedono da qui, non da un @import dentro il CSS: l'@import
-     costringeva il browser a scaricare prima il foglio e POI accorgersi dei
-     font, un viaggio in fila invece che in parallelo. Su un link aperto col
-     telefono in giro quello e' mezzo secondo di testo invisibile. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Share+Tech+Mono&display=swap">
@@ -30,129 +26,145 @@
 </head>
 <body>
 
-<!-- L'INVITO A GIRARE — una striscia, non un muro. Vedi la nota in stile.css:
-     fino al 03/09 il telefono in verticale trovava un cartello a tutto schermo
-     prima del sito. Un link che si diffonde si apre col telefono in mano. -->
+<!-- L'INVITO A GIRARE — una striscia, non un muro (vedi stile.css). -->
 <div class="suggerimento" id="suggerimento">
   <span class="icona" aria-hidden="true"></span>
   <p>SYSTEMA 77 si guarda orizzontale. Gira il telefono.</p>
   <button type="button" id="chiudiSuggerimento" aria-label="Chiudi l'avviso">&times;</button>
 </div>
 
-<nav>
+<nav class="menu">
   <a class="marca" href="index.html">&#9673; SYSTEMA 77</a>
   <a href="servizi.html">Servizi</a>
   <a href="editrice.html">Casa editrice</a>
   <a href="officina.html">Officina</a>
   <a href="progetti.html">Progetti</a>
   <a href="chill.html">Chill</a>
+  <a href="divulgazione.html">Divulgazione</a>
   <span class="spazio"></span>
 </nav>
 
-<!-- IL BINARIO: si scrolla in giu', si viaggia verso destra. Sei quadri in 2.35 —
-     uno per ogni voce di menu, piu' l'apertura. La home E' l'indice del sito.
-     Ordine del Direttore, 04/09: «1 servizi · 2 storie diventa casa editrice ·
-     3 officina (dove e' finito?) · 4 progetti · 5 chill». -->
 <div class="binario-alt" id="binarioAlt">
   <div class="binario">
     <div class="corsa" id="corsa">
 
-      <!-- QUADRO 1 · L'APERTURA. Rettifica del Direttore: «questo si deve
-           leggere MOLTO meglio: AI AGENT SERVICE». Adesso e' la seconda cosa
-           piu' grande della pagina, in Archivo bianco, non in mono grigio. -->
+      <!-- QUADRO 1 · L'APERTURA — il gigante a sinistra, la promessa a destra:
+           prima il titolo si prendeva tutta la riga e sotto restava mezzo
+           schermo vuoto. Rilievo del Direttore 04/09 sullo spazio orizzontale. -->
       <section class="quadro77">
-        <div class="dentro">
-          <div class="kick">agenzia &middot; <b>dal 2077</b></div>
-          <div class="gigante">SYSTEMA<br><span class="g">77.</span></div>
-          <p class="claim">AI AGENT <span class="g">SERVICE</span>.</p>
-          <p class="dice">Costruiamo agenti che lavorano al posto vostro &mdash; e produciamo
-             quello che serve a farli parlare: storie, libri, immagini, film, musica.</p>
-          <p class="dice">Siete arrivati senza che vi cercassimo. &Egrave; normale: funziona cos&igrave;.</p>
+        <div class="dentro due">
+          <div>
+            <div class="kick">agenzia &middot; <b>dal 2077</b></div>
+            <div class="gigante">SYSTEMA<br><span class="g">77.</span></div>
+          </div>
+          <div class="destra">
+            <p class="claim">AI AGENT <span class="g">SERVICE</span>.</p>
+            <p class="dice forte">Costruiamo agenti che lavorano al posto vostro,
+               e produciamo quello che serve a farli parlare.</p>
+            <p class="dice piccola">Siete arrivati senza che vi cercassimo.
+               &Egrave; normale: funziona cos&igrave;.</p>
+          </div>
         </div>
         <span class="angolo">quadro 1/6<span class="solo-pista"> &middot; scendi: si va a destra &#9654;</span></span>
       </section>
 
-      <!-- QUADRO 2 · SERVIZI. Ordine del Direttore 04/09: «dobbiamo mettere
-           anche i servizi per terzi, la ricerca e sviluppo, nel menu» e
-           «questa parte va sviluppata: e' qui che potrebbero arrivare contatti
-           di lavoro. SYSTEMA 77 e' arte per me, ma dobbiamo anche vendere». -->
+      <!-- QUADRO 2 · SERVIZI — «e' qui che potrebbero arrivare contatti di
+           lavoro. SYSTEMA 77 e' arte per me, ma dobbiamo anche vendere.» -->
       <section class="quadro77">
-        <div class="dentro">
-          <h2>QUELLO CHE FACCIAMO<br><span class="striscia">PER VOI.</span></h2>
-          <p class="claim">AUTOMAZIONE <span class="m">&middot;</span> PRODUZIONE PER TERZI
-             <span class="m">&middot;</span> RICERCA &amp; SVILUPPO</p>
-          <div class="strip rs">
-            <div class="tag">SERVIZI</div>
-            <a href="servizi.html#automazione">AUTOMAZIONE<span>processi che oggi vi costano ore</span></a>
-            <a href="servizi.html#terzi">PER TERZI<span>produciamo con i nostri strumenti</span></a>
-            <a href="servizi.html#rs">RICERCA &amp; SVILUPPO<span>cose che non esistono ancora</span></a>
+        <div class="dentro due">
+          <div>
+            <h2>QUELLO CHE<br>FACCIAMO<br><span class="striscia">PER VOI.</span></h2>
+          </div>
+          <div class="destra">
+            <p class="claim">AUTOMAZIONE <span class="m">&middot;</span> PER TERZI
+               <span class="m">&middot;</span> RICERCA &amp; SVILUPPO</p>
+            <div class="strip rs">
+              <div class="tag">SERVIZI</div>
+              <a href="servizi.html#automazione">AUTOMAZIONE<span>processi che oggi vi costano ore</span></a>
+              <a href="servizi.html#terzi">PER TERZI<span>produciamo con i nostri strumenti</span></a>
+              <a href="servizi.html#rs">R&amp;S<span>cose che non esistono ancora</span></a>
+            </div>
+            <p class="dice piccola">Nessun listino: ogni lavoro &egrave; diverso. Chiedere non costa.</p>
           </div>
         </div>
         <span class="angolo">quadro 2/6</span>
       </section>
 
-      <!-- QUADRO 3 · CASA EDITRICE. Era «STORIE». Parole del Direttore:
-           «CASA EDITRICE! Produciamo storie. Libri o film e' uguale — cioe'
-           siamo una casa editrice di libri, avremo anche lo shop». -->
+      <!-- QUADRO 3 · QUELLO CHE PRODUCIAMO — casa editrice e officina insieme,
+           una per colonna: sono lo stesso gesto (si fabbrica) e stanno bene
+           affiancate. Due voci in un quadro invece che due quadri: «semplifica». -->
       <section class="quadro77">
         <div class="dentro">
-          <h2>SIAMO UNA<br><span class="striscia">CASA EDITRICE.</span></h2>
-          <p class="claim">PRODUCIAMO STORIE. LIBRO O FILM, <span class="g">&Egrave; LO STESSO LAVORO</span>.</p>
-          <p class="dice">Le scriviamo, le stampiamo e le vendiamo. Quando la forma giusta &egrave;
-             il film, la stessa storia diventa un film.</p>
-          <a class="bottone" href="editrice.html">Entra in casa editrice</a>
+          <h2>E QUELLO CHE<br>FACCIAMO <span style="color:var(--magenta)">E BASTA.</span></h2>
+          <div class="due" style="margin-top:1.8rem">
+            <div>
+              <p class="claim" style="font-size:clamp(1.1rem,2.4vw,1.7rem)">CASA EDITRICE.</p>
+              <p class="dice forte">Produciamo storie. Libro o film, &egrave; lo stesso lavoro.</p>
+              <a class="bottone" href="editrice.html">Entra</a>
+            </div>
+            <div class="destra">
+              <p class="claim" style="font-size:clamp(1.1rem,2.4vw,1.7rem)">OFFICINA.</p>
+              <p class="dice forte">Immagini ferme, immagini in movimento, suono.</p>
+              <a class="bottone m" href="officina.html">Entra</a>
+            </div>
+          </div>
         </div>
         <span class="angolo">quadro 3/6</span>
       </section>
 
-      <!-- QUADRO 4 · OFFICINA. Il Direttore: «3 officina, dove e' finito?».
-           Era finito dentro il quadro 2 e non stava nel menu: immagini, film e
-           musica erano tre pagine orfane. Adesso l'officina e' una porta vera. -->
+      <!-- QUADRO 4 · CHILL. AURA e' viva e si guarda; la radio e' accesa per
+           ordine del Direttore del 04/09 («attiva la radio»). -->
       <section class="quadro77">
-        <div class="dentro">
-          <h2>E QUI<br>SI <span style="color:var(--magenta)">FABBRICA.</span></h2>
-          <p class="claim">IMMAGINI FERME <span class="m">&middot;</span> IMMAGINI IN MOVIMENTO
-             <span class="m">&middot;</span> SUONO</p>
-          <div class="strip officina">
-            <div class="tag">OFFICINA</div>
-            <a href="immagini.html">IMMAGINI<span>fotografie panoramiche, fine art</span></a>
-            <a href="film.html">FILM<span>video e film, analogico e digitale</span></a>
-            <a href="musica.html">MUSICA<span>colonne sonore e musica originale</span></a>
+        <div class="dentro due">
+          <div>
+            <h2>E QUANDO NON<br>SERVE NIENTE<span style="color:var(--ciano)">.</span></h2>
+          </div>
+          <div class="destra">
+            <p class="dice forte">Le cose che si tengono accese mentre si fa altro.</p>
+            <div class="strip chill2">
+              <div class="tag">CHILL</div>
+              <a href="meteo.html">AURA<span>il meteo: quattro localit&agrave;, tre modelli</span></a>
+              <a href="https://radio-anima.pages.dev" rel="noopener">RADIO &#8599;<span>solo musica nostra, diritti in chiaro</span></a>
+              <a href="chill.html#podcast">PODCAST<span>montati in casa, sigla compresa</span></a>
+            </div>
           </div>
         </div>
         <span class="angolo">quadro 4/6</span>
       </section>
 
-      <!-- QUADRO 5 · PROGETTI. Il Direttore, 04/09: «all'interno di progetti ci
-           sta solo animagame», «deve essere spiegato che e' a invito e deve
-           portare a una pagina che gia' esiste». -->
+      <!-- QUADRO 5 · IL GIOCO -->
       <section class="quadro77">
-        <div class="dentro">
-          <h2>POI C'&Egrave;<br>IL GIOCO<span style="color:var(--verde-game)">.</span></h2>
-          <p class="claim">ANIMA GAME. <span style="color:var(--verde-game)">A INVITO.</span></p>
-          <p class="dice">Un gioco a invito: serve una carta vera, e la carta arriva a casa.
-             Chi ce l&rsquo;ha entra e gioca. Senza, si pu&ograve; guardare &mdash; non &egrave; un muro,
-             &egrave; la regola.</p>
-          <a class="bottone v" href="progetti.html">Com&rsquo;&egrave; fatto</a>
+        <div class="dentro due">
+          <div>
+            <h2>POI C'&Egrave;<br>IL GIOCO<span style="color:var(--verde-game)">.</span></h2>
+          </div>
+          <div class="destra">
+            <p class="claim">ANIMA GAME. <span class="v">A INVITO.</span></p>
+            <p class="dice forte">Serve una carta vera, e la carta arriva a casa.</p>
+            <p class="dice piccola">Senza, si pu&ograve; guardare. Non &egrave; un muro: &egrave; la regola.</p>
+            <a class="bottone v" href="progetti.html">Com&rsquo;&egrave; fatto</a>
+          </div>
         </div>
         <span class="angolo">quadro 5/6</span>
       </section>
 
-      <!-- QUADRO 6 · CHILL + il contatto. Il contatto sta in fondo alla bobina
-           perche' e' li' che arriva chi ha guardato tutto: non e' una nota, e'
-           la porta. Bottone pieno, non una riga mono grigia. -->
+      <!-- QUADRO 6 · LA GALASSIA + il contatto. Ordine del Direttore 04/09:
+           «trova un modo per indirizzare meglio il fruitore. ricorda che e'
+           una galassia». La bobina finisce con la mappa e con la porta. -->
       <section class="quadro77" style="border-right:0">
         <div class="dentro">
-          <h2>E QUANDO NON<br>SERVE NIENTE<span style="color:var(--ciano)">.</span></h2>
-          <div class="strip chill2">
-            <div class="tag">CHILL</div>
-            <a href="meteo.html">METEO<span>quattro localit&agrave;, tre modelli</span></a>
-            <a href="chill.html#radio">RADIO<span>una voce, non una playlist</span></a>
-            <a href="chill.html#podcast">PODCAST<span>montati in casa, sigla compresa</span></a>
+          <div class="due">
+            <div>
+              <h2>SIAMO UNA<br><span class="striscia">GALASSIA.</span></h2>
+              <p class="dice">SYSTEMA 77 &egrave; il centro. Intorno ci sono altri pianeti,
+                 e ognuno ha un indirizzo suo.</p>
+            </div>
+            <div class="destra">
+              <p class="dice forte">Avete un lavoro per noi, o un&rsquo;idea che non sapete
+                 se si pu&ograve; fare?</p>
+              <a class="bottone pieno" href="mailto:pierluigidepalo@gmail.com?subject=SYSTEMA%2077">Scriveteci</a>
+            </div>
           </div>
-          <p class="dice" style="margin-top:2.2rem">Avete un lavoro per noi, o un&rsquo;idea che non
-             sapete se si pu&ograve; fare?</p>
-          <a class="bottone pieno" href="mailto:pierluigidepalo@gmail.com">Scriveteci</a>
         </div>
         <span class="angolo">quadro 6/6<span class="solo-pista"> &middot; fine bobina</span></span>
       </section>
@@ -161,9 +173,61 @@
   </div>
 </div>
 
+<!-- LA CODA porta la galassia: da qualunque punto del sito si vede la mappa
+     intera, e il colore dice se si resta in casa o si cambia pianeta. -->
 <footer>
-  <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
-  <span><a href="mailto:pierluigidepalo@gmail.com">scriveteci</a> &middot; <a href="index.html">home</a></span>
+  <div class="dentro">
+    <p class="titolo-coda">la galassia</p>
+<div class="galassia">
+  <a class="stella qui" href="servizi.html">
+    <span class="nome">Servizi</span>
+    <span class="che">automazione, produzione per terzi, ricerca e sviluppo</span>
+  </a>
+  <a class="stella qui" href="editrice.html">
+    <span class="nome">Casa editrice</span>
+    <span class="che">produciamo storie: libri, e film quando è la forma giusta</span>
+  </a>
+  <a class="stella qui" href="officina.html">
+    <span class="nome">Officina</span>
+    <span class="che">immagini ferme, immagini in movimento, suono</span>
+  </a>
+  <a class="stella qui" href="progetti.html">
+    <span class="nome">Progetti</span>
+    <span class="che">quello che costruiamo e che non esisteva</span>
+  </a>
+  <a class="stella qui" href="chill.html">
+    <span class="nome">Chill</span>
+    <span class="che">le cose che si tengono accese mentre si fa altro</span>
+  </a>
+  <a class="stella qui" href="meteo.html">
+    <span class="nome">AURA</span>
+    <span class="che">il meteo: quattro località, tre modelli a confronto</span>
+  </a>
+  <a class="stella verde" href="https://animagame.io" rel="noopener">
+    <span class="nome">Anima Game &#8599;</span>
+    <span class="che">il gioco a invito: serve una carta vera</span>
+    <span class="dove">animagame.io</span>
+  </a>
+  <a class="stella magenta" href="https://cyberboomer.ninja" rel="noopener">
+    <span class="nome">Cyber Boomer &#8599;</span>
+    <span class="che">la divulgazione: la tecnologia spiegata a chi non ci è nato dentro</span>
+    <span class="dove">cyberboomer.ninja</span>
+  </a>
+  <a class="stella ciano" href="https://radio-anima.pages.dev" rel="noopener">
+    <span class="nome">Radio Anima &#8599;</span>
+    <span class="che">solo musica nostra, con i diritti in chiaro</span>
+    <span class="dove">radio-anima.pages.dev</span>
+  </a>
+</div>
+<p class="galassia-legenda">
+  <span><i class="g"></i>si resta qui</span>
+  <span><i class="a"></i>un altro pianeta della galassia</span>
+</p>
+    <div class="coda-riga">
+      <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
+      <span><a href="mailto:pierluigidepalo@gmail.com">scriveteci</a> &middot; <a href="index.html">home</a></span>
+    </div>
+  </div>
 </footer>
 <script src="s77.js" defer></script>
 </body>
