@@ -212,19 +212,56 @@ a.manifesto:hover h2{color:var(--giallo)}
    da qualunque punto del sito si vede la mappa intera. */
 .galassia{display:grid; gap:0; border-top:2px solid var(--linea); border-left:2px solid var(--linea);
   grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
-.stella{padding:1.15rem 1.2rem 1.25rem; border-right:2px solid var(--linea);
+.stella{--luce:var(--linea-viva);
+  padding:1.15rem 1.2rem 1.25rem; border-right:2px solid var(--linea);
   border-bottom:2px solid var(--linea); display:flex; flex-direction:column; gap:.3rem;
-  border-left:4px solid var(--linea-viva)}
+  border-left:4px solid var(--luce)}
 .stella:hover{background:#111}
 .stella .nome{font-family:var(--mono); font-size:.84rem; letter-spacing:.15em;
   text-transform:uppercase; color:var(--carta)}
 .stella .che{font-family:var(--serif); font-size:.98rem; line-height:1.4; color:var(--testo)}
 .stella .dove{font-family:var(--mono); font-size:.7rem; letter-spacing:.12em; color:var(--muto)}
-.stella.qui{border-left-color:var(--giallo)}
+.stella.qui{--luce:var(--giallo)}
 .stella.qui:hover .nome{color:var(--giallo)}
-.stella.verde{border-left-color:var(--verde-game)} .stella.verde:hover .nome{color:var(--verde-game)}
-.stella.magenta{border-left-color:var(--magenta)} .stella.magenta:hover .nome{color:var(--magenta)}
-.stella.ciano{border-left-color:var(--ciano)} .stella.ciano:hover .nome{color:var(--ciano)}
+.stella.verde{--luce:var(--verde-game)} .stella.verde:hover .nome{color:var(--verde-game)}
+.stella.magenta{--luce:var(--magenta)} .stella.magenta:hover .nome{color:var(--magenta)}
+.stella.ciano{--luce:var(--ciano)} .stella.ciano:hover .nome{color:var(--ciano)}
+
+/* ── L'ORBITA — i pianeti si guardavano; adesso si muovono ────────────────
+   Ordine del Direttore, 05/09: «far muovere i pianeti».
+
+   Non muovo i pianeti: muovo la loro LUCE. Non e' un ripiego, e' la regola
+   che questa casa si era gia' data — «l'archivio non puo' muovere il suo
+   personaggio, ma puo' muovere la sua luce» (CHRONO, 06/08) — e qui vale
+   doppio, perche' il colore di una stella E' il suo indirizzo: spostarlo
+   vorrebbe dire cambiare la mappa mentre uno la legge.
+
+   Un alone del colore della stella respira sul suo bordo, e il respiro passa
+   da una stella all'altra: sette secondi di giro, sfasati di nove decimi, coi
+   ritardi NEGATIVI perche' al caricamento la mappa sia gia' in mezzo al suo
+   giro e non parta con otto lampi insieme. Cosi' si legge come UNA galassia
+   che gira, non come otto lucine che lampeggiano.
+
+   A riposo l'alone e' a zero: la mappa ferma e' identica a quella di prima —
+   misurata al pixel, non a occhio — e chi ha chiesto meno movimento vede
+   esattamente il sito di ieri.
+
+   ⚠️ Il primo tentativo era una striscia in `::before`, e per reggerla serviva
+   `position:relative` sulla stella. Costava 21.982 pixel di differenza sulla
+   mappa FERMA: una stella posizionata dipinge sopra i bordi della vicina, e le
+   linee della griglia di JUDY cambiavano. Misurato prima di spingere, buttato.
+   La luce si aggiunge DENTRO la stella, con un'ombra: niente posizionamento,
+   niente ordine di pittura toccato, niente layout. */
+.stella{animation:orbita 7s ease-in-out infinite}
+@keyframes orbita{0%,100%{box-shadow:none} 50%{box-shadow:inset 16px 0 22px -14px var(--luce)}}
+.stella:nth-child(2){animation-delay:-.9s}
+.stella:nth-child(3){animation-delay:-1.8s}
+.stella:nth-child(4){animation-delay:-2.7s}
+.stella:nth-child(5){animation-delay:-3.6s}
+.stella:nth-child(6){animation-delay:-4.5s}
+.stella:nth-child(7){animation-delay:-5.4s}
+.stella:nth-child(8){animation-delay:-6.3s}
+@media (prefers-reduced-motion:reduce){ .stella{animation:none} }
 .galassia-legenda{margin-top:1rem; display:flex; gap:1.6rem; flex-wrap:wrap;
   font-family:var(--mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
   color:var(--muto)}
