@@ -105,6 +105,28 @@ divulgazione). La radio torna nella mappa quando suona. La mappa è scritta
 in ogni pagina, uguale: quando cambia, cambia in tutte (`grep -n stella` le
 trova).
 
+## La luce (2077, 05/09)
+
+Rilievo del Direttore: «la vetrina la trovo un po' spenta di colori: tanto
+giallo, tanto bianco, poco magenta o ciano. Rendila più 2077». Misurato coi
+font veri: in sei quadri il magenta compariva due volte e il ciano una.
+
+- **Una riga al neon sotto il menu**, giallo → magenta → ciano, su ogni pagina.
+- **Aloni negli angoli** dei quadri della home e dell'annuncio di ogni pagina
+  (`.luce-m`, `.luce-c`, `.luce-g`, `.luce-v`, `.luce-mc`). Alfa al 16%
+  massimo: è luce, non fondale. Il bianco e il giallo restano quello che erano.
+- **Il gigante sdoppiato** ai bordi (ciano a sinistra, magenta a destra), fermo.
+- SERVICE è ciano, GALASSIA è magenta (`.striscia.m`). Il giallo resta al 77 e
+  alle porte di casa.
+
+**I testi** (stesso rilievo: «manca formattazione, punti a capo,
+giustificazioni»). Il corpo `.dice` è giustificato con la sillabazione
+italiana sopra i 700px; sotto torna a bandiera, perché sul telefono la
+giustificazione apre buchi. Frasi forti, claim e titoli vanno a capo
+bilanciati (`text-wrap:balance`): niente parola sola sull'ultima riga. I claim
+a tre voci stanno su tre righe col punto colorato, non su una riga che spezza
+«PER / TERZI».
+
 ## Gli stati, il 05/09
 
 **La radio è spenta.** Il Direttore ha aperto il link e ha detto «la radio non
