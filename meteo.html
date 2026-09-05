@@ -103,6 +103,65 @@ td:first-child,th:first-child{text-align:left;color:var(--text-primary)}
 footer{margin-top:22px;font-size:12.5px;color:var(--text-muted)}
 footer a{color:var(--text-secondary)}
 .arrow-i{display:inline-block;width:14px;height:14px;vertical-align:-2px}
+
+/* ── LA PORTA DI AURA — stessa macchina, variabili già definite sopra ── */
+.porta [hidden]{display:none!important}
+.porta{background:var(--surface-1);border:1px solid var(--border);border-radius:14px;
+  padding:20px 18px;margin:14px 2px 18px;--porta-err:#FF6B6B}
+/* Misurato dal collaudo del 04/09: in tema chiaro il bianco sull'accento (#0E8F8C) fa 3,94:1 e
+   l'etichetta 4,33:1, sotto il 4,5:1 di AA; nel tema scuro il rosso #d03b3b fa 3,83:1. Qui i
+   valori che passano, solo dentro la porta: il motore resta com'è. — D.R.A.G.O., 2026-09-04 */
+:root[data-theme="light"] .porta{--porta-err:#B32D2D}
+:root[data-theme="light"] .porta-lab{color:#66665E}
+:root[data-theme="light"] .porta-bottone,:root[data-theme="light"] .porta-canale.on,
+:root[data-theme="light"] .porta-gesto-btn{background:#0B6F6D;border-color:#0B6F6D}
+.porta-titolo{font-family:var(--archivo);text-transform:uppercase;font-weight:400;
+  font-size:20px;letter-spacing:.02em;margin:0 0 10px;color:var(--text-primary)}
+.porta-testo{font-size:14px;color:var(--text-secondary);margin:0 0 8px;max-width:640px}
+.porta-stato{font-size:13.5px;color:var(--text-secondary);margin:12px 0;padding-left:10px;
+  border-left:3px solid var(--text-muted)}
+.porta-form{display:grid;gap:16px;margin-top:14px;max-width:640px}
+.porta-campo{display:flex;flex-direction:column;gap:6px;position:relative}
+.porta-riga{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:640px){.porta-riga{grid-template-columns:1fr 1fr}}
+.porta-lab{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;
+  font-size:11px;color:var(--text-muted)}
+.porta-canali{display:flex;flex-wrap:wrap;gap:8px}
+.porta-canale{border:1px solid var(--border);background:transparent;color:var(--text-secondary);
+  border-radius:9px;padding:9px 14px;min-height:40px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+  text-transform:uppercase;cursor:pointer}
+.porta-canale.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+.porta-canale.spento{opacity:.5;cursor:not-allowed}
+.porta-canale small{text-transform:none;letter-spacing:0;font-size:10px;opacity:.8}
+.porta-input{background:var(--page);border:1px solid var(--border);border-radius:9px;
+  color:var(--text-primary);padding:11px 12px;font-size:15px;font-family:inherit;width:100%}
+.porta-input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.porta-input:disabled{opacity:.5}
+.porta-suggerimenti{list-style:none;margin:0;padding:0;position:absolute;top:100%;left:0;right:0;
+  z-index:6;border:1px solid var(--border);border-radius:9px;background:var(--surface-1);
+  max-height:220px;overflow-y:auto;margin-top:2px}
+.porta-suggerimenti li{padding:9px 12px;font-size:13.5px;color:var(--text-secondary);
+  cursor:pointer;border-bottom:1px solid var(--grid)}
+.porta-suggerimenti li:last-child{border-bottom:0}
+.porta-suggerimenti li:hover{background:var(--page);color:var(--text-primary)}
+.porta-suggerimenti li small{color:var(--text-muted)}
+.porta-trappola{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden}
+.porta-consenso{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--text-secondary)}
+.porta-consenso a{color:var(--accent)}
+.porta-consenso input{margin-top:3px;flex:none}
+.porta-errore{display:none;font-size:13px;color:var(--porta-err);border-left:3px solid var(--porta-err);padding-left:10px}
+.porta-errore.on{display:block}
+.porta-bottone{justify-self:start;background:var(--accent);color:var(--accent-ink);border:0;
+  border-radius:9px;padding:12px 22px;min-height:44px;font-family:var(--mono);text-transform:uppercase;
+  letter-spacing:.06em;font-size:13px;font-weight:700;cursor:pointer}
+.porta-bottone:disabled{opacity:.4;cursor:not-allowed}
+.porta-gesto{margin-top:16px;padding:14px;border:1px solid var(--accent);border-radius:12px;
+  background:var(--page);font-size:14px}
+.porta-gesto p{margin:0 0 8px}
+.porta-gesto p:last-child{margin-bottom:0}
+.porta-gesto-btn{display:inline-block;margin-top:2px;background:var(--accent);color:var(--accent-ink);
+  padding:10px 16px;min-height:40px;box-sizing:border-box;border-radius:9px;text-decoration:none;font-family:var(--mono);
+  text-transform:uppercase;letter-spacing:.04em;font-size:12.5px;font-weight:700}
 </style>
 </head>
 <body>
@@ -120,6 +179,62 @@ footer a{color:var(--text-secondary)}
     <h1>AURA <span class="sl">—</span> meteo</h1>
     <span class="sub" id="spotSub">il tempo che fa, dove serve a te</span>
   </header>
+
+  <!-- ════════════════════════════════════════════════════════════════════
+       LA PORTA DI AURA — blocco d'iscrizione, sotto il titolo.
+       Parole di ECHO (root_clode-aura/AURA/PAROLE-AURA-2077.md, sez. «a»),
+       incollate senza modifiche. Non tocca il motore meteo sotto (SPOTS,
+       HOURLY, MODELS, S, load(), Chart.js, tema): vive di suo, stessa
+       faccia ACID di questa pagina (--accent, --surface-1, --border,
+       Archivo Black, Share Tech Mono). Impianto (fetch, stato, validazione)
+       in uno <script> separato in fondo al body. — JUDY, 2026-09-04
+  ════════════════════════════════════════════════════════════════════ -->
+  <section class="porta" id="porta" aria-labelledby="portaTitolo">
+    <h2 id="portaTitolo" class="porta-titolo">Il meteo che ti scrive lui.</h2>
+    <p class="porta-testo">La sera prima ti scrive: come vestirti domani, se serve l'ombrello, se servono gli occhiali da sole.</p>
+    <p class="porta-testo">Se arriva pioggia forte o vento pericoloso, ti avvisa un'ora prima. È gratis: basta un numero o un'email.</p>
+
+    <div class="porta-stato" id="portaStato" role="status" aria-live="polite" hidden></div>
+
+    <form class="porta-form" id="portaForm" novalidate>
+      <div class="porta-campo">
+        <span class="porta-lab" id="labCanali">Dove vuoi essere avvisato</span>
+        <div class="porta-canali" id="portaCanali" role="radiogroup" aria-labelledby="labCanali"></div>
+      </div>
+
+      <div class="porta-riga">
+        <div class="porta-campo">
+          <label class="porta-lab" for="portaContatto" id="labContatto">Il tuo numero</label>
+          <input class="porta-input" id="portaContatto" name="contatto" type="tel" inputmode="tel" value="+39" autocomplete="tel">
+        </div>
+
+        <div class="porta-campo" id="campoLocalita">
+          <label class="porta-lab" for="portaLocalita">Il tuo posto</label>
+          <input class="porta-input" id="portaLocalita" name="localita" type="text" placeholder="Scrivi una città o una zona" autocomplete="off">
+          <ul class="porta-suggerimenti" id="portaSuggerimenti" hidden></ul>
+          <input type="hidden" id="portaLat" name="lat">
+          <input type="hidden" id="portaLon" name="lon">
+        </div>
+      </div>
+
+      <div class="porta-trappola">
+        <label for="trappola">Non compilare questo campo</label>
+        <input type="text" id="trappola" name="trappola" tabindex="-1" autocomplete="off" aria-hidden="true">
+      </div>
+
+      <label class="porta-consenso">
+        <input type="checkbox" id="portaConsenso" name="consenso">
+        <span>Accetto che AURA mi scriva su questo canale. Come trattiamo i tuoi dati → <a href="riservatezza.html">riservatezza</a></span>
+      </label>
+
+      <div class="porta-errore" id="portaErrore" role="alert"></div>
+
+      <button type="submit" class="porta-bottone" id="portaBottone" disabled>Entra in AURA</button>
+    </form>
+
+    <div class="porta-gesto" id="portaGesto" hidden></div>
+  </section>
+
   <div class="spots" id="spotBar"></div>
   <div class="updated" id="updated">Carico i dati…</div>
 
@@ -486,6 +601,249 @@ $('themeBtn').addEventListener('click',()=>{
 document.documentElement.dataset.theme='dark'; // Camera Oscura: il buio e' il default
 Chart.defaults.font.family='system-ui,-apple-system,"Segoe UI",sans-serif';
 load();
+</script>
+
+<script>
+/*!
+ * LA PORTA DI AURA — impianto del blocco d'iscrizione. — JUDY, 2026-09-04
+ * Script SEPARATO dal motore meteo qui sopra: non lo tocca, non ne
+ * ridichiara le variabili (usa un proprio $-helper per non collidere con
+ * `const $` già dichiarata sopra). Legge SOLO la costante SPOTS del motore,
+ * già in pagina, come ripiego offline per i suggerimenti di località — non
+ * la modifica.
+ * Parole: root_clode-aura/AURA/PAROLE-AURA-2077.md, sezione «a».
+ * Nessun dato in localStorage, nessun tracciamento, nessuna libreria esterna.
+ */
+(function(){
+'use strict';
+
+const AURA_API = 'https://api.cyberboomer.io/aura';
+
+const gid = id => document.getElementById(id);
+
+const TESTO_CHIUSA = "La porta è chiusa in questo momento. Non è un errore tuo: il motore che scrive i messaggi è spento adesso. Riprova fra poco.";
+const ERRORI = {
+  consenso_mancante: "Manca la spunta sul consenso. Senza, AURA non può scriverti — te la chiediamo per rispetto, non per burocrazia.",
+  contatto_non_valido: "Questo numero (o questa email) non sembra giusto. Controlla il prefisso +39 o l'indirizzo e riprova.",
+  gia_dentro: "Questo numero o questa email è già dentro AURA. Non serve entrare due volte.",
+  troppi_tentativi: "Troppi tentativi in poco tempo. Aspetta qualche minuto e riprova.",
+  canale_spento: "Questo canale non è ancora acceso. Per ora scegline un altro — arriva presto."
+};
+const CANALI = ['whatsapp','telegram','email'];
+const NOME_CANALE = {whatsapp:'WhatsApp', telegram:'Telegram', email:'Email'};
+
+const form        = gid('portaForm');
+const stato       = gid('portaStato');
+const canaliBar   = gid('portaCanali');
+const inContatto  = gid('portaContatto');
+const labContatto = gid('labContatto');
+const inLocalita  = gid('portaLocalita');
+const listaSugg   = gid('portaSuggerimenti');
+const inLat       = gid('portaLat');
+const inLon       = gid('portaLon');
+const inConsenso  = gid('portaConsenso');
+const inTrappola  = gid('trappola');
+const bottone     = gid('portaBottone');
+const errore      = gid('portaErrore');
+const gesto       = gid('portaGesto');
+
+let canaleScelto = null;
+let canaliAperti = {};
+let postiLiberi  = null;
+let debounceId   = null;
+
+function testoBottone(){
+  return postiLiberi === 0 ? "Entra in lista d'attesa" : 'Entra in AURA';
+}
+function mostraErrore(msg){ errore.textContent = msg; errore.classList.add('on'); }
+function nascondiErrore(){ errore.textContent = ''; errore.classList.remove('on'); }
+
+function chiudiPorta(){
+  stato.textContent = TESTO_CHIUSA;
+  stato.hidden = false;
+  form.querySelectorAll('input,button').forEach(el => el.disabled = true);
+}
+
+function selezionaCanale(c){
+  if(canaliAperti[c] === false) return;
+  canaleScelto = c;
+  canaliBar.querySelectorAll('button').forEach(b => {
+    const on = b.dataset.canale === c;
+    b.classList.toggle('on', on);
+    if(b.getAttribute('role') === 'radio') b.setAttribute('aria-checked', on ? 'true' : 'false');
+  });
+  if(c === 'email'){
+    labContatto.textContent = 'La tua email';
+    inContatto.type = 'email';
+    inContatto.placeholder = 'nome@esempio.it';
+    inContatto.autocomplete = 'email';
+    inContatto.value = '';
+  } else {
+    labContatto.textContent = 'Il tuo numero';
+    inContatto.type = 'tel';
+    inContatto.inputMode = 'tel';
+    inContatto.placeholder = '';
+    inContatto.autocomplete = 'tel';
+    inContatto.value = '+39';
+  }
+  nascondiErrore();
+}
+
+function disegnaCanali(){
+  canaliBar.innerHTML = CANALI.map(c => {
+    const spento = canaliAperti[c] === false;
+    return '<button type="button" class="porta-canale'+(spento?' spento':'')+'" data-canale="'+c+'"'+
+      (spento?' aria-disabled="true"':' role="radio" aria-checked="false"')+'>'+NOME_CANALE[c]+
+      (spento?' <small>in arrivo</small>':'')+'</button>';
+  }).join('');
+}
+
+canaliBar.addEventListener('click', e => {
+  const b = e.target.closest('button'); if(!b) return;
+  selezionaCanale(b.dataset.canale);
+});
+
+function contattoValido(){
+  const v = inContatto.value.trim();
+  if(canaleScelto === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  return /^\+39\d{9,10}$/.test(v.replace(/\s+/g,''));
+}
+
+// ── località: suggerimenti dal Worker, ripiego sulle SPOTS del motore meteo
+function nascondiSuggerimenti(){ listaSugg.hidden = true; listaSugg.innerHTML = ''; }
+function disegnaSuggerimenti(elenco){
+  if(!elenco || !elenco.length){ nascondiSuggerimenti(); return; }
+  listaSugg._dati = elenco;
+  listaSugg.innerHTML = elenco.map((v,i) =>
+    '<li data-i="'+i+'">'+v.nome+(v.regione?' <small>· '+v.regione+'</small>':'')+'</li>'
+  ).join('');
+  listaSugg.hidden = false;
+}
+async function cercaLocalita(q){
+  let risultati = null;
+  try{
+    const r = await fetch(AURA_API+'/localita?q='+encodeURIComponent(q));
+    if(r.ok){ const j = await r.json(); if(Array.isArray(j)) risultati = j; }
+  }catch(e){ /* rete giù: ripiego locale sotto */ }
+  if(!risultati && typeof SPOTS !== 'undefined'){
+    const ql = q.toLowerCase();
+    risultati = SPOTS.filter(s => s.btn.toLowerCase().includes(ql) || s.sub.toLowerCase().includes(ql))
+      .map(s => ({nome: s.btn.replace('★ ',''), regione:'', lat:s.lat, lon:s.lon}));
+  }
+  disegnaSuggerimenti(risultati);
+}
+inLocalita.addEventListener('input', () => {
+  inLat.value = ''; inLon.value = '';
+  const q = inLocalita.value.trim();
+  clearTimeout(debounceId);
+  if(q.length < 2){ nascondiSuggerimenti(); return; }
+  debounceId = setTimeout(() => cercaLocalita(q), 300);
+});
+listaSugg.addEventListener('click', e => {
+  const li = e.target.closest('li'); if(!li) return;
+  const v = listaSugg._dati[+li.dataset.i];
+  inLocalita.value = v.nome; inLat.value = v.lat; inLon.value = v.lon;
+  nascondiSuggerimenti();
+});
+document.addEventListener('click', e => {
+  if(!e.target.closest('#campoLocalita')) nascondiSuggerimenti();
+});
+
+// ── apertura porta
+async function apriPorta(){
+  try{
+    const r = await fetch(AURA_API+'/');
+    if(!r.ok) throw new Error('http '+r.status);
+    const j = await r.json();
+    if(!j || j.servizio !== 'aura') throw new Error('corpo inatteso');
+    canaliAperti = j.canali || {};
+    postiLiberi = typeof j.posti_liberi === 'number' ? j.posti_liberi : null;
+    disegnaCanali();
+    const primo = CANALI.find(c => canaliAperti[c] !== false);
+    if(primo) selezionaCanale(primo);
+    bottone.disabled = false;
+    bottone.textContent = testoBottone();
+  }catch(e){
+    chiudiPorta();
+  }
+}
+
+// ── invio
+function mostraGesto(j){
+  form.hidden = true;
+  const g = j.gesto || {};
+  let html = '';
+  if(g.tipo === 'whatsapp'){
+    html += '<p>Apri WhatsApp e manda <strong>AURA '+(g.codice||'')+'</strong>. Da quel momento sei dentro.</p>';
+    if(g.url) html += '<a class="porta-gesto-btn" href="'+g.url+'" target="_blank" rel="noopener">Apri WhatsApp</a>';
+  } else if(g.tipo === 'telegram'){
+    html += '<p>Apri Telegram e premi <strong>Avvia</strong>. Da quel momento sei dentro.</p>';
+    if(g.url) html += '<a class="porta-gesto-btn" href="'+g.url+'" target="_blank" rel="noopener">Apri Telegram</a>';
+  } else if(g.tipo === 'email'){
+    html += "<p>Controlla la tua posta: c'è un'email da confermare. Un click e sei dentro.</p>";
+  } else if(g.testo){
+    html += '<p>'+g.testo+'</p>';
+  }
+  if(j.posizione_lista != null){
+    html += "<p>Sei il numero "+j.posizione_lista+" in lista d'attesa. Ti scriviamo appena si libera un posto — la lista conta, non è un binario morto.</p>";
+  } else if(j.posto != null){
+    html += '<p>Sei il numero '+j.posto+'. Sei dentro: aspetta il primo messaggio stasera.</p>';
+  }
+  gesto.innerHTML = html;
+  gesto.hidden = false;
+}
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  nascondiErrore();
+  if(!canaleScelto || canaliAperti[canaleScelto] === false){ mostraErrore(ERRORI.canale_spento); return; }
+  if(!inConsenso.checked){ mostraErrore(ERRORI.consenso_mancante); return; }
+  if(!contattoValido()){ mostraErrore(ERRORI.contatto_non_valido); return; }
+
+  bottone.disabled = true;
+  const testoPrecedente = bottone.textContent;
+  bottone.textContent = 'Un momento…';
+
+  const corpo = {
+    canale: canaleScelto,
+    contatto: inContatto.value.trim(),
+    localita: inLocalita.value.trim(),
+    lat: inLat.value ? Number(inLat.value) : null,
+    lon: inLon.value ? Number(inLon.value) : null,
+    consenso: true,
+    informativa: 'v1',
+    trappola: inTrappola.value
+  };
+
+  let r;
+  try{
+    r = await fetch(AURA_API+'/ingresso', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(corpo)
+    });
+  }catch(networkErr){
+    chiudiPorta();
+    return;
+  }
+  let j = null;
+  try{ j = await r.json(); }catch(parseErr){ j = null; }
+
+  if(r.ok && j && j.stato){
+    mostraGesto(j);
+  } else if(j && j.errore){
+    mostraErrore(ERRORI[j.errore] || j.messaggio || 'Qualcosa non ha funzionato. Riprova.');
+    bottone.disabled = false;
+    bottone.textContent = testoPrecedente;
+  } else {
+    // risposta senza la forma attesa: non si finge un esito, si tratta come porta chiusa
+    chiudiPorta();
+  }
+});
+
+apriPorta();
+
+})();
 </script>
 </body>
 </html>

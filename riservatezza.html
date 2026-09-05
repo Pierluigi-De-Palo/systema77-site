@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RISERVATEZZA — SYSTEMA 77</title>
+<meta name="description" content="SYSTEMA 77 — Riservatezza: come trattiamo i tuoi dati quando usi AURA, il meteo che ti scrive.">
+<!-- Come il sito si vede FUORI da se': la tab del browser e l'anteprima
+     di un link incollato in chat. Favicon inline (zero file), immagine di
+     condivisione generata con la stessa palette, nessuna foto inventata. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23F2E205' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='7.5' fill='%23F2E205'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SYSTEMA 77">
+<meta property="og:title" content="RISERVATEZZA — SYSTEMA 77">
+<meta property="og:description" content="SYSTEMA 77 — Riservatezza: come trattiamo i tuoi dati quando usi AURA, il meteo che ti scrive.">
+<meta property="og:url" content="https://systema77.com/riservatezza.html">
+<meta property="og:image" content="https://systema77.com/og-systema77.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://systema77.com/og-systema77.png">
+<link rel="stylesheet" href="stile.css">
+<style>
+.blocco{border-bottom:2px solid var(--linea); padding:2.6rem 1.2rem}
+.blocco .dentro{max-width:1100px; margin:0 auto}
+.meteo-frame{width:100%; height:78svh; border:2px solid var(--linea); background:#000; margin-top:1.4rem}
+</style>
+</head>
+<body>
+
+<div class="ruota" aria-hidden="false">
+  <div class="ruota-icona"></div>
+  <div class="ruota-big">GIRA<br>IL TELEFONO<span class="m">.</span></div>
+  <div class="ruota-mono">SYSTEMA 77 SI GUARDA ORIZZONTALE.<br>
+  <span class="m">IL RESTO L'ABBIAMO GI&Agrave; RISOLTO NOI.</span></div>
+  <button type="button" class="ruota-esci" id="ruotaEsci">CONTINUA COMUNQUE</button>
+</div>
+
+<nav>
+  <a class="marca" href="index.html">&#9673; SYSTEMA 77</a>
+  <a href="storie.html">Storie</a>
+  <a href="chill.html">Chill</a>
+  <a href="progetti.html">Progetti</a>
+</nav>
+
+<div class="annuncio" style="padding-bottom:3rem">
+  <div class="dentro">
+    <div class="kick">systema 77 &middot; <b>dati e riservatezza</b></div>
+    <h1>RISERVA-<br>TEZZA<span class="m">.</span></h1>
+    <div class="riga-mono">COME TRATTIAMO I TUOI DATI QUANDO USI AURA.<br>
+    POCHE RIGHE, NESSUN LEGALESE.</div>
+  </div>
+</div>
+
+<div class="blocco" id="titolare">
+  <div class="dentro">
+    <h2>TITOLARE<span style="color:var(--ciano)">.</span></h2>
+    <div class="corpo">AURA è un servizio di SYSTEMA 77. Il titolare del trattamento dei
+    dati è SYSTEMA 77 &middot; Pierluigi De Palo.</div>
+  </div>
+</div>
+
+<div class="blocco" id="cosa-raccogliamo">
+  <div class="dentro">
+    <h2>COSA RACCOGLIAMO<span style="color:var(--ciano)">.</span></h2>
+    <div class="corpo">Per scriverti ci servono solo tre cose: un numero di telefono o
+    un'email, il posto per cui vuoi il meteo, e il canale che scegli (WhatsApp,
+    Telegram o email). Registriamo anche la data in cui hai dato il consenso, per
+    poterlo dimostrare se serve. Non ti chiediamo il nome.</div>
+  </div>
+</div>
+
+<div class="blocco" id="dove-stanno">
+  <div class="dentro">
+    <h2>DOVE STANNO I DATI<span style="color:var(--ciano)">.</span></h2>
+    <div class="corpo">I tuoi dati vivono su server Cloudflare, cifrati. Nessuna persona
+    li apre uno per uno e li legge: li usa solo il sistema, per capire dove e come
+    mandarti i messaggi che hai chiesto.</div>
+  </div>
+</div>
+
+<div class="blocco" id="per-quanto">
+  <div class="dentro">
+    <h2>PER QUANTO TEMPO<span style="color:var(--ciano)">.</span></h2>
+    <div class="corpo">Numero (o email), posto e canale restano finché sei dentro AURA:
+    se te ne vai, li cancelliamo. Il registro di quando ti abbiamo scritto — non il
+    contenuto dei messaggi — resta 30 giorni, poi sparisce da solo. Se sei in lista
+    d'attesa, il tuo posto in coda resta 180 giorni.</div>
+  </div>
+</div>
+
+<div class="blocco" id="come-fermarsi">
+  <div class="dentro">
+    <h2>COME FERMARTI O CANCELLARTI<span style="color:var(--ciano)">.</span></h2>
+    <div class="corpo">Su WhatsApp basta scrivere STOP. Su Telegram, /stop. Nell'email
+    trovi un link in fondo. Oppure scrivi in ogni momento a {email_contatto} e
+    cancelliamo tutto.</div>
+  </div>
+</div>
+
+<div class="blocco" id="nessuna-cessione">
+  <div class="dentro">
+    <h2>NESSUNA CESSIONE, NESSUNA PUBBLICIT&Agrave;<span style="color:var(--ciano)">.</span></h2>
+    <div class="corpo">Non vendiamo, non prestiamo e non condividiamo i tuoi dati con
+    nessuno. Non li usiamo per farti pubblicità, nostra o di altri. Servono a una cosa
+    sola: scriverti il meteo che hai chiesto.</div>
+  </div>
+</div>
+
+<div class="blocco" id="diritti">
+  <div class="dentro">
+    <h2>I TUOI DIRITTI<span style="color:var(--ciano)">.</span></h2>
+    <div class="corpo">Puoi chiedere in ogni momento quali dati abbiamo su di te, o
+    chiederci di cancellarli tutti. Basta scrivere a {email_contatto}.</div>
+  </div>
+</div>
+
+<div class="blocco" id="fonte-meteo" style="border-bottom:0">
+  <div class="dentro">
+    <h2>DA DOVE VIENE IL METEO<span style="color:var(--ciano)">.</span></h2>
+    <div class="corpo">Le previsioni che AURA usa arrivano da Open-Meteo, con licenza
+    CC BY 4.0. Non sono una previsione nostra: sono i dati dei modelli meteorologici,
+    e li citiamo sempre.</div>
+    <div class="riga-mono" style="margin-top:1.6rem">TESTO IN ATTESA DI RATIFICA DEL DIRETTORE</div>
+  </div>
+</div>
+
+<footer>
+  <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
+  <a href="index.html">home</a>
+</footer>
+
+<!-- — scritto da ECHO · su commessa del Direttore · dispatch D.R.A.G.O. · 2026-09-04
+     Impianto grafico di chill.html riusato (head, CSS, nav/annuncio/blocco/footer):
+     nessun file di chill.html è stato toccato, questa è una pagina nuova con testo
+     nuovo. Numeri qui dentro (30, 180 giorni) vengono dal piano ratificato dal
+     Direttore, non inventati. {email_contatto} resta un segnaposto finché il
+     Direttore non indica l'indirizzo vero. -->
+<script>
+/* LA VIA D'USCITA, ANCHE QUI. La home ce l'aveva dal 17/08, queste no: chi
+   atterrava diretto su questa pagina col blocco rotazione attivo restava fuori
+   dall'intero sito (WCAG 1.3.4). Qui non c'e' il binario da rimisurare, quindi
+   basta togliere il muro. La scelta vale per la sessione, come in home. */
+(function(){
+  var esci=document.getElementById('ruotaEsci');
+  try{ if(sessionStorage.getItem('s77-passa')==='1') document.documentElement.classList.add('passa'); }catch(e){}
+  if(esci) esci.addEventListener('click', function(){
+    document.documentElement.classList.add('passa');
+    try{ sessionStorage.setItem('s77-passa','1'); }catch(e){}
+  });
+})();
+</script>
+
+</body>
+</html>
