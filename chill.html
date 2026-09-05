@@ -4,103 +4,93 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CHILL — SYSTEMA 77</title>
-<meta name="description" content="SYSTEMA 77 — Chill: meteo, radio, podcast. Servizi d'ambiente, integrati o singoli.">
-<!-- Come il sito si vede FUORI da se': la tab del browser e l'anteprima
-     di un link incollato in chat. Favicon inline (zero file), immagine di
-     condivisione generata con la stessa palette, nessuna foto inventata. -->
+<meta name="description" content="SYSTEMA 77 — Chill: meteo, radio, podcast. Servizi d'ambiente, integrati o da soli.">
+<!-- Come il sito si vede FUORI da se': la tab del browser e l'anteprima di un
+     link incollato in chat. Favicon inline (zero file), immagine di condivisione
+     con la stessa palette, nessuna foto inventata. -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23F2E205' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='7.5' fill='%23F2E205'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SYSTEMA 77">
 <meta property="og:title" content="CHILL — SYSTEMA 77">
-<meta property="og:description" content="SYSTEMA 77 — Chill: meteo, radio, podcast. Servizi d'ambiente, integrati o singoli.">
+<meta property="og:description" content="SYSTEMA 77 — Chill: meteo, radio, podcast. Servizi d'ambiente, integrati o da soli.">
 <meta property="og:url" content="https://systema77.com/chill.html">
 <meta property="og:image" content="https://systema77.com/og-systema77.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://systema77.com/og-systema77.png">
+<!-- I font si chiedono da qui, non da un @import dentro il CSS: l'@import
+     costringeva il browser a scaricare prima il foglio e POI accorgersi dei
+     font, un viaggio in fila invece che in parallelo. Su un link aperto col
+     telefono in giro quello e' mezzo secondo di testo invisibile. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Share+Tech+Mono&display=swap">
 <link rel="stylesheet" href="stile.css">
-<style>
-.blocco{border-bottom:2px solid var(--linea); padding:2.6rem 1.2rem}
-.blocco .dentro{max-width:1100px; margin:0 auto}
-.meteo-frame{width:100%; height:78svh; border:2px solid var(--linea); background:#000; margin-top:1.4rem}
-</style>
 </head>
 <body>
 
-<div class="ruota" aria-hidden="false">
-  <div class="ruota-icona"></div>
-  <div class="ruota-big">GIRA<br>IL TELEFONO<span class="m">.</span></div>
-  <div class="ruota-mono">SYSTEMA 77 SI GUARDA ORIZZONTALE.<br>
-  <span class="m">IL RESTO L'ABBIAMO GI&Agrave; RISOLTO NOI.</span></div>
-  <button type="button" class="ruota-esci" id="ruotaEsci">CONTINUA COMUNQUE</button>
-</div>
 
 <nav>
   <a class="marca" href="index.html">&#9673; SYSTEMA 77</a>
-  <a href="storie.html">Storie</a>
-  <a href="chill.html" aria-current="page">Chill</a>
+  <a href="servizi.html">Servizi</a>
+  <a href="editrice.html">Casa editrice</a>
+  <a href="officina.html">Officina</a>
   <a href="progetti.html">Progetti</a>
+  <a href="chill.html" aria-current="page">Chill</a>
+  <span class="spazio"></span>
 </nav>
 
-<div class="annuncio" style="padding-bottom:3rem">
+<div class="annuncio">
   <div class="dentro">
-    <div class="kick">servizi secondari &middot; <b>d'ambiente</b></div>
+    <div class="kick">chill &middot; <b>servizi d&rsquo;ambiente</b></div>
     <h1><span class="striscia" style="background:var(--ciano)">CHILL.</span></h1>
-    <div class="riga-mono">METEO &middot; RADIO &middot; PODCAST.<br>
-    INTEGRATI ALLA VISIONE, O DA SOLI.</div>
+    <p class="claim">METEO <span class="c" style="color:var(--ciano)">&middot;</span> RADIO
+       <span class="c" style="color:var(--ciano)">&middot;</span> PODCAST</p>
+    <p class="dice">Le cose che si tengono accese mentre si fa altro. Integrate alla
+       visione, o da sole.</p>
   </div>
 </div>
 
 <div class="blocco" id="meteo">
   <div class="dentro">
     <h2>METEO<span style="color:var(--ciano)">.</span></h2>
-    <div class="riga-mono"><span class="stato on">FUNZIONA GI&Agrave;</span> &middot; SI CHIAMA AURA &middot; IL MOTORE CONOSCE QUATTRO LOCALIT&Agrave; VERE</div>
+    <p class="dice">Si chiama <b>AURA</b>. Quattro localit&agrave; vere, tre modelli messi a
+       confronto: quando non sono d&rsquo;accordo si vede, invece di scegliere per voi
+       quello che dice la cosa piu&rsquo; comoda.</p>
+    <p style="margin-top:1.4rem"><span class="stato on">funziona gi&agrave;</span></p>
+    <a class="bottone c" href="meteo.html">Guardalo adesso &rarr;</a>
+    <p class="riga-mono">dati open-meteo su licenza commerciale</p>
     <!-- Stato vero, non quello di prima: la chiave c'è dal 19/08
          (AURA/LICENZA-DATI.md), il servizio è online su /meteo.html e
          risponde con dati veri. Il prossimo passo non è tecnico: AURA sta
          per imparare a scrivere lei, la sera prima, su WhatsApp e Telegram
          — vedi AURA/PAROLE-AURA-2077.md. — ECHO, 2026-09-04 -->
-    <div class="riga-mono" style="margin-top:1rem"><a class="stato on" href="/meteo.html">GUARDALO ADESSO &rarr;</a> &middot; QUATTRO LOCALIT&Agrave; &middot; TRE MODELLI A CONFRONTO &middot; DATI OPEN-METEO SU LICENZA COMMERCIALE</div>
   </div>
 </div>
 
 <div class="blocco" id="radio">
   <div class="dentro">
     <h2>RADIO<span style="color:var(--ciano)">.</span></h2>
-    <div class="riga-mono">UNA VOCE, NON UNA PLAYLIST.<br>
-    <span class="stato">IN ACCORDATURA &middot; SI ACCENDE QUANDO I DIRITTI SONO NOSTRI, TUTTI</span></div>
-    <div class="riga-mono" style="margin-top:1rem">NON SI SEGUE. SI SINTONIZZA &mdash; E NON CONTA CHI ASCOLTA.</div>
+    <p class="dice">Una voce, non una playlist. Non si segue e non insegue:
+       <b>si sintonizza</b>, e non conta chi ascolta.</p>
+    <p style="margin-top:1.4rem"><span class="stato">in accordatura &middot; si accende coi diritti nostri</span></p>
   </div>
 </div>
 
-<div class="blocco" id="podcast" style="border-bottom:0">
+<div class="blocco" id="podcast">
   <div class="dentro">
     <h2>PODCAST<span style="color:var(--ciano)">.</span></h2>
-    <div class="riga-mono">EPISODI MONTATI IN CASA, SIGLA COMPRESA.<br>
-    <span class="stato">AL CANCELLO DIRITTI &middot; NESSUNA VOCE CHE NON POSSIAMO FIRMARE</span></div>
+    <p class="dice">Episodi montati in casa, sigla compresa. Nessuna voce che
+       non possiamo firmare.</p>
+    <p style="margin-top:1.4rem"><span class="stato">al cancello diritti</span></p>
   </div>
 </div>
 
 <footer>
   <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
-  <a href="index.html">home</a>
+  <span><a href="mailto:pierluigidepalo@gmail.com">scriveteci</a> &middot; <a href="index.html">home</a></span>
 </footer>
-
-<script>
-/* LA VIA D'USCITA, ANCHE QUI. La home ce l'aveva dal 17/08, queste no: chi
-   atterrava diretto su questa pagina col blocco rotazione attivo restava fuori
-   dall'intero sito (WCAG 1.3.4). Qui non c'e' il binario da rimisurare, quindi
-   basta togliere il muro. La scelta vale per la sessione, come in home. */
-(function(){
-  var esci=document.getElementById('ruotaEsci');
-  try{ if(sessionStorage.getItem('s77-passa')==='1') document.documentElement.classList.add('passa'); }catch(e){}
-  if(esci) esci.addEventListener('click', function(){
-    document.documentElement.classList.add('passa');
-    try{ sessionStorage.setItem('s77-passa','1'); }catch(e){}
-  });
-})();
-</script>
-
+<script src="s77.js" defer></script>
 </body>
 </html>

@@ -4,185 +4,167 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SYSTEMA 77 — AI AGENT SERVICE</title>
-<meta name="description" content="SYSTEMA 77 — AI Agent Service. Servizi di automatizzazione AI: immagini, storie, film, musica. CHILL: meteo, radio, podcast. E ANIMA GAME.">
-<!-- Come il sito si vede FUORI da se': la tab del browser e l'anteprima
-     di un link incollato in chat. Favicon inline (zero file), immagine di
-     condivisione generata con la stessa palette, nessuna foto inventata. -->
+<meta name="description" content="SYSTEMA 77 — AI Agent Service. Automazione con agenti AI, produzione per terzi, ricerca e sviluppo. Casa editrice, officina, ANIMA GAME.">
+<!-- Come il sito si vede FUORI da se': la tab del browser e l'anteprima di un
+     link incollato in chat. Favicon inline (zero file), immagine di condivisione
+     con la stessa palette, nessuna foto inventata. -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23F2E205' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='7.5' fill='%23F2E205'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SYSTEMA 77">
 <meta property="og:title" content="SYSTEMA 77 — AI AGENT SERVICE">
-<meta property="og:description" content="SYSTEMA 77 — AI Agent Service. Servizi di automatizzazione AI: immagini, storie, film, musica. CHILL: meteo, radio, podcast. E ANIMA GAME.">
-<meta property="og:url" content="https://systema77.com/">
+<meta property="og:description" content="SYSTEMA 77 — AI Agent Service. Automazione con agenti AI, produzione per terzi, ricerca e sviluppo. Casa editrice, officina, ANIMA GAME.">
+<meta property="og:url" content="https://systema77.com/index.html">
 <meta property="og:image" content="https://systema77.com/og-systema77.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://systema77.com/og-systema77.png">
+<!-- I font si chiedono da qui, non da un @import dentro il CSS: l'@import
+     costringeva il browser a scaricare prima il foglio e POI accorgersi dei
+     font, un viaggio in fila invece che in parallelo. Su un link aperto col
+     telefono in giro quello e' mezzo secondo di testo invisibile. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Share+Tech+Mono&display=swap">
 <link rel="stylesheet" href="stile.css">
 </head>
 <body>
 
-<!-- L'ORDINE: SYSTEMA 77 si guarda orizzontale. Sul telefono in verticale, questo copre tutto. -->
-<div class="ruota" aria-hidden="false">
-  <div class="ruota-icona"></div>
-  <div class="ruota-big">GIRA<br>IL TELEFONO<span class="m">.</span></div>
-  <div class="ruota-mono">SYSTEMA 77 SI GUARDA ORIZZONTALE.<br>
-  <span class="m">IL RESTO L'ABBIAMO GI&Agrave; RISOLTO NOI.</span></div>
-  <!-- La via d'uscita (WCAG 1.3.4): chi ha il blocco rotazione attivo, o non puo'
-       girare il telefono, senza questo bottone resta fuori da TUTTO il sito. -->
-  <button type="button" class="ruota-esci" id="ruotaEsci">CONTINUA COMUNQUE</button>
+<!-- L'INVITO A GIRARE — una striscia, non un muro. Vedi la nota in stile.css:
+     fino al 03/09 il telefono in verticale trovava un cartello a tutto schermo
+     prima del sito. Un link che si diffonde si apre col telefono in mano. -->
+<div class="suggerimento" id="suggerimento">
+  <span class="icona" aria-hidden="true"></span>
+  <p>SYSTEMA 77 si guarda orizzontale. Gira il telefono.</p>
+  <button type="button" id="chiudiSuggerimento" aria-label="Chiudi l'avviso">&times;</button>
 </div>
 
 <nav>
-  <!-- Tre voci, tutte piene. Immagini, Film e Musica sono cantieri: stanno nel
-       blocco «IN OFFICINA» in home, non qui. Il menu è la promessa, la pagina è
-       il contenuto — e sei voci di cui quattro portavano a un cartello. -->
   <a class="marca" href="index.html">&#9673; SYSTEMA 77</a>
-  <a href="storie.html">Storie</a>
-  <a href="chill.html">Chill</a>
+  <a href="servizi.html">Servizi</a>
+  <a href="editrice.html">Casa editrice</a>
+  <a href="officina.html">Officina</a>
   <a href="progetti.html">Progetti</a>
+  <a href="chill.html">Chill</a>
+  <span class="spazio"></span>
 </nav>
 
-<!-- IL BINARIO: si scrolla in giù, si viaggia verso destra. Cinque quadri in 2.35. -->
+<!-- IL BINARIO: si scrolla in giu', si viaggia verso destra. Sei quadri in 2.35 —
+     uno per ogni voce di menu, piu' l'apertura. La home E' l'indice del sito.
+     Ordine del Direttore, 04/09: «1 servizi · 2 storie diventa casa editrice ·
+     3 officina (dove e' finito?) · 4 progetti · 5 chill». -->
 <div class="binario-alt" id="binarioAlt">
   <div class="binario">
     <div class="corsa" id="corsa">
 
-      <!-- QUADRO 1 · LA SCRITTA PIÙ GRANDE -->
+      <!-- QUADRO 1 · L'APERTURA. Rettifica del Direttore: «questo si deve
+           leggere MOLTO meglio: AI AGENT SERVICE». Adesso e' la seconda cosa
+           piu' grande della pagina, in Archivo bianco, non in mono grigio. -->
       <section class="quadro77">
         <div class="dentro">
-          <div class="kick">AI Agent Service &middot; <b>dal 2077</b></div>
+          <div class="kick">agenzia &middot; <b>dal 2077</b></div>
           <div class="gigante">SYSTEMA<br><span class="g">77.</span></div>
-          <div class="riga-mono" style="margin-top:1.6rem">SERVIZI DI AUTOMATIZZAZIONE AI.</div>
-          <div class="riga-mono">SIETE ARRIVATI SENZA CHE VI CERCASSIMO.<br>
-          <span class="m">&Egrave; NORMALE: FUNZIONA COS&Igrave;.</span></div>
+          <p class="claim">AI AGENT <span class="g">SERVICE</span>.</p>
+          <p class="dice">Costruiamo agenti che lavorano al posto vostro &mdash; e produciamo
+             quello che serve a farli parlare: storie, libri, immagini, film, musica.</p>
+          <p class="dice">Siete arrivati senza che vi cercassimo. &Egrave; normale: funziona cos&igrave;.</p>
         </div>
-        <span class="angolo">quadro 1/5 &middot; 2.35:1 &middot; scendi: si va a destra &#9654;</span>
+        <span class="angolo">quadro 1/6<span class="solo-pista"> &middot; scendi: si va a destra &#9654;</span></span>
       </section>
 
-      <!-- QUADRO 2 · OFFICINA: i quattro primari -->
+      <!-- QUADRO 2 · SERVIZI. Ordine del Direttore 04/09: «dobbiamo mettere
+           anche i servizi per terzi, la ricerca e sviluppo, nel menu» e
+           «questa parte va sviluppata: e' qui che potrebbero arrivare contatti
+           di lavoro. SYSTEMA 77 e' arte per me, ma dobbiamo anche vendere». -->
       <section class="quadro77">
         <div class="dentro">
-          <h2 style="font-size:clamp(2.2rem,6vw,4.2rem)">QUELLO CHE<br><span class="striscia">FACCIAMO.</span></h2>
-          <!-- STORIE ha contenuto vero e sta nel menu. Gli altri tre sono cantieri
-               aperti: vivono qui, dichiarati per quello che sono. Non si cancella
-               niente — si smette di spacciare un cantiere per una stanza. -->
+          <h2>QUELLO CHE FACCIAMO<br><span class="striscia">PER VOI.</span></h2>
+          <p class="claim">AUTOMAZIONE <span class="m">&middot;</span> PRODUZIONE PER TERZI
+             <span class="m">&middot;</span> RICERCA &amp; SVILUPPO</p>
+          <div class="strip rs">
+            <div class="tag">SERVIZI</div>
+            <a href="servizi.html#automazione">AUTOMAZIONE<span>processi che oggi vi costano ore</span></a>
+            <a href="servizi.html#terzi">PER TERZI<span>produciamo con i nostri strumenti</span></a>
+            <a href="servizi.html#rs">RICERCA &amp; SVILUPPO<span>cose che non esistono ancora</span></a>
+          </div>
+        </div>
+        <span class="angolo">quadro 2/6</span>
+      </section>
+
+      <!-- QUADRO 3 · CASA EDITRICE. Era «STORIE». Parole del Direttore:
+           «CASA EDITRICE! Produciamo storie. Libri o film e' uguale — cioe'
+           siamo una casa editrice di libri, avremo anche lo shop». -->
+      <section class="quadro77">
+        <div class="dentro">
+          <h2>SIAMO UNA<br><span class="striscia">CASA EDITRICE.</span></h2>
+          <p class="claim">PRODUCIAMO STORIE. LIBRO O FILM, <span class="g">&Egrave; LO STESSO LAVORO</span>.</p>
+          <p class="dice">Le scriviamo, le stampiamo e le vendiamo. Quando la forma giusta &egrave;
+             il film, la stessa storia diventa un film.</p>
+          <a class="bottone" href="editrice.html">Entra in casa editrice</a>
+        </div>
+        <span class="angolo">quadro 3/6</span>
+      </section>
+
+      <!-- QUADRO 4 · OFFICINA. Il Direttore: «3 officina, dove e' finito?».
+           Era finito dentro il quadro 2 e non stava nel menu: immagini, film e
+           musica erano tre pagine orfane. Adesso l'officina e' una porta vera. -->
+      <section class="quadro77">
+        <div class="dentro">
+          <h2>E QUI<br>SI <span style="color:var(--magenta)">FABBRICA.</span></h2>
+          <p class="claim">IMMAGINI FERME <span class="m">&middot;</span> IMMAGINI IN MOVIMENTO
+             <span class="m">&middot;</span> SUONO</p>
           <div class="strip officina">
-            <div class="tag">STORIE</div>
-            <a href="storie.html">STORIE<span>le inventiamo. poi le verifichiamo</span></a>
-          </div>
-          <div class="strip officina" style="margin-top:.9rem">
-            <div class="tag">IN OFFICINA</div>
-            <a href="immagini.html">IMMAGINI<span>le facciamo noi. voi le guardate</span></a>
-            <a href="film.html">FILM<span>il cinema &egrave; qui dentro</span></a>
-            <a href="musica.html">MUSICA<span>master, non demo</span></a>
+            <div class="tag">OFFICINA</div>
+            <a href="immagini.html">IMMAGINI<span>fotografie panoramiche, fine art</span></a>
+            <a href="film.html">FILM<span>video e film, analogico e digitale</span></a>
+            <a href="musica.html">MUSICA<span>colonne sonore e musica originale</span></a>
           </div>
         </div>
-        <span class="angolo">quadro 2/5</span>
+        <span class="angolo">quadro 4/6</span>
       </section>
 
-      <!-- QUADRO 3 · CHILL (blu) -->
+      <!-- QUADRO 5 · PROGETTI. Il Direttore, 04/09: «all'interno di progetti ci
+           sta solo animagame», «deve essere spiegato che e' a invito e deve
+           portare a una pagina che gia' esiste». -->
       <section class="quadro77">
         <div class="dentro">
-          <h2 style="font-size:clamp(2.2rem,6vw,4.2rem)">E QUANDO NON<br>SERVE NIENTE<span style="color:var(--ciano)">.</span></h2>
-          <div class="strip chill2">
-            <div class="tag">CHILL</div>
-            <a href="chill.html#meteo">METEO<span>funziona gi&agrave;</span></a>
-            <a href="chill.html#radio">RADIO<span>in accordatura</span></a>
-            <a href="chill.html#podcast">PODCAST<span>al cancello diritti</span></a>
-          </div>
+          <h2>POI C'&Egrave;<br>IL GIOCO<span style="color:var(--verde-game)">.</span></h2>
+          <p class="claim">ANIMA GAME. <span style="color:var(--verde-game)">A INVITO.</span></p>
+          <p class="dice">Un gioco a invito: serve una carta vera, e la carta arriva a casa.
+             Chi ce l&rsquo;ha entra e gioca. Senza, si pu&ograve; guardare &mdash; non &egrave; un muro,
+             &egrave; la regola.</p>
+          <a class="bottone v" href="progetti.html">Com&rsquo;&egrave; fatto</a>
         </div>
-        <span class="angolo">quadro 3/5</span>
+        <span class="angolo">quadro 5/6</span>
       </section>
 
-      <!-- QUADRO 4 · ANIMA GAME (verde, ospite dichiarato) -->
-      <section class="quadro77">
-        <div class="dentro">
-          <h2 style="font-size:clamp(2.2rem,6vw,4.2rem)">POI C'&Egrave;<br>IL GIOCO<span style="color:#38E08A">.</span></h2>
-          <div class="strip game">
-            <div class="tag">ANIMA GAME</div>
-            <a href="progetti.html">A INVITO<span>non cercatelo: vi trova lui &#10035;</span></a>
-            <a href="progetti.html">CARTA VERA<span>strumenti veri, punteggio</span></a>
-          </div>
-        </div>
-        <span class="angolo">quadro 4/5</span>
-      </section>
-
-      <!-- QUADRO 5 · R&S (blu, in fondo) + coda -->
+      <!-- QUADRO 6 · CHILL + il contatto. Il contatto sta in fondo alla bobina
+           perche' e' li' che arriva chi ha guardato tutto: non e' una nota, e'
+           la porta. Bottone pieno, non una riga mono grigia. -->
       <section class="quadro77" style="border-right:0">
         <div class="dentro">
-          <h2 style="font-size:clamp(2.2rem,6vw,4.2rem)">RICERCA &amp;<br>SVILUPPO<span style="color:var(--ciano)">.</span></h2>
-          <div class="strip rs">
-            <div class="tag">R&amp;S</div>
-            <div class="voce">PROGETTI SU MISURA, VIA AI<span>prodotti che non sapete ancora di volere</span></div>
+          <h2>E QUANDO NON<br>SERVE NIENTE<span style="color:var(--ciano)">.</span></h2>
+          <div class="strip chill2">
+            <div class="tag">CHILL</div>
+            <a href="meteo.html">METEO<span>quattro localit&agrave;, tre modelli</span></a>
+            <a href="chill.html#radio">RADIO<span>una voce, non una playlist</span></a>
+            <a href="chill.html#podcast">PODCAST<span>montati in casa, sigla compresa</span></a>
           </div>
-          <div class="riga-mono" style="margin-top:2.2rem">&copy; 2026&rarr;2077 &middot; SYSTEMA 77
-          &nbsp;&middot;&nbsp; <a href="mailto:pierluigidepalo@gmail.com" style="border-bottom:1px solid var(--linea)">CONTATTO</a></div>
+          <p class="dice" style="margin-top:2.2rem">Avete un lavoro per noi, o un&rsquo;idea che non
+             sapete se si pu&ograve; fare?</p>
+          <a class="bottone pieno" href="mailto:pierluigidepalo@gmail.com">Scriveteci</a>
         </div>
-        <span class="angolo">quadro 5/5 &middot; fine bobina</span>
+        <span class="angolo">quadro 6/6<span class="solo-pista"> &middot; fine bobina</span></span>
       </section>
 
     </div>
   </div>
 </div>
 
-<script>
-/* Il binario: scroll Y → corsa X. Scrollbar nativa, zero librerie.
-   SYSTEMA 77 SI GUARDA ORIZZONTALE: sul telefono in verticale l'invito è girare
-   lo schermo (overlay via CSS). Dal 17/08 però l'invito non è più un muro: chi
-   non può girare preme «CONTINUA COMUNQUE» e ottiene gli stessi cinque quadri
-   in colonna. Il binario resta acceso in orizzontale, a ogni larghezza. */
-(function(){
-  var alt=document.getElementById('binarioAlt'), corsa=document.getElementById('corsa');
-  var verticale=window.matchMedia('(orientation: portrait) and (max-width:600px)');
-
-  /* LA VIA D'USCITA. L'ordine di girare resta l'invito, ma non e' piu' un muro:
-     chi non puo' girare il telefono (blocco rotazione su iOS, supporto fisso,
-     tablet legato) passa oltre e vede gli stessi cinque quadri in colonna.
-     La scelta vale per la sessione: chiederla a ogni pagina sarebbe lo stesso
-     muro, solo piu' educato. */
-  var esci=document.getElementById('ruotaEsci');
-  function passaOltre(){
-    document.documentElement.classList.add('passa');
-    try{ sessionStorage.setItem('s77-passa','1'); }catch(e){}
-    misura(); muovi();
-  }
-  try{ if(sessionStorage.getItem('s77-passa')==='1') document.documentElement.classList.add('passa'); }catch(e){}
-  if(esci) esci.addEventListener('click', passaOltre);
-  /* In verticale il binario e' fermo. Se pero' si e' passati oltre, la pagina
-     deve poter crescere: si toglie l'altezza fissa invece di lasciarla correggere
-     al solo !important del CSS. In orizzontale «passa» non conta: la pista torna
-     quella di sempre. */
-  function impilato(){
-    return verticale.matches && document.documentElement.classList.contains('passa');
-  }
-  function misura(){
-    if(impilato()){ alt.style.height=''; return; }
-    if(verticale.matches){ alt.style.height='100svh'; return; }
-    var extra=corsa.scrollWidth-window.innerWidth;
-    alt.style.height=(window.innerHeight+extra)+'px';
-  }
-  function muovi(){
-    if(impilato()){ corsa.style.transform=''; return; }
-    if(verticale.matches) return;
-    var r=alt.getBoundingClientRect();
-    var extra=corsa.scrollWidth-window.innerWidth;
-    var y=Math.min(Math.max(-r.top,0), extra);
-    corsa.style.transform='translateX(-'+y+'px)';
-  }
-  window.addEventListener('scroll',muovi,{passive:true});
-  window.addEventListener('resize',function(){misura();muovi();});
-  window.addEventListener('orientationchange',function(){setTimeout(function(){misura();muovi();},60);});
-  window.addEventListener('load',function(){misura();muovi();});
-  if(verticale.addEventListener) verticale.addEventListener('change',function(){misura();muovi();});
-  misura(); muovi();
-  setTimeout(function(){misura();muovi();},350); /* font e layout tardivi */
-})();
-</script>
-
-<!-- ACID · font della proposta · annunci alla TAFFO · il binario 2.35 è idea del Direttore
-     («siamo nel 2077 e dobbiamo creare artifici»). creato da D.R.A.G.O. 2026-07-28 ·
-     riscritture JUDY 2026-08-08 -->
+<footer>
+  <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
+  <span><a href="mailto:pierluigidepalo@gmail.com">scriveteci</a> &middot; <a href="index.html">home</a></span>
+</footer>
+<script src="s77.js" defer></script>
 </body>
 </html>

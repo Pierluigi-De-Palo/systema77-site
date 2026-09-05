@@ -1,0 +1,8 @@
+# systema77.com — il link si diffonde, quindi si dice cosa si indicizza.
+User-agent: *
+Allow: /
+# Fuori dagli indici: pagine di servizio e lavori staccati dal sito.
+Disallow: /404.html
+Disallow: /bilancia.html
+
+Sitemap: https://systema77.com/sitemap.xml

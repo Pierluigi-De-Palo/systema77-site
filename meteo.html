@@ -165,6 +165,15 @@ footer a{color:var(--text-secondary)}
 </style>
 </head>
 <body>
+<!-- LA VIA DI RITORNO. Fino al 04/09 questa pagina era un vicolo cieco: ci si
+     arrivava dalla home e si tornava solo col tasto indietro del browser.
+     Il link del sito adesso si diffonde: chi entra deve poter tornare a casa.
+     Barretta minima e autonoma — l'impianto di AURA non si tocca. -->
+<a href="index.html" style="position:fixed;top:0;left:0;z-index:99;
+   font-family:'Share Tech Mono',ui-monospace,Menlo,monospace;font-size:11px;
+   letter-spacing:.16em;text-transform:uppercase;text-decoration:none;
+   color:#F2E205;background:#0A0A0A;border:1px solid #262626;border-top:0;
+   border-left:0;padding:.5rem .8rem">&#9673;&nbsp; Systema 77</a>
 <div class="wrap">
   <header>
     <h1>AURA <span class="sl">—</span> meteo</h1>
@@ -315,7 +324,19 @@ const SPOTS=[
     lat:39.113,lon:8.437,mar:{lat:39.04,lon:8.47,label:'Golfo di Palmas'}}
 ];
 const HOURLY='temperature_2m,apparent_temperature,relative_humidity_2m,pressure_msl,precipitation,precipitation_probability,cloud_cover,wind_speed_10m,wind_gusts_10m,wind_direction_10m';
-/* ═══ LA CHIAVE DEL PIANO A PAGAMENTO — UNICA RIGA DA CAMBIARE ═══════════════
+/* ⚠️ AVVISO DI JUDY, 04/09 — LEGGERE PRIMA DI PUBBLICARE PIU' LARGO.
+   La chiave qui sotto e' in chiaro: in un repo pubblico, e servita dentro una
+   pagina pubblica. Chiunque apra il sorgente la legge, e la puo' usare — le
+   chiamate finiscono sull'abbonamento del Direttore.
+   Non e' un errore di chi l'ha scritta: una pagina statica che chiama l'API
+   dal browser NON PUO' tenere segreta una chiave, mai. Le uscite sono due:
+     a) limitare la chiave per dominio dal pannello di Open-Meteo, se lo
+        consente — la chiave resta visibile ma serve solo da systema77.com;
+     b) far passare le chiamate da un worker nostro che tiene la chiave dalla
+        sua parte, e la pagina chiama il worker (impianto di SQUELCH).
+   Finche' nessuna delle due e' fatta, questa e' una spesa aperta a chiunque.
+
+   ═══ LA CHIAVE DEL PIANO A PAGAMENTO — UNICA RIGA DA CAMBIARE ═══════════════
    Incolla fra gli apici la chiave ricevuta da Open-Meteo dopo l'abbonamento.
 
    VUOTA  → server gratuito. USO INTERNO SOLTANTO: il piano gratuito vieta

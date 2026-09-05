@@ -4,69 +4,76 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MUSICA — SYSTEMA 77</title>
-<meta name="description" content="SYSTEMA 77 — Musica. Master, non demo. Parlata e chiusa in casa.">
-<!-- Come il sito si vede FUORI da se': la tab del browser e l'anteprima
-     di un link incollato in chat. Favicon inline (zero file), immagine di
-     condivisione generata con la stessa palette, nessuna foto inventata. -->
+<meta name="description" content="SYSTEMA 77 — Musica. Colonne sonore e musica originale, dal primo suono al master.">
+<!-- Come il sito si vede FUORI da se': la tab del browser e l'anteprima di un
+     link incollato in chat. Favicon inline (zero file), immagine di condivisione
+     con la stessa palette, nessuna foto inventata. -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23F2E205' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='7.5' fill='%23F2E205'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SYSTEMA 77">
 <meta property="og:title" content="MUSICA — SYSTEMA 77">
-<meta property="og:description" content="SYSTEMA 77 — Musica. Master, non demo. Parlata e chiusa in casa.">
+<meta property="og:description" content="SYSTEMA 77 — Musica. Colonne sonore e musica originale, dal primo suono al master.">
 <meta property="og:url" content="https://systema77.com/musica.html">
 <meta property="og:image" content="https://systema77.com/og-systema77.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://systema77.com/og-systema77.png">
+<!-- I font si chiedono da qui, non da un @import dentro il CSS: l'@import
+     costringeva il browser a scaricare prima il foglio e POI accorgersi dei
+     font, un viaggio in fila invece che in parallelo. Su un link aperto col
+     telefono in giro quello e' mezzo secondo di testo invisibile. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Share+Tech+Mono&display=swap">
 <link rel="stylesheet" href="stile.css">
 </head>
 <body>
 
-<div class="ruota" aria-hidden="false">
-  <div class="ruota-icona"></div>
-  <div class="ruota-big">GIRA<br>IL TELEFONO<span class="m">.</span></div>
-  <div class="ruota-mono">SYSTEMA 77 SI GUARDA ORIZZONTALE.<br>
-  <span class="m">IL RESTO L'ABBIAMO GI&Agrave; RISOLTO NOI.</span></div>
-  <button type="button" class="ruota-esci" id="ruotaEsci">CONTINUA COMUNQUE</button>
-</div>
 
 <nav>
   <a class="marca" href="index.html">&#9673; SYSTEMA 77</a>
-  <a href="storie.html">Storie</a>
-  <a href="chill.html">Chill</a>
+  <a href="servizi.html">Servizi</a>
+  <a href="editrice.html">Casa editrice</a>
+  <a href="officina.html" aria-current="page">Officina</a>
   <a href="progetti.html">Progetti</a>
+  <a href="chill.html">Chill</a>
+  <span class="spazio"></span>
 </nav>
 
 <div class="annuncio">
   <div class="dentro">
-    <div class="kick">S77&middot;04 &middot; <b>officina</b></div>
+    <div class="kick"><a href="officina.html">officina</a> &middot; <b>stanza 3</b></div>
     <h1>MUSICA<span class="m">.</span></h1>
-    <div class="riga-mono">MASTER, NON DEMO. SCRITTA, PARLATA E CHIUSA IN CASA.<br>
-    L'ASCOLTO ARRIVA QUI, SENZA PIATTAFORME.</div>
-    <div class="riga-mono" style="margin-top:2.4rem"><span class="stato">MASTER CHIUSI &middot; SALA D'ASCOLTO IN ALLESTIMENTO</span></div>
+    <p class="claim">COLONNE SONORE E MUSICA ORIGINALE.
+       <span class="g">MASTER, NON DEMO.</span></p>
+    <p class="dice">Scriviamo colonne sonore e musica originale, dal primo suono al master.
+       Scritta, suonata e chiusa in casa: quello che esce &egrave; finito, <b>non un provino</b>.</p>
+  </div>
+</div>
+
+<div class="blocco">
+  <div class="dentro">
+    <h2>SU MATERIALE DI ALTRI<span style="color:var(--ciano)">.</span></h2>
+    <p class="dice">Si pu&ograve; fare, e si fa <b>solo con le autorizzazioni in mano</b>,
+       ottenute prima di cominciare. &Egrave; una regola di casa e non si tratta:
+       &egrave; quello che ci permette di firmare il lavoro.</p>
+  </div>
+</div>
+
+<div class="blocco">
+  <div class="dentro">
+    <h2>LA SALA D&rsquo;ASCOLTO<span style="color:var(--magenta)">.</span></h2>
+    <p class="dice">L&rsquo;ascolto arriva qui, senza passare da piattaforme di altri.</p>
+    <p style="margin-top:1.4rem"><span class="stato">master chiusi &middot; sala in allestimento</span></p>
+    <a class="bottone" href="officina.html" style="margin-top:1.9rem">Torna in officina</a>
   </div>
 </div>
 
 <footer>
   <span>&copy; 2026&rarr;2077 &middot; SYSTEMA 77</span>
-  <a href="index.html">home</a>
+  <span><a href="mailto:pierluigidepalo@gmail.com">scriveteci</a> &middot; <a href="index.html">home</a></span>
 </footer>
-
-<script>
-/* LA VIA D'USCITA, ANCHE QUI. La home ce l'aveva dal 17/08, queste no: chi
-   atterrava diretto su questa pagina col blocco rotazione attivo restava fuori
-   dall'intero sito (WCAG 1.3.4). Qui non c'e' il binario da rimisurare, quindi
-   basta togliere il muro. La scelta vale per la sessione, come in home. */
-(function(){
-  var esci=document.getElementById('ruotaEsci');
-  try{ if(sessionStorage.getItem('s77-passa')==='1') document.documentElement.classList.add('passa'); }catch(e){}
-  if(esci) esci.addEventListener('click', function(){
-    document.documentElement.classList.add('passa');
-    try{ sessionStorage.setItem('s77-passa','1'); }catch(e){}
-  });
-})();
-</script>
-
+<script src="s77.js" defer></script>
 </body>
 </html>
