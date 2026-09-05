@@ -14,9 +14,10 @@ e un gioco.
 | `officina.html` | dove si fabbrica — porta alle tre stanze |
 | `immagini.html` · `film.html` · `musica.html` | le tre stanze dell'officina |
 | `progetti.html` | **solo ANIMA GAME**, e porta ad `animagame.io` |
-| `chill.html` | **AURA** (accesa) · **radio** (accesa) · podcast |
+| `chill.html` | AURA (in allestimento) · radio (in accordatura) · podcast |
 | `divulgazione.html` | la porta verso `cyberboomer.ninja` — la divulgazione sta su un pianeta suo |
-| `meteo.html` | AURA, il meteo. Vive già |
+| `aura.html` | **AURA per il pubblico**: il cielo a icone, e la finestra delle richieste. Motore dichiarato e spento |
+| `meteo.html` | **la console del Direttore** — staccata dal sito, vedi sotto |
 | `stile.css` · `s77.js` | il sistema. Un foglio, un file di comportamento |
 | `storie.html` | rinvio: l'indirizzo vecchio porta alla casa editrice |
 | `bilancia.html` | **staccata dal sito** — vedi sotto |
@@ -77,16 +78,32 @@ qualunque punto del sito si vede dove si può andare.
 | **giallo** | si resta qui, su `systema77.com` |
 | verde · magenta · ciano | è un altro pianeta, e sotto c'è scritto quale |
 
-I pianeti di oggi: `animagame.io` (il gioco), `cyberboomer.ninja` (la
-divulgazione), `radio-anima.pages.dev` (la radio). Quando se ne aggiunge uno,
-si tocca solo la lista `FUORI` nel generatore e la mappa si aggiorna ovunque.
+I pianeti di oggi: `animagame.io` (il gioco) e `cyberboomer.ninja` (la
+divulgazione). La radio torna nella mappa quando suona. La mappa è scritta
+in ogni pagina, uguale: quando cambia, cambia in tutte (`grep -n stella` le
+trova).
 
-## Gli stati accesi
+## Gli stati, il 05/09
 
-`chill.html` dà **AURA** e **la radio** per accese. AURA è verificata (vive in
-`meteo.html`). La radio è accesa **sulla parola del Direttore del 04/09**, non
-su un collaudo: da questo ambiente `radio-anima.pages.dev` non è raggiungibile.
-Se il link non suona, si torna a «in accordatura» cambiando una riga.
+**La radio è spenta.** Il Direttore ha aperto il link e ha detto «la radio non
+è accesa»: `chill.html` dice «in accordatura», nessun bottone, nessun
+indirizzo, e la radio non sta nella mappa. Quando suona, si riaccende in una
+riga per pagina.
+
+**AURA ha due facce.** `meteo.html` — i grafici, le quattro località, i tre
+modelli — è **la console del Direttore**: «quelli li vedrò solo io». È
+staccata dal sito come la bilancia: nessun link, fuori da `sitemap.xml`,
+`noindex`. Non è privata: chi ha l'indirizzo la apre. Diventa privata quando
+passa dietro il suo banco.
+`aura.html` è quello che vede il pubblico: **un'icona per giorno e due
+numeri**, e una finestra dove scrivere cosa si deve fare («sabato vado a fare
+windsurf sul lago di Como: a che ora c'è il vento migliore?»). Le due rotte
+(`GET /previsione`, `POST /richiesta`) sono dichiarate in fondo alla pagina e
+**spente**: le accende chi tiene il Worker di AURA. Finché sono spente la
+pagina mostra le otto icone e dice «in allestimento». La chiave del meteo non
+sta in `aura.html` e non ci starà mai.
+La porta di AURA (chi lascia il numero) sta ancora dentro `meteo.html`: quando
+il Worker risponde, va spostata in `aura.html`.
 
 ## Il telefono in verticale
 
@@ -110,4 +127,4 @@ Portava anche in chiaro un nome preso da un videogioco altrui: è stato tolto
 dal titolo e dalle scritte, per la stessa cautela già decisa su ANIMA GAME.
 
 — creato da D.R.A.G.O. 2026-07-28 · riscritture JUDY 2026-08-08 ·
-  **v1 operativa, JUDY 2026-09-04**
+  **v1 operativa, JUDY 2026-09-04** · radio spenta e AURA a icone, JUDY 2026-09-05

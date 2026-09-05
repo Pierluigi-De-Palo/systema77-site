@@ -292,3 +292,31 @@ footer .titolo-coda{font-family:var(--mono); font-size:.74rem; letter-spacing:.2
   .strip a span, .strip .voce span{font-size:.86rem}
   .stella{padding:.75rem .9rem}
 }
+
+/* ══ AURA PER IL PUBBLICO — icone, non grafici (ordine del Direttore, 05/09) ══
+   I grafici restano nella console. Qui: una tavola di icone in tratto ciano,
+   e una finestra dove scrivere cosa si deve fare. I campi sono della casa:
+   serif dentro, mono per l'etichetta, bordo che si accende in ciano. */
+.aura-form{display:flex; gap:.8rem; flex-wrap:wrap; align-items:stretch; margin-top:1.4rem}
+.aura-form.colonna{flex-direction:column}
+.aura-form label{flex:1 1 100%}
+.aura-form input, .aura-form textarea{flex:1 1 14rem; min-width:0; background:#111; color:var(--carta);
+  border:2px solid var(--linea-viva); padding:.85rem 1rem; font-family:var(--serif);
+  font-size:1.05rem; line-height:1.5; border-radius:0}
+.aura-form textarea{resize:vertical; min-height:7rem}
+.aura-form input:focus, .aura-form textarea:focus{border-color:var(--ciano); outline:0}
+.aura-form input::placeholder, .aura-form textarea::placeholder{color:var(--muto)}
+.aura-form .bottone{margin-top:0}
+.aura-form.colonna .bottone{align-self:flex-start}
+button.bottone{background:transparent; cursor:pointer; border-radius:0}
+.cieli{display:grid; grid-template-columns:repeat(auto-fill,minmax(7.2rem,1fr)); margin-top:1.4rem;
+  border-top:2px solid var(--linea); border-left:2px solid var(--linea)}
+.cielo{padding:1rem .7rem 1.1rem; border-right:2px solid var(--linea); border-bottom:2px solid var(--linea);
+  display:flex; flex-direction:column; align-items:center; gap:.4rem; text-align:center}
+.cielo .icona{width:3.2rem; height:3.2rem; color:var(--ciano); stroke:currentColor; fill:none;
+  stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+.cielo .giorno{font-family:var(--mono); font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muto)}
+.cielo .nome{font-family:var(--serif); font-size:.95rem; line-height:1.3; color:var(--testo)}
+.cielo .gradi{font-family:var(--mono); font-size:.86rem; letter-spacing:.08em; color:var(--carta)}
+.cielo .vento{font-family:var(--mono); font-size:.7rem; letter-spacing:.1em; color:var(--muto)}
+.risposta{margin-top:1.4rem; border-left:4px solid var(--ciano); padding:.9rem 1.1rem; background:#111; max-width:58ch}
