@@ -65,6 +65,28 @@ e un gioco.
 5. **Un indirizzo non si rompe.** Se una pagina cambia nome, la vecchia resta
    e rinvia (vedi `storie.html`).
 
+## La luce (2077)
+
+Il 05/09 il Direttore: «la vetrina la trovo un po' spenta di colori: tanto
+giallo, tanto bianco, poco magenta o ciano. Rendila un po' più 2077». Vero:
+in sei quadri il magenta compariva due volte e il ciano una. Adesso la luce
+c'è anche dove non c'è una parola da colorare, e non muove niente:
+
+- **la riga al neon** sotto il menu (giallo → magenta → ciano), su ogni pagina;
+- **gli aloni** negli angoli dei quadri e dell'annuncio di ogni pagina
+  (`.luce-m` `.luce-c` `.luce-g` `.luce-v` `.luce-mc`), alfa mai sopra il 16%:
+  è luce, non fondale;
+- **il gigante sdoppiato** ai bordi, ciano a sinistra e magenta a destra, fermo;
+- SERVICE in ciano, la GALASSIA in magenta: il giallo lo tengono il 77 e le
+  porte di casa.
+
+**I testi**, stesso giorno: «manca formattazione, punti a capo,
+giustificazioni». Il corpo (`.dice`) è giustificato con la sillabazione
+italiana sopra i 700px e a bandiera sotto, dove la riga è corta e la
+giustificazione apre buchi. Le frasi forti, i claim e i titoli vanno a capo
+bilanciati (`text-wrap:balance`): niente parola sola sull'ultima riga. I
+claim a tre voci stanno su tre righe, col punto colorato in fondo.
+
 ## La galassia
 
 SYSTEMA 77 è il centro; intorno ci sono altri pianeti, ognuno col suo indirizzo.
@@ -127,4 +149,4 @@ Portava anche in chiaro un nome preso da un videogioco altrui: è stato tolto
 dal titolo e dalle scritte, per la stessa cautela già decisa su ANIMA GAME.
 
 — creato da D.R.A.G.O. 2026-07-28 · riscritture JUDY 2026-08-08 ·
-  **v1 operativa, JUDY 2026-09-04** · radio spenta e AURA a icone, JUDY 2026-09-05
+  **v1 operativa, JUDY 2026-09-04** · radio spenta, AURA a icone e la luce 2077, JUDY 2026-09-05

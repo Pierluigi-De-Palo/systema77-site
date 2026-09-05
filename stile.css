@@ -40,6 +40,10 @@
   --linea:#262626;
   --linea-viva:#3A3A36;
   --largo:1360px;       /* era 1100: la pagina usa la larghezza che ha */
+  /* 2077 (05/09): la luce. Una riga al neon e tre aloni, mai piu' del 16%. */
+  --neon:linear-gradient(90deg,var(--giallo) 0%,var(--magenta) 50%,var(--ciano) 100%);
+  --alone-m:rgba(255,46,136,.16); --alone-c:rgba(22,224,220,.14);
+  --alone-g:rgba(242,226,5,.12);  --alone-v:rgba(56,224,138,.14);
   --anton:'Anton',Impact,sans-serif;
   --archivo:'Archivo Black',Impact,sans-serif;
   --mono:'Share Tech Mono',ui-monospace,Menlo,monospace;
@@ -54,7 +58,8 @@ a{color:inherit; text-decoration:none}
 
 /* ── NAVIGAZIONE — cinque voci. Su schermo stretto scorre, non si spezza ── */
 nav.menu{position:sticky; top:0; z-index:20; display:flex; align-items:center; gap:1.35rem;
-  padding:.8rem 1.4rem; background:var(--nero); border-bottom:2px solid var(--linea);
+  padding:.8rem 1.4rem; background:var(--nero);
+  border-bottom:2px solid var(--linea); border-image:var(--neon) 1;
   font-family:var(--mono); font-size:.76rem; letter-spacing:.14em; text-transform:uppercase;
   overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none}
 nav.menu::-webkit-scrollbar{display:none}
@@ -67,7 +72,8 @@ nav.menu a[aria-current]{color:var(--nero); background:var(--giallo); padding:.2
 
 /* ── STRUTTURA ── */
 .dentro{max-width:var(--largo); margin:0 auto; width:100%}
-.annuncio{padding:4.6rem 1.4rem 4rem; border-bottom:2px solid var(--linea)}
+.annuncio{padding:4.6rem 1.4rem 4rem; border-bottom:2px solid var(--linea); position:relative}
+.annuncio > .dentro{position:relative}
 .blocco{border-bottom:2px solid var(--linea); padding:3.4rem 1.4rem}
 .blocco:last-of-type{border-bottom:0}
 
@@ -90,28 +96,38 @@ h1{font-family:var(--anton); font-weight:400; text-transform:uppercase;
   font-size:clamp(2.8rem,9.5vw,7rem); line-height:.9; letter-spacing:.01em; color:var(--carta)}
 h1 .g{color:var(--giallo)} h1 .m{color:var(--magenta)} h1 .c{color:var(--ciano)}
 h2{font-family:var(--anton); font-weight:400; text-transform:uppercase;
-  font-size:clamp(2rem,5.8vw,3.9rem); line-height:.93; color:var(--carta)}
+  font-size:clamp(2rem,5.8vw,3.9rem); line-height:.93; color:var(--carta); text-wrap:balance}
 h3{font-family:var(--archivo); font-weight:400; text-transform:uppercase;
   font-size:clamp(1rem,2.2vw,1.3rem); letter-spacing:.01em; color:var(--carta)}
 .striscia{display:inline-block; background:var(--giallo); color:var(--nero); padding:.1em .25em}
+.striscia.m{background:var(--magenta); color:var(--carta)}
+.striscia.c{background:var(--ciano)}
 
 /* LA PROMESSA — quello che vendiamo, scritto come si vende */
 .claim{font-family:var(--archivo); text-transform:uppercase; color:var(--carta);
   font-size:clamp(1.15rem,3.4vw,2.6rem); line-height:1.14; letter-spacing:.005em;
-  margin-top:1.2rem; max-width:20ch}
+  margin-top:1.2rem; max-width:20ch; text-wrap:balance}
 .claim .g{color:var(--giallo)} .claim .c{color:var(--ciano)}
 .claim .m{color:var(--magenta)} .claim .v{color:var(--verde-game)}
 
-/* LA VOCE UMANA, in tre volumi. Il bianco e' il volume alto: uno per blocco. */
+/* LA VOCE UMANA, in tre volumi. Il bianco e' il volume alto: uno per blocco.
+   05/09, rilievo del Direttore: «manca formattazione, punti a capo,
+   giustificazioni». Il corpo e' GIUSTIFICATO con la sillabazione italiana
+   (html lang="it"); la frase forte e i claim non si giustificano — poche
+   parole per riga farebbero buchi — ma vanno a capo BILANCIATI: niente
+   parola sola sull'ultima riga. */
 .dice{font-family:var(--serif); font-size:clamp(1.05rem,1.5vw,1.2rem); line-height:1.7;
-  color:var(--testo); max-width:58ch; margin-top:1.1rem}
+  color:var(--testo); max-width:58ch; margin-top:1.1rem;
+  text-align:justify; hyphens:auto; -webkit-hyphens:auto; text-wrap:pretty}
+/* Sotto i 700px la riga e' corta e la giustificazione apre buchi: a bandiera. */
+@media(max-width:700px){.dice{text-align:left}}
 .dice + .dice{margin-top:.9rem}
 .dice b, .dice strong{color:var(--carta); font-weight:600}
 .dice a{color:var(--giallo); border-bottom:1px solid var(--linea-viva)}
 .dice a:hover{border-color:var(--giallo)}
 /* volume alto: la frase che deve restare. Una per blocco, mai due. */
 .dice.forte{color:var(--carta); font-size:clamp(1.2rem,1.9vw,1.5rem); line-height:1.5;
-  max-width:34ch}
+  max-width:34ch; text-align:left; hyphens:manual; text-wrap:balance}
 /* volume basso: il dettaglio, per chi lo cerca */
 .dice.piccola{color:var(--muto); font-size:1rem; line-height:1.6; max-width:52ch}
 
@@ -244,8 +260,26 @@ footer .titolo-coda{font-family:var(--mono); font-size:.74rem; letter-spacing:.2
 .quadro77 .angolo{position:absolute; bottom:14px; right:20px; font-family:var(--mono);
   font-size:.7rem; letter-spacing:.18em; color:var(--muto); text-transform:uppercase}
 .gigante{font-family:var(--anton); font-weight:400; text-transform:uppercase;
-  font-size:clamp(3.8rem,13.5vw,12rem); line-height:.86; letter-spacing:.01em; color:var(--carta)}
+  font-size:clamp(3.8rem,13.5vw,12rem); line-height:.86; letter-spacing:.01em; color:var(--carta);
+  /* 2077: il gigante sdoppia i colori ai bordi, come un tubo catodico.
+     Ferma, non animata: la luce non deve consumare niente. */
+  text-shadow:-.03em 0 rgba(22,224,220,.6), .03em 0 rgba(255,46,136,.6)}
 .gigante .g{color:var(--giallo)}
+
+/* ── LA LUCE (2077, 05/09) — «la vetrina la trovo un po' spenta di colori».
+   Ogni quadro porta un alone nell'angolo: magenta in basso a sinistra, ciano
+   in alto a destra, o entrambi. Alfa al 16% massimo: e' luce, non fondale.
+   Il bianco e il giallo restano quello che erano; il magenta e il ciano
+   adesso ci sono anche quando non c'e' una parola da colorare. */
+.quadro77::before, .annuncio::before{content:""; position:absolute; inset:0; pointer-events:none}
+.luce-mc::before, .annuncio::before{background:
+  radial-gradient(55% 60% at 0% 100%, var(--alone-m), transparent 70%),
+  radial-gradient(45% 55% at 100% 0%, var(--alone-c), transparent 70%)}
+.luce-m::before{background:radial-gradient(55% 60% at 0% 100%, var(--alone-m), transparent 70%)}
+.luce-c::before{background:radial-gradient(50% 60% at 100% 0%, var(--alone-c), transparent 70%)}
+.luce-g::before{background:radial-gradient(50% 60% at 100% 100%, var(--alone-g), transparent 70%)}
+.luce-v::before{background:radial-gradient(55% 60% at 0% 100%, var(--alone-v), transparent 70%)}
+.quadro77 > .dentro{position:relative}
 
 /* ── LA STRISCIA che invita a girare (non un muro) ── */
 .suggerimento{display:none}
