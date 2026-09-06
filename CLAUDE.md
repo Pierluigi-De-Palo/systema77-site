@@ -26,6 +26,20 @@ Quella sezione esiste perché quel passo è mancato quattro volte in un mese,
 e ogni volta il sito ha raccontato a degli sconosciuti una cosa che non era
 vera.
 
+## Se tocchi uno stato che vive anche altrove
+
+```
+node strumenti/galassia.mjs
+```
+
+Questo è il centro della galassia, e le altre case (il gioco, la voce, la
+landing, la radio) stanno clonate accanto a questa cartella. Il giro lancia il
+guardiano di ognuna, controlla che da ogni casa si vada alle altre, e
+confronta quello che le pagine dichiarano con `stati-galassia.json`, la
+verità unica. Radio, AURA, verifiche: se ne accendi o spegni una, **prima si
+cambia il registro, poi le pagine, poi si rilancia il giro**. Leggi
+`GALASSIA.md`: dice perché.
+
 ## Le tre che ci hanno fatto male davvero
 
 1. **Non dichiarare quello che non hai misurato.** Se non hai potuto

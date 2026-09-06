@@ -1,0 +1,52 @@
+{
+  "_": "IL REGISTRO DELLA GALASSIA — una verità sola per tutte le case. Quando una cosa si accende o si spegne, si cambia QUI, e il giro (strumenti/galassia.mjs) controlla che ogni casa dica la stessa cosa. Lasciato da JUDY, 2026-09-05.",
+  "aggiornato": "2026-09-06",
+
+  "case": {
+    "systema77.com":         { "repo": "systema77-site",        "voce": "l'agenzia, il centro",          "colore": "#F2E205", "guardiano": "strumenti/collaudo.mjs" },
+    "animagame.io":          { "repo": "animagame-site",        "voce": "il gioco, a invito",             "colore": "#38E08A", "guardiano": "strumenti/collaudo.mjs" },
+    "cyberboomer.ninja":     { "repo": "cyberboomer-ninja-site","voce": "la divulgazione",                "colore": "#5C7CFF", "guardiano": "strumenti/collaudo.mjs" },
+    "anima.solar":           { "repo": "anima-solar-site",      "voce": "una landing: in sviluppo",       "colore": "#C9A15E", "guardiano": null },
+    "radio-anima.pages.dev": { "repo": "radio-anima-site",      "voce": "la radio: spenta, senza sorgente", "colore": null,   "guardiano": null }
+  },
+
+  "porte": {
+    "_": "da ogni casa si deve poter andare a queste. Un link vero, href con https://.",
+    "systema77-site":         ["animagame.io", "cyberboomer.ninja"],
+    "animagame-site":         ["systema77.com"],
+    "cyberboomer-ninja-site": ["systema77.com", "anima.solar"],
+    "anima-solar-site":       ["systema77.com", "animagame.io", "cyberboomer.ninja"]
+  },
+
+  "stati": {
+    "_": "quello che la galassia dichiara vivo o spento. Il giro cerca nel testo VISIBILE di ogni pagina di ogni casa.",
+    "radio": {
+      "stato": "in prova",
+      "dal": "2026-09-06",
+      "perche": "ordine del Direttore del 06/09: «il banco di prova è la vetrina». SUONO ha misurato i byte del player riparato, nessuno l'ha ancora sentita suonare: in pagina si dice «in prova», mai «accesa»",
+      "se_in_prova": {
+        "vietato_testo": "radio[^.]{0,80}?\\b(attiva|accesa|funziona già)\\b"
+      },
+      "se_spenta": {
+        "vietato_link": "radio-anima\\.pages\\.dev",
+        "vietato_testo": "radio[^.]{0,80}?\\b(attiva|accesa|suona|sintonizzati|in prova)\\b"
+      },
+      "se_accesa": {
+        "vietato_testo": "radio[^.]{0,80}?\\b(in accordatura|in prova|spenta)\\b"
+      }
+    },
+    "aura-pubblica": {
+      "stato": "in allestimento",
+      "pagina": "systema77.com/aura.html",
+      "perche": "le due rotte del Worker sono dichiarate e spente",
+      "se_in_allestimento": {
+        "vietato_testo": "\\baura\\b[^.]{0,40}?\\b(è acces[ao]|funziona già|è online)\\b"
+      }
+    },
+    "verifiche": {
+      "stato": "attiva",
+      "pagina": "animagame.io/verifiche.html",
+      "perche": "la stanza è in casa; il motore dietro è dichiarato in assets/config.js"
+    }
+  }
+}
