@@ -1,6 +1,6 @@
 # SYSTEMA 77 — systema77.com
 
-Il sito dell'agenzia. **AI Agent Service**: automazione con agenti AI,
+Il sito dell'agenzia. **AI Agent Agency**: automazione con agenti AI,
 produzione per terzi, ricerca e sviluppo. Più una casa editrice, un'officina
 e un gioco.
 
@@ -77,8 +77,8 @@ c'è anche dove non c'è una parola da colorare, e non muove niente:
   (`.luce-m` `.luce-c` `.luce-g` `.luce-v` `.luce-mc`), alfa mai sopra il 16%:
   è luce, non fondale;
 - **il gigante sdoppiato** ai bordi, ciano a sinistra e magenta a destra, fermo;
-- SERVICE in ciano, la GALASSIA in magenta: il giallo lo tengono il 77 e le
-  porte di casa.
+- AGENCY in ciano, la GALASSIA in magenta: il giallo lo tengono il 77 e le
+  porte di casa. (05/09: era SERVICE. Il Direttore: «sarà ovunque AGENCY».)
 
 **I testi**, stesso giorno: «manca formattazione, punti a capo,
 giustificazioni». Il corpo (`.dice`) è giustificato con la sillabazione
@@ -104,28 +104,6 @@ I pianeti di oggi: `animagame.io` (il gioco) e `cyberboomer.ninja` (la
 divulgazione). La radio torna nella mappa quando suona. La mappa è scritta
 in ogni pagina, uguale: quando cambia, cambia in tutte (`grep -n stella` le
 trova).
-
-## La luce (2077, 05/09)
-
-Rilievo del Direttore: «la vetrina la trovo un po' spenta di colori: tanto
-giallo, tanto bianco, poco magenta o ciano. Rendila più 2077». Misurato coi
-font veri: in sei quadri il magenta compariva due volte e il ciano una.
-
-- **Una riga al neon sotto il menu**, giallo → magenta → ciano, su ogni pagina.
-- **Aloni negli angoli** dei quadri della home e dell'annuncio di ogni pagina
-  (`.luce-m`, `.luce-c`, `.luce-g`, `.luce-v`, `.luce-mc`). Alfa al 16%
-  massimo: è luce, non fondale. Il bianco e il giallo restano quello che erano.
-- **Il gigante sdoppiato** ai bordi (ciano a sinistra, magenta a destra), fermo.
-- SERVICE è ciano, GALASSIA è magenta (`.striscia.m`). Il giallo resta al 77 e
-  alle porte di casa.
-
-**I testi** (stesso rilievo: «manca formattazione, punti a capo,
-giustificazioni»). Il corpo `.dice` è giustificato con la sillabazione
-italiana sopra i 700px; sotto torna a bandiera, perché sul telefono la
-giustificazione apre buchi. Frasi forti, claim e titoli vanno a capo
-bilanciati (`text-wrap:balance`): niente parola sola sull'ultima riga. I claim
-a tre voci stanno su tre righe col punto colorato, non su una riga che spezza
-«PER / TERZI».
 
 ## Gli stati, il 05/09
 
