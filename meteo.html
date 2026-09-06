@@ -347,8 +347,16 @@ const HOURLY='temperature_2m,apparent_temperature,relative_humidity_2m,pressure_
    PIENA  → server a pagamento, licenza commerciale inclusa: si pubblica.
 
    Verificato il 2026-08-19: senza chiave i due server a pagamento rispondono
-   «API key required», quindi esistono e aspettano solo lei.              */
-const APIKEY='iZ5hbTnzZNdDRfqB';
+   «API key required», quindi esistono e aspettano solo lei.
+
+   ⚠️ 2026-09-06 — LA RIGA E' STATA SVUOTATA, E NON RIMETTERCI QUELLA VECCHIA.
+   La chiave che stava qui e' rimasta in chiaro dal 19/08 al 06/09: diciotto
+   giorni in un repo pubblico. Toglierla da qui chiude la spesa aperta DA
+   QUESTA PAGINA, ma NON la revoca: resta nella cronologia di git e in ogni
+   copia gia' scaricata. La revoca si chiede a Open-Meteo, ed e' l'unica cosa
+   che chiude davvero. Finche' non c'e' il worker dell'uscita (b), qui dentro
+   una chiave nuova sarebbe bruciata il giorno stesso.                    */
+const APIKEY='';
 
 const _SRV    = APIKEY ? 'https://customer-api.open-meteo.com'        : 'https://api.open-meteo.com';
 const _SRVMAR = APIKEY ? 'https://customer-marine-api.open-meteo.com' : 'https://marine-api.open-meteo.com';

@@ -18,7 +18,15 @@ node strumenti/galassia.mjs
 | `animagame.io` | il gioco, a invito | verde `#38E08A`, mai fondale | `animagame-site` | `strumenti/collaudo.mjs` |
 | `cyberboomer.ninja` | la divulgazione, la voce | blu-link `#5C7CFF` | `cyberboomer-ninja-site` | `strumenti/collaudo.mjs` (di FLUX) |
 | `anima.solar` | una landing: «in sviluppo» | ambra `#C9A15E` | `anima-solar-site` | nessuno |
-| `radio-anima.pages.dev` | la radio, in prova | — | `radio-anima-site`, vuoto | nessuno |
+| `radio-anima.pages.dev` | la radio, in prova | — | **nessuno** (vedi sotto) | nessuno |
+
+La radio è l'eccezione, e va detta: **non ha un repo**. La sua sorgente sta in
+`animagame-site/radio/` sul Mac, fuori da ogni git apposta — l'onda pesa ~6 MB
+a settimana, quasi 2 GB l'anno che resterebbero nella cronologia per sempre. Si
+pubblica per caricamento diretto (`bash scripts/pubblica.sh radio --vai`), e il
+progetto Pages non è collegato a nessun repo: collegarcelo pubblicherebbe una
+radio muta, perché in git ci finirebbe il codice e non l'audio. Il repo
+`radio-anima-site` **non contiene la radio**. Misurato da SUONO il 06/09.
 
 Ogni casa ha la sua voce e non si assomigliano: il gioco non ha l'Anton
 dell'agenzia, la voce non ha il verde del gioco. Quello che è uguale ovunque
