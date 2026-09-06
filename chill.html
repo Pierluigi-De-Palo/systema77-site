@@ -74,9 +74,15 @@
   </div>
 </div>
 
-<!-- LA RADIO — SPENTA. Il 05/09 il Direttore ha aperto il link e ha detto
-     «la radio non è accesa»: nessun bottone, nessun indirizzo, finché non
-     suona davvero. Quando suona, il bottone torna in una riga. -->
+<!-- LA RADIO — IN PROVA, per ordine del Direttore del 06/09: «ora il banco
+     di prova è la vetrina systema 77, si prova lì ed eventualmente si torna
+     indietro». Il player è stato riparato il 05/09 e la riparazione è MISURATA
+     (anima-console, «Prova della radio», run #2: il file pubblicato ha impronta
+     diversa da quello rotto, e dentro ci sono play() nel click e seeked).
+     ⚠️ Ma il collaudo misura i BYTE, non l'orecchio: NESSUNO l'ha ancora
+     sentita suonare. Per questo la parola in pagina è «in prova» e non
+     «accesa» — il 05/09 diceva «accesa» e non usciva un suono.
+     Per tornare indietro: git revert del commit che ha rimesso questa riga. -->
 <div class="blocco" id="radio">
   <div class="dentro due">
     <div>
@@ -87,7 +93,9 @@
       <p class="dice forte">Solo musica nostra, con i diritti in chiaro.</p>
       <p class="dice">Non si segue e non insegue: <b>si sintonizza</b>, e non conta
          chi ascolta.</p>
-      <p style="margin-top:1.5rem"><span class="stato">in accordatura</span></p>
+      <p style="margin-top:1.5rem"><span class="stato on">in prova</span></p>
+      <a class="bottone c" href="https://radio-anima.pages.dev" rel="noopener">Sintonizzati &#8599;</a>
+      <p class="riga-mono">radio-anima.pages.dev</p>
     </div>
   </div>
 </div>
@@ -144,6 +152,11 @@
     <span class="nome">Cyber Boomer &#8599;</span>
     <span class="che">la divulgazione: la tecnologia spiegata a chi non ci è nato dentro</span>
     <span class="dove">cyberboomer.ninja</span>
+  </a>
+  <a class="stella ciano" href="https://radio-anima.pages.dev" rel="noopener">
+    <span class="nome">Radio Anima &#8599;</span>
+    <span class="che">solo musica nostra, con i diritti in chiaro</span>
+    <span class="dove">radio-anima.pages.dev</span>
   </a>
 </div>
 <p class="galassia-legenda">
