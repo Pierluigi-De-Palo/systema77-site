@@ -7,7 +7,7 @@
     "animagame.io":          { "repo": "animagame-site",        "voce": "il gioco, a invito",             "colore": "#38E08A", "guardiano": "strumenti/collaudo.mjs" },
     "cyberboomer.ninja":     { "repo": "cyberboomer-ninja-site","voce": "la divulgazione",                "colore": "#5C7CFF", "guardiano": "strumenti/collaudo.mjs" },
     "anima.solar":           { "repo": "anima-solar-site",      "voce": "una landing: in sviluppo",       "colore": "#C9A15E", "guardiano": null },
-    "radio-anima.pages.dev": { "repo": "radio-anima-site",      "voce": "la radio: spenta, senza sorgente", "colore": null,   "guardiano": null }
+    "radio-anima.pages.dev": { "repo": null,                    "voce": "la radio, in prova: sorgente fuori da git",  "colore": null,   "guardiano": null }
   },
 
   "porte": {
@@ -23,6 +23,7 @@
     "radio": {
       "stato": "in prova",
       "dal": "2026-09-06",
+      "sorgente": "animagame-site/radio/ sul Mac, FUORI da ogni git apposta: l'onda pesa ~6 MB a settimana, quasi 2 GB l'anno che resterebbero nella cronologia per sempre. Si pubblica con `bash scripts/pubblica.sh radio --vai`, per caricamento diretto. Il progetto Pages NON è collegato a un repo e non deve esserlo: collegarlo pubblicherebbe una radio muta. Misurato da SUONO, 2026-09-06. ⚠️ Il repo `radio-anima-site` NON contiene la radio.",
       "perche": "ordine del Direttore del 06/09: «il banco di prova è la vetrina». SUONO ha misurato i byte del player riparato, nessuno l'ha ancora sentita suonare: in pagina si dice «in prova», mai «accesa»",
       "se_in_prova": {
         "vietato_testo": "radio[^.]{0,80}?\\b(attiva|accesa|funziona già)\\b"

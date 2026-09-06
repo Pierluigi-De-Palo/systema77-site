@@ -91,6 +91,10 @@ console.log(`\n${G.forte}◉ IL GIRO DELLA GALASSIA${G.fine} ${G.muto}— regist
 titolo('1 · le case');
 const case_ = {};   // dominio → { dir, pagine }
 for (const [dominio, casa] of Object.entries(REG.case)) {
+  // Una casa può vivere senza repo: la radio si pubblica per caricamento
+  // diretto e la sua sorgente sta fuori da git (vedi il registro). Cercarle
+  // una cartella qui vorrebbe dire contare le pagine di qualcun altro.
+  if (!casa.repo) { nota(`${dominio} — nessun repo (${casa.voce})`); continue; }
   const dir = join(NIDO, casa.repo);
   if (!existsSync(dir)) { nota(`${dominio} — ${casa.repo} non clonata qui: saltata`); continue; }
   const pg = pagine(dir);
