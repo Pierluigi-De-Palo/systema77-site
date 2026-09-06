@@ -61,3 +61,9 @@ Thumbs.db
 *.pem
 *.key
 .dev.vars
+
+# ── Gli attrezzi dei guardiani, non il sito
+# Sia il collaudo sia il provino delle icone dicono «npm i -D playwright» a chi
+# li lancia senza browser. Chi obbedisce si ritrova ~60 MB e decine di migliaia
+# di file pronti da spingere in un repo PUBBLICO, e se ne accorge dopo.
+node_modules/
